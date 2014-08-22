@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Configuring OAuth Authentication for an Application Link - JIRA 6.0 - Atlassian Documentation</title>
+
+        
+
+                        
+    
+                        
+    
+                        
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=IE7">
+<meta charset="UTF-8">
+<meta id="confluence-context-path" name="confluence-context-path" content="">
+<meta id="confluence-base-url" name="confluence-base-url" content="https://confluence.atlassian.com">
+
+<meta id="atlassian-token" name="atlassian-token" content="4777c8fa1fbbbf8161a781ce7e3d10ef048e7286">
+
+<meta id="confluence-space-key" name="confluence-space-key" content="JIRA060">
+<script src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+        var contextPath = '';
+</script>
+
+    
+
+    <meta name="confluence-request-time" content="1408447753686">
+        
+            <script type="text/x-template" title="create-draft">
+    <div class="publisher-dialog">
+        <form action="#" method="post" class="aui create-draft-dialog">
+            <div>
+                <label for="create-draft-title">Title</label>
+                <input class="text" type="text" id="create-draft-title" name="title" title="Title">
+            </div>
+        </form>
+    </div>
+</script>
+
+<script type="text/x-template" title="publisher-dialog-page1">
+    <div class="publisher-dialog">
+        <div class="publisher-dialog-comment">
+            <form action="#" method="post" class="aui publish-comment-form">
+                <div>
+                    <label for="publish-comment">Version Comment</label>
+                    <input class="text" type="text" id="publish-comment" name="publish-comment" title="Version Comment">
+                </div>
+            </form>
+        </div>
+        <div class="publisher-dialog-pages">
+            <table class="aui">
+                <tr>
+                    <th class="publisher-dialog-pages-title">Page Title</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" title="publisher-dialog-page2">
+    <div class="publisher-dialog">
+        <div class="publisher-dialog-progress">
+            <div class="publisher-dialog-progress-icon"></div><span class="publisher-dialog-progress-message">Progress ...</span>
+        </div>
+        <div class="publisher-dialog-pages-progress">
+            <table class="aui">
+                <tr>
+                    <th class="publisher-dialog-pages-title">Page Title</th>
+                    <th class="publisher-dialog-pages-status">Changes in Original</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" title="publisher-dialog-page">
+    <tr>
+        <td class="publisher-dialog-pages-title"><a href="{1}" target="_blank">{0}</a></td>
+    </tr>
+</script>
+
+<script type="text/x-template" title="publisher-dialog-page-progress">
+    <tr>
+        <td class="publisher-dialog-pages-title"><a href="{1}" target="_blank">{0}</a></td>
+        <td class="publisher-dialog-pages-status">{2}<a href="{3}" target="_blank">{4}</a></td>
+    </tr>
+</script>
+    
+        
+            <meta name="ajs-is-confluence-admin" content="false">
+            <meta name="ajs-connection-timeout" content="10000">
+            <meta name="ajs-discovered-plugin-features" content="{}">
+            <meta name="ajs-use-keyboard-shortcuts" content="true">
+            <meta name="ajs-show-space-welcome-dialog" content="true">
+            <meta name="ajs-keyboardshortcut-hash" content="458f43722dddc361338446ed816ce3e1">
+            <meta name="gliffy-license-type" content="COMMERCIAL">
+<meta name="gliffy-license-quantity" content="10000000">
+
+            <script type="text/x-template" title="gliffy-webpanel-footer">
+        <div class="gliffy-webpanel-footer"><span></span></div>
+</script>
+
+
+            
+    
+    
+            <meta name="ajs-page-id" content="370705790">
+            <meta name="ajs-content-type" content="page">
+            <meta name="ajs-page-title" content="Configuring OAuth Authentication for an Application Link">
+            <meta name="ajs-parent-page-title" content="Configuring Authentication for an Application Link">
+            <meta name="ajs-parent-page-id" content="370705788">
+            <meta name="ajs-space-key" content="JIRA060">
+            <meta name="ajs-space-name" content="JIRA 6.0">
+            <meta name="ajs-from-page-title" content="">
+            <meta name="ajs-can-remove-page" content="false">
+            <meta name="ajs-context-path" content="">
+            <meta name="ajs-base-url" content="https://confluence.atlassian.com">
+            <meta name="ajs-version-number" content="5.5.5-m3">
+            <meta name="ajs-build-number" content="5523">
+            <meta name="ajs-remote-user" content="ahrnazemi">
+            <meta name="ajs-current-user-fullname" content="ahmadReza Nazemi">
+            <meta name="ajs-current-user-avatar-url" content="/images/icons/profilepics/default.png">
+            <meta name="ajs-static-resource-url-prefix" content="/s/en_GB/5523/205577d01f4fb4efed99ead6d83b28ba8b59d647.27/_">
+            <meta name="ajs-global-settings-attachment-max-size" content="146800640">
+            <meta name="ajs-user-locale" content="en_GB">
+            <meta name="ajs-enabled-dark-features" content="captcha-level.easy,draggable.disabled,confluence-monitoring.enable">
+            <meta name="ajs-atl-token" content="4777c8fa1fbbbf8161a781ce7e3d10ef048e7286">
+            <meta name="ajs-confluence-flavour" content="VANILLA">
+            <meta name="ajs-user-date-pattern" content="dd MMM yyyy">
+            <meta name="ajs-date.format" content="MMM dd, yyyy">
+    
+    <link rel="shortcut icon" href="https://confluence.atlassian.com/s/en_GB/5523/205577d01f4fb4efed99ead6d83b28ba8b59d647.27/_/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://confluence.atlassian.com/s/en_GB/5523/205577d01f4fb4efed99ead6d83b28ba8b59d647.27/_/favicon.ico">
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://confluence.atlassian.com/opensearch/osd.action" title="Atlassian Documentation">
+
+<link type="text/css" rel="stylesheet" href="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/batch_003.css" media="all">
+<link type="text/css" rel="stylesheet" href="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/batch.css" media="print">
+<!--[if lt IE 9]>
+<link type="text/css" rel="stylesheet" href="/s/921e5c13ba2dde147a359f044997077a/en_GB/5523/205577d01f4fb4efed99ead6d83b28ba8b59d647.27/197404/_/download/superbatch/css/batch.css?conditionalComment=lt+IE+9" media="all">
+<![endif]-->
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e/en_GB/5523/205577d01f4fb4efed99ead6d83b28ba8b59d647.27/197404/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+8" media="all">
+<![endif]-->
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e/en_GB/5523/205577d01f4fb4efed99ead6d83b28ba8b59d647.27/197404/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+9" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/batch_005.css" media="all">
+<!--[if lt IE 9]>
+<link type="text/css" rel="stylesheet" href="/s/6298d95c2db783cd91b2054a645deef4/en_GB/5523/205577d01f4fb4efed99ead6d83b28ba8b59d647.27/9bf8af11acfea35d848724c061e9a21d/_/download/contextbatch/css/atl.confluence.plugins.pagetree-desktop,main,viewcontent,atl.general/batch.css?conditionalComment=lt+IE+9" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/batch_004.css" media="all">
+<!--[if lt IE 9]>
+<link type="text/css" rel="stylesheet" href="/s/7cf797346aea813127917f3c7abbb181/en_GB/5523/205577d01f4fb4efed99ead6d83b28ba8b59d647.27/911ec42c823f7ef9b511c8c99fd363e4/_/download/contextbatch/css/page/batch.css?conditionalComment=lt+IE+9" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/batch_002.css" media="all">
+<link type="text/css" rel="stylesheet" href="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/confluence.css" media="all">
+<link type="text/css" rel="stylesheet" href="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/org.css" media="all">
+<link type="text/css" rel="stylesheet" href="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/com.css" media="all">
+<!--[if lt IE 9]>
+<link type="text/css" rel="stylesheet" href="/s/921e5c13ba2dde147a359f044997077a/en_GB/5523/205577d01f4fb4efed99ead6d83b28ba8b59d647.27/1.5/_/download/batch/com.atlassian.confluence.plugins.confluence-highlight-actions:highlighting-experiment-resources/com.atlassian.confluence.plugins.confluence-highlight-actions:highlighting-experiment-resources.css?conditionalComment=lt+IE+9" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/confluence_002.css" media="all">
+<link type="text/css" rel="stylesheet" href="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/com_002.css" media="all">
+<script type="text/javascript" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/batch_003.js"></script>
+<!--[if lte IE 8]>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e/en_GB/5523/205577d01f4fb4efed99ead6d83b28ba8b59d647.27/197404/_/download/superbatch/js/batch.js?conditionalComment=lte+IE+8" ></script>
+<![endif]-->
+<script type="text/javascript" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/batch_002.js"></script>
+<script type="text/javascript" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/batch.js"></script><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style>
+<script type="text/javascript" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/com_002.js"></script>
+<script type="text/javascript" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/com.js"></script>
+<link type="text/css" rel="stylesheet" href="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/colors.css" media="all">
+<link type="text/css" rel="stylesheet" href="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/custom.css" media="all">
+
+
+        
+        <script type="text/javascript">
+    // temp fix to fix find-replace
+    var $ = AJS.$;
+</script>
+<script src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/1053703113.js"></script>
+
+    
+                <link rel="canonical" href="https://confluence.atlassian.com/display/JIRA060/Configuring+OAuth+Authentication+for+an+Application+Link">
+        <link rel="shortlink" href="https://confluence.atlassian.com/x/foUYFg">
+    <meta name="wikilink" content="[JIRA060:Configuring OAuth Authentication for an Application Link]">
+    <meta name="page-version" content="2">
+
+</head>
+
+<body onload="placeFocus()" id="com-atlassian-confluence" class="theme-documentation  aui-theme-default aui-layout">
+
+        
+    <div id="full-height-container">
+    <div id="header-precursor">
+        
+                    </div>
+
+
+
+
+
+
+<header id="header" role="banner">
+    <nav class="aui-header aui-dropdown2-trigger-group" role="navigation"><div class="aui-header-inner"><div class="aui-header-before"><a class="aui-dropdown2-trigger app-switcher-trigger" aria-owns="app-switcher" aria-haspopup="true" tabindex="0"><span class="aui-icon aui-icon-small aui-iconfont-appswitcher">Linked Applications</span></a><div id="app-switcher" class="aui-dropdown2 aui-style-default"><div class="app-switcher-loading">Loading…</div></div><script>
+            (function (NL) {
+                var initialise = function () {
+                    // For some milestones of AUI, the atlassian soy namespace was renamed to aui. Handle that here by ensuring that window.atlassian is defined.
+                    window.atlassian = window.atlassian || window.aui;
+                    new NL.AppSwitcher({
+                        dropdownContents: '#app-switcher'
+                    });
+                };
+                if (NL.AppSwitcher) {
+                    initialise();
+                } else {
+                    NL.onInit = initialise;
+                }
+            }(window.NL = (window.NL || {})));
+            window.NL.isUserAdmin = false</script></div><div class="aui-header-primary"><h1 id="logo" class="aui-header-logo aui-header-logo-custom"><a href="https://confluence.atlassian.com/"><img src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/confluence-logo.png" alt="Atlassian Documentation"></a></h1><ul class="aui-nav">
+                            <li>
+            
+        
+        
+<a id="space-directory-link" href="https://confluence.atlassian.com/spacedirectory/view.action" class=" aui-nav-imagelink" title="Spaces">
+            <span>Spaces</span>
+    </a>
+        </li>
+                            <li id="browseMenu" role="menu">
+            
+    
+        <a id="browse-menu-link" class="aui-nav-link aui-dropdown2-trigger" href="#" aria-haspopup="true" aria-owns="browse-menu-link-content" title="Browse">
+        <span class="browse">Browse</span>
+    </a>
+    <nav id="browse-menu-link-content" class="aui-dropdown2 aui-style-default" aria-hidden="true">
+                    <div class="aui-dropdown2-section">
+                                    <strong></strong>
+                                <ul id="browse-menu-link-leading" class="aui-list-truncate section-leading first">
+                                            <li>
+    
+            
+<a id="space-pages-link" href="https://confluence.atlassian.com/pages/listpages.action?key=JIRA060" class="    " title="Browse pages in the JIRA 6.0 space">
+        Pages
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="space-blogposts-link" href="https://confluence.atlassian.com/pages/viewrecentblogposts.action?key=JIRA060" class="    " title="Browse blogs in the JIRA 6.0 space">
+        Blog
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="space-labels-link" href="https://confluence.atlassian.com/labels/listlabels-heatmap.action?key=JIRA060" class="    " title="Browse labels in the JIRA 6.0 space">
+        Labels
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="space-mail-link" href="https://confluence.atlassian.com/mail/archive/viewmailarchive.action?key=JIRA060" class="    " title="Browse mail in the JIRA 6.0 space">
+        Mail
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="space-advanced-link" href="https://confluence.atlassian.com/spaces/viewspacesummary.action?key=JIRA060" class="    " title="Browse additional space functions in the JIRA 6.0 space">
+        Space Operations
+</a>
+</li>
+                                    </ul>
+            </div>
+            </nav>
+    
+        </li>
+        </ul>
+</div><div class="aui-header-secondary"><ul class="aui-nav">
+            <li>
+        
+    
+            
+<a id="doctheme-anchor" href="#" class=" aui-nav-imagelink" title="">
+            <span></span>
+    </a>
+    </li>
+                    <li>
+        <form id="quick-search" class="aui-quicksearch dont-default-focus header-quicksearch" action="/dosearchsite.action" method="get"><fieldset><input name="where" value="JIRA060" type="hidden"><input name="spaceSearch" value="true" type="hidden"><label for="quick-search-query" class="assistive">Quick Search</label><input id="quick-search-query" class="text app-search search quick-search-query" accesskey="q" autocomplete="off" name="queryString" title="Quick Search" placeholder="Search space" type="text"><input id="quick-search-submit" class="quick-search-submit" value="Search" type="submit"><div class="aui-dd-parent quick-nav-drop-down"></div></fieldset></form>
+    </li>
+        <li>
+            
+        <a id="help-menu-link" class="aui-nav-link aui-dropdown2-trigger" href="#" aria-haspopup="true" aria-owns="help-menu-link-content" title="Help">
+        <span class="aui-icon aui-icon-small aui-iconfont-help">Help</span>
+    </a>
+    <nav id="help-menu-link-content" class="aui-dropdown2 aui-style-default" aria-hidden="true">
+                    <div class="aui-dropdown2-section">
+                                    <strong></strong>
+                                <ul id="help-menu-link-leading" class="aui-list-truncate section-leading first">
+                                            <li>
+        
+            
+<a id="confluence-help-link" href="https://docs.atlassian.com/confluence/docs-55/Getting+Help+And+Support" class="    " title="Visit the Confluence documentation home" target="_blank">
+        Online Help
+</a>
+</li>
+                                            <li>
+    
+                
+<a id="keyboard-shortcuts-link" href="#" class="    " title="View available keyboard shortcuts">
+        Keyboard Shortcuts
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="feed-builder-link" href="https://confluence.atlassian.com/dashboard/configurerssfeed.action" class="    " title="Create your custom RSS feed.">
+        Feed Builder
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="whats-new-menu-link" href="https://docs.atlassian.com/confluence/docs-55/whatsnew/iframe?od=false&amp;a=false" class="    " title="">
+        What’s new
+</a>
+</li>
+                                            <li>
+    
+                
+<a id="gadget-directory-link" href="#" class="   user-item administration-link " title="Browse gadgets provided by Confluence">
+        Available Gadgets
+</a>
+</li>
+                                            <li>
+    
+            
+<a href="https://confluence.atlassian.com/spaces/com.k15t.scroll.platform/spaceadmin.action?key=VSN1#/about" class="   sv-getstarted " title="">
+        About Scroll Versions
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="confluence-about-link" href="https://confluence.atlassian.com/aboutconfluencepage.action" class="    " title="Get more information about Confluence">
+        About Confluence
+</a>
+</li>
+                                    </ul>
+            </div>
+            </nav>
+    
+    </li>
+        <li>
+                
+    
+    </li>
+        <li>
+            
+    </li>
+        <li>
+                                            
+        <a id="user-menu-link" class="aui-dropdown2-trigger " aria-haspopup="true" aria-owns="user-menu-link-content" data-username="ahrnazemi" href="#" title="ahmadReza Nazemi">
+                    <div class="aui-avatar aui-avatar-small">
+                <div class="aui-avatar-inner">
+                    <img src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/default.png">
+                </div>
+            </div>
+            <span class="aui-icon-dropdown"></span>
+        </a>
+        <nav id="user-menu-link-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                    <ul id="user-menu-link-user-status" class="aui-list-truncate section-user-status first">
+                                                    <li>
+        
+            
+<a id="create-user-status-link" href="https://confluence.atlassian.com/display/%7Eahrnazemi" class="   user-item update-user-status " title="Update your status">
+        Update Status…
+</a>
+</li>
+                                            </ul>
+                </div>
+                            <div class="aui-dropdown2-section">
+                    <ul id="user-menu-link-user-preferences" class="aui-list-truncate section-user-preferences">
+                                                    <li>
+    
+            
+<a id="view-user-history-link" href="https://confluence.atlassian.com/users/viewuserhistory.action" class="   user-item user-history popup-link " title="">
+        Recently Viewed
+</a>
+</li>
+                                            </ul>
+                </div>
+                            <div class="aui-dropdown2-section">
+                    <ul id="user-menu-link-user-content" class="aui-list-truncate section-user-content">
+                                                    <li>
+    
+            
+<a id="view-user-profile-link" href="https://confluence.atlassian.com/users/viewmyprofile.action" class="   user-item user-profile " title="">
+        Profile
+</a>
+</li>
+                                                    <li>
+    
+            
+<a id="view-mytasks-link" href="https://confluence.atlassian.com/plugins/inlinetasks/mytasks.action" class="   user-item list-user-status " title="">
+        Tasks
+</a>
+</li>
+                                                    <li>
+    
+            
+<a id="user-favourites-link" href="https://confluence.atlassian.com/users/viewmyfavourites.action" class="   user-item " title="">
+        Favourites
+</a>
+</li>
+                                                    <li>
+    
+            
+<a id="user-watches-link" href="https://confluence.atlassian.com/users/viewnotifications.action" class="   user-item " title="">
+        Watches
+</a>
+</li>
+                                                    <li>
+    
+            
+<a id="user-drafts-link" href="https://confluence.atlassian.com/users/viewmydrafts.action" class="   user-item " title="">
+        Drafts
+</a>
+</li>
+                                                    <li>
+    
+            
+<a id="view-user-status-link" href="https://confluence.atlassian.com/display/status/ahrnazemi/list" class="   user-item list-user-status " title="">
+        Status updates
+</a>
+</li>
+                                                    <li>
+    
+            
+<a id="user-network-link" href="https://confluence.atlassian.com/users/viewfollow.action?username=ahrnazemi" class="   follow-link " title="">
+        Network
+</a>
+</li>
+                                                    <li>
+    
+            
+<a id="user-settings-link" href="https://confluence.atlassian.com/users/viewmysettings.action" class="   user-item " title="">
+        Settings
+</a>
+</li>
+                                            </ul>
+                </div>
+                            <div class="aui-dropdown2-section">
+                    <ul id="user-menu-link-user-operations" class="aui-list-truncate section-user-operations">
+                                                    <li>
+    
+            
+<a id="logout-link" href="https://confluence.atlassian.com/logout.action" class="   user-item logout-link " title="">
+        Log Out
+</a>
+</li>
+                                            </ul>
+                </div>
+                    </nav>
+                    
+    </li>
+    </ul>
+</div></div><!-- .aui-header-inner--></nav><!-- .aui-header -->
+    <br class="clear">
+</header>
+
+    <div id="splitter">
+    <div id="splitter-sidebar" class="padding-div">
+        
+        <p><strong><a href="https://confluence.atlassian.com/display/JIRA060/JIRA+Documentation" title="JIRA Documentation">JIRA Documentation</a></strong></p>
+
+
+
+
+<div class="plugin_pagetree">
+
+        
+        
+    <ul class="plugin_pagetree_children_list plugin_pagetree_children_list_noleftspace">
+        <div class="plugin_pagetree_children">
+        </div>
+    </ul>
+
+    <fieldset class="hidden">
+        <input name="treeId" value="" type="hidden">
+        <input name="treeRequestId" value="/plugins/pagetree/naturalchildren.action?decorator=none&amp;excerpt=false&amp;sort=position&amp;reverse=false&amp;disableLinks=false&amp;expandCurrent=false" type="hidden">
+        <input name="treePageId" value="370705790" type="hidden">
+
+        <input name="noRoot" value="false" type="hidden">
+        <input name="rootPageId" value="370704876" type="hidden">
+
+        <input name="rootPage" value="" type="hidden">
+        <input name="startDepth" value="0" type="hidden">
+        <input name="spaceKey" value="JIRA060" type="hidden">
+
+        <input name="i18n-pagetree.loading" value="Loading..." type="hidden">
+        <input name="i18n-pagetree.error.permission" value="Unable to load page tree. It seems that you do not have permission to view the root page." type="hidden">
+        <input name="i18n-pagetree.eeror.general" value="There was a problem retrieving the page tree. Please check the server log file for more information." type="hidden">
+        <input name="loginUrl" value="/login.action?os_destination=%2Fpages%2Fviewpage.action%3Ftitle%3DConfiguring%2BOAuth%2BAuthentication%2Bfor%2Ban%2BApplication%2BLink%26spaceKey%3DJIRA060" type="hidden">
+        <input name="mobile" value="false" type="hidden">
+
+                <fieldset class="hidden">
+                                                <input name="ancestorId" value="370705788" type="hidden">
+                                    <input name="ancestorId" value="370705787" type="hidden">
+                                    <input name="ancestorId" value="370705786" type="hidden">
+                                    <input name="ancestorId" value="370705719" type="hidden">
+                                    <input name="ancestorId" value="370704876" type="hidden">
+                                    </fieldset>
+    </fieldset>
+</div>
+
+
+<p><a href="http://confluence.atlassian.com/labels/listlabels-alphaview.action?key=JIRA060" class="external-link" rel="nofollow">Index</a><br>
+<a href="https://confluence.atlassian.com/display/ALLDOC/JIRA+Documentation+Directory#JIRADocumentationDirectory-downloads">Downloads (PDF, HTML &amp; XML formats)</a><br>
+<a href="https://confluence.atlassian.com/display/ALLDOC/JIRA+Documentation+Directory" title="JIRA Documentation Directory">Other versions</a></p>
+    
+
+            </div>
+    <div id="splitter-content">
+
+                    <script type="text/javascript" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/doc-theme.js"></script>
+    
+                        
+        <div id="theme-header">
+            <div class="sectionColumnWrapper"><div class="sectionMacro">
+<div class="sectionMacroRow"><div class="columnMacro" style="width:1%;min-width:1%;max-width:1%;"></div>
+<div class="columnMacro"><div class="panel" style="border-width: 1px;"><div class="panelContent">
+<p>Documentation for <a href="https://confluence.atlassian.com/display/JIRA060"><strong>JIRA 6.0</strong></a>. Documentation for other versions of JIRA is <a href="https://confluence.atlassian.com/display/ALLDOC/JIRA+Documentation+Directory" title="JIRA Documentation Directory">available too</a>. <a href="http://www.atlassian.com/" class="external-link" rel="nofollow"><span class="image-wrap" style="float: right"><img src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/atlassian_logo_doc_header_25.png" style="border: 0px solid black"></span></a></p>
+</div></div></div>
+<div class="columnMacro" style="width:1%;min-width:1%;max-width:1%;"></div></div></div></div>
+        </div>
+    
+            
+<div id="main" class="aui-page-panel">
+    <div id="main-header">
+        
+        
+    <div id="navigation" class="content-navigation view">
+                    <ul class="ajs-menu-bar">
+                            <li class="ajs-button normal">
+
+    
+        
+                            
+    
+    
+    <a id="watch-content-button" href="https://confluence.atlassian.com/display/JIRA060/Configuring+OAuth+Authentication+for+an+Application+Link?watchingPage=false&amp;watchingSpace=false&amp;watchingBlogs=false&amp;isAdmin=false&amp;isBlogPost=false" rel="nofollow" class="watch-menu not-watching" title="Watch (w)">
+                <span><u>W</u>atch</span>    </a>
+</li>
+                <li class="ajs-button normal">
+
+    
+            
+                            
+    
+    
+    <a id="shareContentLink" href="#" rel="nofollow" class="share" title="Share this content by emailing other users">
+                <span><u>S</u>hare</span>    </a>
+</li>
+                        
+                    
+        <li class="normal ajs-menu-item">
+        <a id="action-menu-link" class="action ajs-menu-title aui-dropdown2-trigger" href="#" aria-haspopup="true" aria-owns="action-menu" data-container="#navigation"><span><span>Tools</span></span></a>         <div id="action-menu" class="aui-dropdown2 aui-style-default">
+                            <ul id="action-menu-primary" class="section-primary first aui-dropdown2-section">
+                                            <li>
+
+    
+        
+                            
+    
+    
+    <a id="view-attachments-link" href="https://confluence.atlassian.com/pages/viewpageattachments.action?pageId=370705790" rel="nofollow" class="action-view-attachments" accesskey="t" title="View Attachments">
+                <span>A<u>t</u>tachments (0)</span>    </a>
+</li>
+                                        <li>
+
+    
+        
+                            
+    
+    
+    <a id="action-view-history-link" href="https://confluence.atlassian.com/pages/viewpreviousversions.action?pageId=370705790" rel="nofollow" class="action-view-history" title="">
+                <span>Page History</span>    </a>
+</li>
+                                        <li>
+
+    
+        
+                            
+    
+    
+    <a id="action-page-permissions-link" href="https://confluence.atlassian.com/pages/viewinfo.action?pageId=370705790" rel="nofollow" class="action-page-permissions" title="Edit restrictions">
+                <span>Restrictions</span>    </a>
+</li>
+                                </ul>
+                            <ul id="action-menu-marker" class="section-marker aui-dropdown2-section">
+                                            <li>
+
+    
+        
+                            
+    
+    
+    <a id="page-favourite" href="https://confluence.atlassian.com/labels/addfavourite.action?entityId=370705790&amp;atl_token=4777c8fa1fbbbf8161a781ce7e3d10ef048e7286" rel="nofollow" class="action-page-favourite" title="">
+                <span>Favourite</span>    </a>
+</li>
+                                </ul>
+                            <ul id="action-menu-secondary" class="section-secondary aui-dropdown2-section">
+                                            <li>
+
+    
+        
+                            
+    
+    
+    <a id="view-page-info-link" href="https://confluence.atlassian.com/pages/viewinfo.action?pageId=370705790" rel="nofollow" class="action-view-info" title="">
+                <span>Page Information</span>    </a>
+</li>
+                                        <li>
+
+    
+        
+                            
+    
+    
+    <a id="link-to-page-link" href="https://confluence.atlassian.com/pages/viewinfo.action?pageId=370705790" rel="nofollow" class="" title="Link to this Page">
+                <span>Link to this Page…</span>    </a>
+</li>
+                                        <li>
+
+    
+        
+                            
+    
+    
+    <a id="view-in-hierarchy-link" href="https://confluence.atlassian.com/pages/listpages-dirview.action?key=JIRA060&amp;openId=370705790#selectedPageInHierarchy" rel="nofollow" class="" title="">
+                <span>View in Hierarchy</span>    </a>
+</li>
+                                        <li>
+
+    
+        
+                            
+    
+    
+    <a id="action-view-source-link" href="https://confluence.atlassian.com/plugins/viewsource/viewpagesrc.action?pageId=370705790" rel="nofollow" class="action-view-source popup-link" title="">
+                <span>View Source</span>    </a>
+</li>
+                                        <li>
+
+    
+        
+                            
+    
+    
+    <a id="action-export-word-link" href="https://confluence.atlassian.com/exportword?pageId=370705790" rel="nofollow" class="action-export-word" title="">
+                <span>Export to Word</span>    </a>
+</li>
+                                </ul>
+                    </div>
+    </li>
+            </ul>
+    </div>
+
+        
+                <div id="title-heading" class="pagetitle with-breadcrumbs">
+        
+                            <div class="space-logo " data-key="JIRA060" data-name="JIRA 6.0" data-entity-type="confluence.space">
+            <a><img class="logo space custom" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/JIRA060.png" alt=""></a>
+        </div>            
+                            <div id="breadcrumb-section">
+                    
+    
+    
+    <ol id="breadcrumbs">
+                    
+                
+        <li class="first">
+                
+
+                    <span class=""><a href="https://confluence.atlassian.com/display/JIRA060">JIRA 6.0</a></span>
+                                                </li><li id="ellipsis" title="Show all breadcrumbs"><span><strong>…</strong></span></li>
+                                    
+                
+        <li class="hidden-crumb">
+                
+
+                    <span class=""><a href="https://confluence.atlassian.com/display/JIRA060/JIRA+Documentation">JIRA Documentation</a></span>
+                                        
+                
+        </li><li class="hidden-crumb">
+                
+
+                    <span class=""><a href="https://confluence.atlassian.com/display/JIRA060/JIRA+Administrator%27s+Guide">JIRA Administrator's Guide</a></span>
+                                        
+                
+        </li><li class="hidden-crumb">
+                
+
+                    <span class=""><a href="https://confluence.atlassian.com/display/JIRA060/Configuring+Global+Settings">Configuring Global Settings</a></span>
+                                        
+                
+        </li><li class="hidden-crumb">
+                
+
+                    <span class=""><a href="https://confluence.atlassian.com/display/JIRA060/Configuring+Application+Links">Configuring Application Links</a></span>
+                            
+                
+        </li><li>
+                
+
+                    <span class=""><a href="https://confluence.atlassian.com/display/JIRA060/Configuring+Authentication+for+an+Application+Link">Configuring Authentication for an Application Link</a></span>
+                </li></ol>
+
+
+                </div>
+            
+            <h1 id="title-text" class="with-breadcrumbs">
+                                        <a href="https://confluence.atlassian.com/display/JIRA060/Configuring+OAuth+Authentication+for+an+Application+Link">Configuring OAuth Authentication for an Application Link</a>
+                            </h1>
+        </div>
+    </div>
+
+    
+
+    
+    
+    
+    
+    
+
+        
+
+
+
+
+        
+
+
+
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+    
+    
+        
+    
+    
+                    
+    
+
+    
+
+
+<div id="content" class="page view">
+    
+
+<div id="action-messages">
+                        </div>
+
+
+
+        <script type="text/x-template" title="searchResultsGrid">
+    <table class="aui">
+        <thead>
+            <tr class="header">
+                <th class="search-result-title">Page Title</th>
+                <th class="search-result-space">Space</th>
+                <th class="search-result-date">Updated</th>
+            </tr>
+        </thead>
+    </table>
+</script>
+<script type="text/x-template" title="searchResultsGridCount">
+    <p class="search-result-count">{0}</p>
+</script>
+<script type="text/x-template" title="searchResultsGridRow">
+    <tr class="search-result">
+        <td class="search-result-title"><a href="{1}" class="content-type-{2}"><span>{0}</span></a></td>
+        <td class="search-result-space"><a class="space" href="/display/{4}/" title="{3}">{3}</a></td>
+        <td class="search-result-date"><span class="date" title="{6}">{5}</span></td>
+    </tr>
+</script>
+        
+    
+    
+        <fieldset class="hidden parameters">
+            <input title="parentPageId" value="370705788" type="hidden">
+        </fieldset>
+
+                            
+    
+
+                    
+
+        
+        <a href="#page-metadata-end" class="assistive">Skip to end of metadata</a>
+<div id="page-metadata-start" class="assistive"></div>
+
+    <div class="page-metadata">
+        <ul>
+                            <li class="page-metadata-item noprint">
+
+    
+            
+                            
+    
+    
+    <a id="content-metadata-page-restrictions" href="#" rel="nofollow" class="hidden" title="Page restrictions apply">
+                    <img alt="" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/red_padlock.png" title="" height="16" width="16">
+                <span></span>    </a>
+</li>
+                        <li class="page-metadata-modification-info">
+                
+        
+    
+        
+    
+        
+        
+            Created by <span class="author">     <a href="https://confluence.atlassian.com/display/%7Eggaskell" class="url fn confluence-userlink" data-username="ggaskell">Giles Gaskell</a></span>, last modified by <span class="editor">     <a href="https://confluence.atlassian.com/display/%7Esgriffin" class="url fn confluence-userlink" data-username="sgriffin">Susan Griffin [Atlassian]</a></span> on <a class="last-modified" title="May 17, 2013 04:08" href="https://confluence.atlassian.com/pages/diffpagesbyversion.action?pageId=370705790&amp;selectedPageVersions=1&amp;selectedPageVersions=2">May 17, 2013</a>
+                </li>
+        </ul>
+    </div>
+
+
+<a href="#page-metadata-start" class="assistive">Go to start of metadata</a>
+<div id="page-metadata-end" class="assistive"></div>
+
+        
+        <fieldset class="hidden parameters">
+                        <input title="browsePageTreeMode" value="view" type="hidden">
+        </fieldset>
+
+        <div class="wiki-content">
+                           
+        <div class="sectionColumnWrapper"><div class="sectionMacro"><div class="sectionMacroRow"><div class="columnMacro"><p>The instructions on this page describe how to configure <strong>OAuth</strong> for outgoing authentication and/or incoming authentication of an application link.</p><p><a href="http://oauth.net/" class="external-link" rel="nofollow">OAuth</a>
+ is a protocol that allows a web application to share data/resources 
+with any other OAuth-compliant external application. These external 
+applications could be another web application (such as a Confluence 
+installation or an <a href="http://www.google.com/ig" class="external-link" rel="nofollow">iGoogle</a>
+ home page), a desktop application or a mobile device application, 
+provided that they are accessible from within your network or available 
+on the Internet.</p><p>For example, you could set up an application link
+ between JIRA and an iGoogle page using OAuth authentication. This would
+ allow you to view data from your JIRA server in a JIRA gadget on the 
+iGoogle page.</p><p>If you were setting up an application link between 
+two trusted applications which do not share the same set of users (and 
+both applications have the Application Links plugin installed), you 
+would typically configure OAuth for both <a href="#ConfiguringOAuthAuthenticationforanApplicationLink-outgoing">outgoing authentication</a> and <a href="#ConfiguringOAuthAuthenticationforanApplicationLink-incoming">incoming authentication</a>. See <a href="https://confluence.atlassian.com/display/JIRA060/Configuring+Authentication+for+an+Application+Link">Configuring Authentication for an Application Link</a> for other configurations.</p>    <div class="aui-message hint shadowed information-macro">
+                    <p class="title">Key OAuth Terminology</p>
+                            <span class="aui-icon icon-hint">Icon</span>
+                <div class="message-content">
+                            <ul><li><strong>Service provider</strong> — An application that shares ('provides') its resources.</li><li><strong>Consumer</strong> — An application that accesses ('consumes') a service provider's resources.</li><li><strong>User</strong> — An individual who has an account with the Service Provider.</li></ul><p>For more information about OAuth, see <a class="unresolved" href="#">Configuring OAuth</a> as well as the <a href="http://oauth.net/core/1.0/" class="external-link" rel="nofollow">OAuth specification</a>.</p>
+                    </div>
+    </div>
+</div><div class="columnMacro" style="width:240px;min-width:240px;max-width:240px;"><div class="panel" style="border-width: 1px;"><div class="panelContent">
+<p><strong>On this page:</strong></p><style type="text/css">/*<![CDATA[*/
+div.rbtoc1408447754030 {padding: 0px;}
+div.rbtoc1408447754030 ul {list-style: disc;margin-left: 0px;}
+div.rbtoc1408447754030 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class="toc-macro rbtoc1408447754030">
+<ul class="toc-indentation">
+<li><a href="#ConfiguringOAuthAuthenticationforanApplicationLink-BeforeYouBegin">Before You Begin</a></li>
+<li><a href="#ConfiguringOAuthAuthenticationforanApplicationLink-ConfiguringOAuthforOutgoingAuthentication">Configuring OAuth for Outgoing Authentication</a></li>
+<li><a href="#ConfiguringOAuthAuthenticationforanApplicationLink-ConfiguringOAuthforIncomingAuthentication">Configuring OAuth for Incoming Authentication</a></li>
+<li><a href="#ConfiguringOAuthAuthenticationforanApplicationLink-Notes">Notes</a></li>
+</ul>
+</div>
+</div></div><p></p><p>&nbsp;</p></div></div></div></div><h2 id="ConfiguringOAuthAuthenticationforanApplicationLink-BeforeYouBegin">Before You Begin</h2><p></p><ul><li>Adding an OAuth consumer requires the transmission of sensitive data. To prevent <a href="http://en.wikipedia.org/wiki/Man-in-the-middle_attack" class="external-link" rel="nofollow">'man-in-the-middle' attacks,</a> it is recommended that you <strong>use SSL</strong> for your applications while configuring OAuth authentication.</li><li>Do not link to an application using OAuth authentication, unless you <strong>trust all code in the application</strong>
+ to behave itself at all times. OAuth consumers are a potential security
+ risk to the applications that they are linked to because of <span style="color: rgb(34,34,34);">the ability to impersonate users. If your server is compromised, the data there and on linked servers is at risk.</span></li><li>Note
+ that creating a new application link now uses OAuth by default and 
+enables both 3-legged OAuth (3LO) and 2-legged OAuth (2LO).</li><li>When
+ updating older application links (that perhaps used Trusted Apps 
+authentication) to use OAuth, 3LO is used by default, but you need to 
+explicitly enable 2LO using the check box in the application link 
+configuration settings.</li><li>Only use the 2LO with impersonation 
+option in the application link configuration settings if your servers 
+both have the same set of users and they fully trust each other.</li></ul><p></p><ul><li>The instructions assume that <strong>both of the applications that you are linking have the Application Links plugin installed</strong>.
+ If the remote application that you are linking to supports OAuth, but 
+does not have the Application Links plugin installed, you will need to 
+configure OAuth from within the remote application (see the relevant 
+administrator's documentation for that application) in addition to 
+configuring the outgoing/incoming authentication for the application 
+link (as described below).</li><li>You must be a JIRA system administrator to configure OAuth authentication for an application link.</li></ul><p><span class="confluence-anchor-link" id="ConfiguringOAuthAuthenticationforanApplicationLink-outgoing"></span></p><h2 id="ConfiguringOAuthAuthenticationforanApplicationLink-ConfiguringOAuthforOutgoingAuthentication">Configuring OAuth for Outgoing Authentication</h2><p>Configuring <strong>outgoing OAuth authentication</strong>
+ will allow JIRA to access specific functions and data on a remote 
+application, on behalf of any registered user of that remote 
+application.</p><p><strong>To configure OAuth authentication for an outgoing application link:</strong></p><p></p><ol><li>Log in as a system administrator and go to the administration page. Click '<strong>Application Links</strong>'
+ in the administration menu. The 'Configure Application Links' page will
+ appear, showing the application links that have been set up.</li><li>Click the '<strong>Edit</strong>' link next to the application link that you want to configure OAuth for.</li><li>Click the '<strong>Outgoing Authentication</strong>' tab. The outgoing authentication page will be displayed.</li><li>Click the '<strong>OAuth</strong>' tab.</li><li>If
+ you are not currently logged in to the remote application (or you 
+logged in to the remote application under a variant of the application's
+ hostname, such as the IP address), a login dialogue will display.<ul><li>Enter the '<strong>Username</strong>' and '<strong>Password</strong>' for the remote server, not your local server, and click the '<strong>Login</strong>'
+ button. The remote server needs to learn the identity of your local 
+server for the OAuth protocol to work and your admin credentials are 
+used to store your local server's public key on the remote server. If 
+you are already logged into your remote server, then the appropriate 
+changes can be made without having to log in again.</li></ul></li><li>Click the '<strong>Enable</strong>' button to enable OAuth authentication for the outgoing link.&nbsp;</li></ol><p></p><p><span class="confluence-anchor-link" id="ConfiguringOAuthAuthenticationforanApplicationLink-incoming"></span></p><h2 id="ConfiguringOAuthAuthenticationforanApplicationLink-ConfiguringOAuthforIncomingAuthentication">Configuring OAuth for Incoming Authentication</h2><p>Configuring <strong>incoming OAuth authentication</strong>
+ will allow the remote application that you are linking to, to access 
+specific functions and data in JIRA on behalf of any JIRA user.</p><p><strong>To configure OAuth authentication for an incoming application link:</strong></p><p></p><ol><li>Log in as a system administrator and go to the administration page. Click '<strong>Application Links</strong>'
+ in the administration menu. The 'Configure Application Links' page will
+ appear, showing the application links that have been set up.</li><li>Click the '<strong>Edit</strong>' link next to the application link that you want to configure OAuth for.</li><li>Click the '<strong>Incoming Authentication</strong>' tab. The incoming authentication page will be displayed.</li><li>Click the '<strong>OAuth</strong>' tab.</li><li>Click the '<strong>Enable</strong>' button to enable OAuth authentication for the incoming link.&nbsp;</li></ol><p></p><h2 id="ConfiguringOAuthAuthenticationforanApplicationLink-Notes">Notes</h2><p>See <a href="https://bitbucket.org/atlassian_tutorial/atlassian-oauth-examples" class="external-link" rel="nofollow">Bitbucket: Atlassian 3-legged OAuth Example</a> for some examples.</p><h5 id="ConfiguringOAuthAuthenticationforanApplicationLink-RelatedTopics">Related Topics</h5><p><a href="https://confluence.atlassian.com/display/JIRA060/Configuring+Basic+HTTP+Authentication+for+an+Application+Link">Configuring Basic HTTP Authentication for an Application Link</a> <br> <a href="https://confluence.atlassian.com/display/JIRA060/Configuring+Trusted+Applications+Authentication+for+an+Application+Link">Configuring Trusted Applications Authentication for an Application Link</a></p>
+
+                
+        
+    
+        </div>
+
+        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://confluence.atlassian.com/display/JIRA060/Configuring+OAuth+Authentication+for+an+Application+Link"
+    dc:identifier="https://confluence.atlassian.com/display/JIRA060/Configuring+OAuth+Authentication+for+an+Application+Link"
+    dc:title="Configuring OAuth Authentication for an Application Link"
+    trackback:ping="https://confluence.atlassian.com/rpc/trackback/370705790"/>
+</rdf:RDF>
+-->
+
+            
+    
+
+
+
+<div id="labels-section" class="pageSection group">
+    <div class="labels-section-content content-column" entityid="370705790" entitytype="page">
+	<div class="labels-content">
+		
+    <ul class="label-list label-list-right  has-pen">
+            
+
+<li class="aui-label " data-label-id="264568846">
+    <a class="aui-label-split-main" href="https://confluence.atlassian.com/label/JIRA060/hostedna">hostedna</a>
+    </li>                 <li class="labels-edit-container">
+            <a href="#" class="show-labels-editor editor-icon" title="Edit Labels">
+                <span class="icon icon-edit">Edit Labels</span>
+            </a>
+        </li>
+        </ul>
+
+    </div>
+</div></div>
+
+            
+            
+
+
+
+
+            
+    
+
+
+
+
+
+
+
+
+                    
+    
+<div id="comments-section" class="pageSection group">
+    
+    
+    
+    
+            <div class="bottom-comment-panels comment-panels">
+            </div>
+    
+    </div>
+
+
+            
+</div>
+
+
+    
+
+
+
+
+    
+    
+
+    
+    
+    
+
+
+
+
+
+
+
+
+</div>
+  
+        <div id="theme-footer">
+            <div class="sectionColumnWrapper"><div class="sectionMacro"><div class="sectionMacroRow"><div class="columnMacro" style="width:212px;min-width:212px;max-width:212px;"><p><img class="confluence-embedded-image" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/spacer.png" data-image-src="/download/attachments/370705908/spacer.png?version=1&amp;modificationDate=1281671770818&amp;api=v2" title="spacer.png"><br> <a href="https://confluence.atlassian.com/display/JIRA060/Getting+Help"><img class="confluence-embedded-image" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/btn_support.png" data-image-src="/download/attachments/370705908/btn_support.png?version=1&amp;modificationDate=1344996540643&amp;api=v2"></a></p></div><div class="columnMacro" style="width:212px;min-width:212px;max-width:212px;"><p><img class="confluence-embedded-image" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/spacer.png" data-image-src="/download/attachments/370705908/spacer.png?version=1&amp;modificationDate=1281671770818&amp;api=v2" title="spacer.png"><br> <a href="http://jira.atlassian.com/browse/JRA" class="external-link" rel="nofollow"><img class="confluence-embedded-image" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/btn_bug.png" data-image-src="/download/attachments/370705908/btn_bug.png?version=1&amp;modificationDate=1344996593168&amp;api=v2"></a></p></div><div class="columnMacro" style="width:212px;min-width:212px;max-width:212px;"><p><img class="confluence-embedded-image" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/spacer.png" data-image-src="/download/attachments/370705908/spacer.png?version=1&amp;modificationDate=1281671770818&amp;api=v2" title="spacer.png"><br> <a href="https://answers.atlassian.com/tags/jira/" class="external-link" rel="nofollow"><img class="confluence-embedded-image" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/btn_answers.png" data-image-src="/download/attachments/370705908/btn_answers.png?version=1&amp;modificationDate=1344996616590&amp;api=v2" title="btn_answers.png"></a></p></div><div class="columnMacro" style="width:212px;min-width:212px;max-width:212px;"><p><img class="confluence-embedded-image" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/spacer.png" data-image-src="/download/attachments/370705908/spacer.png?version=1&amp;modificationDate=1281671770818&amp;api=v2" title="spacer.png"><br> <a href="https://confluence.atlassian.com/display/JIRA060/Contributing+to+the+JIRA+Documentation"><img class="confluence-embedded-image" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/btn_docs.png" data-image-src="/download/attachments/370705908/btn_docs.png?version=1&amp;modificationDate=1344996622595&amp;api=v2" title="btn_docs.png"></a></p></div></div></div></div>
+<div class="sectionColumnWrapper"><div class="sectionMacro"><div class="sectionMacroRow"><div class="columnMacro" style="width:900px;min-width:900px;max-width:900px;"><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><a href="http://creativecommons.org/licenses/by/2.5/au/" class="external-link" rel="nofollow"><img class="confluence-embedded-image" src="Configuring%20OAuth%20Authentication%20for%20an%20Application%20Link%20-%20JIRA%206.0%20-%20Atlassian%20Documentation_files/ico_cc.png" data-image-src="/download/attachments/180295777/ico_cc.png?version=1&amp;modificationDate=1256506275108&amp;api=v2"></a> Except where otherwise noted, content in this space is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/au/" class="external-link" rel="nofollow">Creative Commons Attribution 2.5 Australia License</a>.</p><p style="text-align: center;">&nbsp;</p></div></div></div></div>
+        </div>
+    
+    </div>
+</div>
+
+
+        
+            
+<div id="footer" role="contentinfo">
+    <section class="footer-body">
+
+                                        
+        
+
+        <ul id="poweredby">
+            <li class="noprint">Powered by <a href="http://www.atlassian.com/software/confluence" class="hover-footer-link">Atlassian Confluence</a> <span id="footer-build-information">5.5.5-m3</span>, <a href="http://www.atlassian.com/software/confluence/overview/team-collaboration-software?utm_source=confluence-footer" class="hover-footer-link">Team Collaboration Software</a></li>
+            <li class="print-only">Printed by Atlassian Confluence 5.5.5-m3, Team Collaboration Software.</li>
+            <li class="noprint"><a href="https://jira.atlassian.com/browse/CONF" class="hover-footer-link">Report a bug</a></li>
+            <li class="noprint"><a href="http://www.atlassian.com/about/connected.jsp?s_kwcid=Confluence-stayintouch" class="hover-footer-link">Atlassian News</a></li>
+        </ul>
+
+        
+
+        <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+
+                    <!-- Google Analytics statistic tracking for CAC - do not remove, EVER! Team-WTF. And always test on QA-CAC. Team-Brian-andPer  -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6032469-8']);
+  _gaq.push(['_setDomainName', '.atlassian.com']);
+  _gaq.push(['_trackPageview']);
+
+
+  _gaq.push(['devrel._setAccount', 'UA-6032469-39']);
+  _gaq.push(['devrel._setDomainName', '.atlassian.com']);
+  _gaq.push(['devrel._trackPageview']);
+
+  _gaq.push(['demandgen._setAccount', 'UA-6032469-23']);
+  _gaq.push(['demandgen._setDomainName', '.atlassian.com']);
+  _gaq.push(['demandgen._trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+/* ADM-19936: GA tracking for attachment downloads */
+jQuery(function ($) {
+    $("a[href^='/download/attachments/']").each(function () {
+        var $link = $(this);
+        $link.click(function() {
+            _gaq.push(['_trackPageview', $link.attr('href')]);
+        });
+    });
+});
+
+/* ADM-26328: Add Google Analytics tracking to expand macro */
+AJS.toInit(function($) {
+    var openedOnce = false;
+    var pageID = AJS.Meta.get("page-id");
+
+    //send an Asynchronous trackEvent when expand-control is expanded and only on the first expand. 
+    //syntax is:   _gaq.push(['_trackEvent', 'category', 'action', 'opt_label','opt_value','opt_noninteraction']);
+    $(".expand-control").bind("click",function() {
+        if (!$('.expand-control-icon', this).hasClass('expanded')) {
+            return;
+        } else if (openedOnce == false) {
+            var exactElement = AJS.$(this).children(".expand-control-text").html();
+            _gaq.push(['_trackEvent', 'ExpandTracker - Expand', pageID, exactElement]);
+            openedOnce = true;
+        }
+    }); 
+});
+</script>
+<script type="text/javascript">AJS.$("#poweredby").append("<li class='noprint'>" + (getCookie("JSESSIONID") != null ? new RegExp("node\\d").exec(getCookie("JSESSIONID")) : "") + "<li>");</script>
+
+        
+    </section>
+</div>
+
+            
+    </div>
+
+
+</body></html>

@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="PostgreSQL" id="Project7010839" database="PostgreSQL" >
+	<schema name="igns" catalogname="igns" schemaname="igns" defo="y" >
+		<table name="applicants" >
+			<column name="id" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="extuid" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="identificationtype" type="varchar" length="255" jt="12" />
+			<column name="identificationcenter" type="varchar" length="255" jt="12" />
+			<column name="identificationexecutivecenter" type="varchar" length="255" jt="12" />
+			<column name="province" type="varchar" length="255" jt="12" />
+			<column name="city" type="varchar" length="255" jt="12" />
+			<index name="applicants_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="applicants_extuid_key" unique="UNIQUE" >
+				<column name="extuid" />
+			</index>
+		</table>
+		<table name="auth_users" >
+			<column name="id" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="extuid" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="username" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="password" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="enabled" type="bool" length="1" jt="-7" mandatory="y" regexp_nulls="0" >
+				<defo>true</defo>
+			</column>
+			<column name="firstname" type="varchar" length="255" jt="12" />
+			<column name="lastname" type="varchar" length="255" jt="12" />
+			<column name="phonenumber" type="varchar" length="255" jt="12" />
+			<index name="auth_users_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="auth_users_extuid_key" unique="UNIQUE" >
+				<column name="extuid" />
+			</index>
+			<index name="auth_users_username_key" unique="UNIQUE" >
+				<column name="username" />
+			</index>
+		</table>
+		<table name="comission_members" >
+			<column name="comissionproceedingid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="memberid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<index name="comission_members_pkey" unique="PRIMARY_KEY" >
+				<column name="comissionproceedingid" />
+				<column name="memberid" />
+			</index>
+			<fk name="fkef6e6f3a5fdb9808" to_schema="igns" to_table="comission_proceedings" >
+				<fk_column name="comissionproceedingid" pk="id" />
+			</fk>
+			<fk name="fkef6e6f3ac0269cde" to_schema="igns" to_table="inspection_members" >
+				<fk_column name="memberid" pk="id" />
+			</fk>
+		</table>
+		<table name="comission_proceedings" >
+			<column name="id" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="extuid" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="comissiondate" type="timestamp" length="29" decimal="6" jt="93" />
+			<column name="proceedingfile" type="bytea" length="2147483647" jt="-2" />
+			<column name="indigentfileid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="decision" type="varchar" length="255" jt="12" />
+			<column name="decisiondescription" type="varchar" length="255" jt="12" />
+			<index name="comission_proceedings_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="comission_proceedings_extuid_key" unique="UNIQUE" >
+				<column name="extuid" />
+			</index>
+			<fk name="fk47c32020c04a28b4" to_schema="igns" to_table="indigent_files" >
+				<fk_column name="indigentfileid" pk="id" />
+			</fk>
+		</table>
+		<table name="convict_files" >
+			<column name="fileid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="reason" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="amount" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="convicttimeindays" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="startdate" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" regexp_nulls="0" />
+			<index name="convict_files_pkey" unique="PRIMARY_KEY" >
+				<column name="fileid" />
+			</index>
+			<fk name="fkb38e2f9e293350a6" to_schema="igns" to_table="indigent_files" >
+				<fk_column name="fileid" pk="id" />
+			</fk>
+		</table>
+		<table name="debtor_files" >
+			<column name="fileid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="reason" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="amount" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="creditor" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<index name="debtor_files_pkey" unique="PRIMARY_KEY" >
+				<column name="fileid" />
+			</index>
+			<fk name="fk748caa8e293350a6" to_schema="igns" to_table="indigent_files" >
+				<fk_column name="fileid" pk="id" />
+			</fk>
+		</table>
+		<table name="disaster_indigent_files" >
+			<column name="fileid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="type" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="date" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" regexp_nulls="0" />
+			<column name="cost" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<index name="disaster_indigent_files_pkey" unique="PRIMARY_KEY" >
+				<column name="fileid" />
+			</index>
+			<fk name="fk6faa1a84293350a6" to_schema="igns" to_table="indigent_files" >
+				<fk_column name="fileid" pk="id" />
+			</fk>
+		</table>
+		<table name="disastered_items" >
+			<column name="indigentfileid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="disastereditem" type="varchar" length="255" jt="12" />
+			<fk name="fkb6f8b9e1c4d99135" to_schema="igns" to_table="disaster_indigent_files" >
+				<fk_column name="indigentfileid" pk="fileid" />
+			</fk>
+		</table>
+		<table name="economic_problem_files" >
+			<column name="fileid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="reason" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<index name="economic_problem_files_pkey" unique="PRIMARY_KEY" >
+				<column name="fileid" />
+			</index>
+			<fk name="fkc81449cd293350a6" to_schema="igns" to_table="indigent_files" >
+				<fk_column name="fileid" pk="id" />
+			</fk>
+		</table>
+		<table name="elderly_care_files" >
+			<column name="fileid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="titleid" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="sickreason" type="varchar" length="255" jt="12" />
+			<column name="sickness" type="varchar" length="255" jt="12" />
+			<column name="startdate" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" regexp_nulls="0" />
+			<column name="severity" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="monthlycost" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<index name="elderly_care_files_pkey" unique="PRIMARY_KEY" >
+				<column name="fileid" />
+			</index>
+			<fk name="fke9140bf1293350a6" to_schema="igns" to_table="indigent_files" >
+				<fk_column name="fileid" pk="id" />
+			</fk>
+		</table>
+		<table name="features" >
+			<column name="id" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="extuid" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="name" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="description" type="varchar" length="255" jt="12" />
+			<index name="features_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="features_extuid_key" unique="UNIQUE" >
+				<column name="extuid" />
+			</index>
+			<index name="features_name_key" unique="UNIQUE" >
+				<column name="name" />
+			</index>
+		</table>
+		<table name="group_users" >
+			<column name="groupid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="userid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<index name="group_users_pkey" unique="PRIMARY_KEY" >
+				<column name="groupid" />
+				<column name="userid" />
+			</index>
+			<fk name="fkf8b974082296480a" to_schema="igns" to_table="user_groups" >
+				<fk_column name="groupid" pk="id" />
+			</fk>
+			<fk name="fkf8b97408394cb1b5" to_schema="igns" to_table="users" >
+				<fk_column name="userid" pk="id" />
+			</fk>
+		</table>
+		<table name="handicapped_files" >
+			<column name="fileid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="type" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="innate" type="bool" length="1" jt="-7" mandatory="y" regexp_nulls="0" />
+			<column name="reason" type="varchar" length="255" jt="12" />
+			<column name="startdate" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" regexp_nulls="0" />
+			<column name="handicappedlimb" type="varchar" length="255" jt="12" />
+			<column name="handicaptype" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="disabilitypercent" type="real" length="8" decimal="8" jt="7" />
+			<column name="cost" type="bigint" length="19" jt="-5" />
+			<index name="handicapped_files_pkey" unique="PRIMARY_KEY" >
+				<column name="fileid" />
+			</index>
+			<fk name="fk89c83e4f293350a6" to_schema="igns" to_table="indigent_files" >
+				<fk_column name="fileid" pk="id" />
+			</fk>
+		</table>
+		<table name="house_indigent_files" >
+			<column name="fileid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="housetype" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="selldate" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" regexp_nulls="0" />
+			<column name="selldescription" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<index name="house_indigent_files_pkey" unique="PRIMARY_KEY" >
+				<column name="fileid" />
+			</index>
+			<fk name="fk20faac85293350a6" to_schema="igns" to_table="indigent_files" >
+				<fk_column name="fileid" pk="id" />
+			</fk>
+		</table>
+		<table name="indigent_files" >
+			<column name="id" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="extuid" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="priority" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="registrationdate" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" regexp_nulls="0" />
+			<column name="description" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="indigentid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<index name="indigent_files_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="indigent_files_extuid_key" unique="UNIQUE" >
+				<column name="extuid" />
+			</index>
+			<fk name="fkf3a1ed668f15ac98" to_schema="igns" to_table="indigents" >
+				<fk_column name="indigentid" pk="id" />
+			</fk>
+		</table>
+		<table name="indigents" >
+			<column name="id" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="extuid" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="name" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="surname" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="relation" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="address" type="varchar" length="255" jt="12" />
+			<column name="phone" type="varchar" length="255" jt="12" />
+			<column name="mobile" type="varchar" length="255" jt="12" />
+			<column name="applicantid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<index name="indigents_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="indigents_extuid_key" unique="UNIQUE" >
+				<column name="extuid" />
+			</index>
+			<fk name="fk7be1e785d33238de" to_schema="igns" to_table="applicants" >
+				<fk_column name="applicantid" pk="id" />
+			</fk>
+		</table>
+		<table name="inspection_groups" >
+			<column name="id" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="extuid" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="title" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="province" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="city" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="description" type="varchar" length="255" jt="12" />
+			<index name="inspection_groups_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="inspection_groups_extuid_key" unique="UNIQUE" >
+				<column name="extuid" />
+			</index>
+		</table>
+		<table name="inspection_members" >
+			<column name="id" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="extuid" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="name" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="surname" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="role" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="responsibility" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="description" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="indigentid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="groupid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<index name="inspection_members_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="inspection_members_extuid_key" unique="UNIQUE" >
+				<column name="extuid" />
+			</index>
+			<fk name="fka038412e2ca57bb9" to_schema="igns" to_table="inspection_groups" >
+				<fk_column name="indigentid" pk="id" />
+			</fk>
+			<fk name="fka038412e5ab1bf6a" to_schema="igns" to_table="inspection_groups" >
+				<fk_column name="groupid" pk="id" />
+			</fk>
+		</table>
+		<table name="inspection_report_attachment" >
+			<column name="inspectionreportid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="doccontainerextuid" type="varchar" length="255" jt="12" />
+			<fk name="fk747e37034c024d06" to_schema="igns" to_table="inspection_reports" >
+				<fk_column name="inspectionreportid" pk="id" />
+			</fk>
+		</table>
+		<table name="inspection_reports" >
+			<column name="id" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="extuid" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="startdate" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" regexp_nulls="0" />
+			<column name="enddate" type="timestamp" length="29" decimal="6" jt="93" />
+			<column name="liablememberid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="description" type="varchar" length="255" jt="12" />
+			<column name="resultdescription" type="varchar" length="255" jt="12" />
+			<column name="indigentfileid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<index name="inspection_reports_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="inspection_reports_extuid_key" unique="UNIQUE" >
+				<column name="extuid" />
+			</index>
+			<fk name="fka8e7c9d4c04a28b4" to_schema="igns" to_table="indigent_files" >
+				<fk_column name="indigentfileid" pk="id" />
+			</fk>
+			<fk name="fka8e7c9d4554cf235" to_schema="igns" to_table="inspection_members" >
+				<fk_column name="liablememberid" pk="id" />
+			</fk>
+		</table>
+		<table name="roles" >
+			<column name="id" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="type_" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="extuid" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="name" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="description" type="varchar" length="255" jt="12" />
+			<index name="roles_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="roles_extuid_key" unique="UNIQUE" >
+				<column name="extuid" />
+			</index>
+			<index name="roles_name_key" unique="UNIQUE" >
+				<column name="name" />
+			</index>
+		</table>
+		<table name="user_groups" >
+			<column name="id" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="extuid" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="name" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<index name="user_groups_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="user_groups_extuid_key" unique="UNIQUE" >
+				<column name="extuid" />
+			</index>
+			<index name="user_groups_name_key" unique="UNIQUE" >
+				<column name="name" />
+			</index>
+		</table>
+		<table name="user_roles" >
+			<column name="userid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="roleid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<index name="user_roles_pkey" unique="PRIMARY_KEY" >
+				<column name="userid" />
+				<column name="roleid" />
+			</index>
+			<fk name="fkc6c799295fd57e66" to_schema="igns" to_table="roles" >
+				<fk_column name="roleid" pk="id" />
+			</fk>
+			<fk name="fkc6c79929394cb1b5" to_schema="igns" to_table="users" >
+				<fk_column name="userid" pk="id" />
+			</fk>
+		</table>
+		<table name="users" >
+			<column name="id" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="extuid" type="varchar" length="255" jt="12" mandatory="y" regexp_nulls="0" />
+			<column name="authuserid" type="bigint" length="19" jt="-5" mandatory="y" regexp_nulls="0" />
+			<column name="enabled" type="bool" length="1" jt="-7" mandatory="y" regexp_nulls="0" >
+				<defo>true</defo>
+			</column>
+			<index name="users_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="users_authuserid_key" unique="UNIQUE" >
+				<column name="authuserid" />
+			</index>
+			<index name="users_extuid_key" unique="UNIQUE" >
+				<column name="extuid" />
+			</index>
+			<fk name="fk4d495e89cf749f6" to_schema="igns" to_table="auth_users" >
+				<fk_column name="authuserid" pk="id" />
+			</fk>
+		</table>
+	</schema>
+	<connector name="PostgreSQL" database="PostgreSQL" driver_class="org.postgresql.Driver" driver_jar="postgresql-9.2-1003.jdbc3.jar" url="jdbc:postgresql://localhost:5432/igns" host="localhost" port="5432" instance="postgres" user="viratech" passwd="cm9vdA==" schema_mapping="" />
+	<layout id="Layout7095897" name="igns" show_relation_columns="y" >
+		<entity schema="igns" name="applicants" color="edd4b4" x="750" y="810" />
+		<entity schema="igns" name="auth_users" color="b4caed" x="1635" y="600" />
+		<entity schema="igns" name="comission_members" color="edd4b4" x="990" y="675" />
+		<entity schema="igns" name="comission_proceedings" color="edd4b4" x="750" y="600" />
+		<entity schema="igns" name="convict_files" color="beedb4" x="45" y="600" />
+		<entity schema="igns" name="debtor_files" color="b4b4ed" x="600" y="45" />
+		<entity schema="igns" name="disaster_indigent_files" color="b4b4ed" x="735" y="45" />
+		<entity schema="igns" name="disastered_items" color="b4b4ed" x="885" y="210" />
+		<entity schema="igns" name="economic_problem_files" color="beedb4" x="225" y="645" />
+		<entity schema="igns" name="elderly_care_files" color="beedb4" x="405" y="780" />
+		<entity schema="igns" name="features" color="b4b4ed" x="885" y="390" />
+		<entity schema="igns" name="group_users" color="b4caed" x="1410" y="690" />
+		<entity schema="igns" name="handicapped_files" color="beedb4" x="45" y="780" />
+		<entity schema="igns" name="house_indigent_files" color="beedb4" x="225" y="780" />
+		<entity schema="igns" name="indigent_files" color="beedb4" x="225" y="945" />
+		<entity schema="igns" name="indigents" color="edd4b4" x="600" y="810" />
+		<entity schema="igns" name="inspection_groups" color="edd4b4" x="990" y="810" />
+		<entity schema="igns" name="inspection_members" color="edd4b4" x="990" y="1020" />
+		<entity schema="igns" name="inspection_report_attachment" color="b4caed" x="1410" y="825" />
+		<entity schema="igns" name="inspection_reports" color="b4caed" x="1230" y="825" />
+		<entity schema="igns" name="roles" color="b4b4ed" x="735" y="210" />
+		<entity schema="igns" name="user_groups" color="b4caed" x="1635" y="825" />
+		<entity schema="igns" name="user_roles" color="b4b4ed" x="600" y="210" />
+		<entity schema="igns" name="users" color="b4caed" x="1260" y="660" />
+		<group name="applicants" color="faf6f0" >
+			<comment>Used by : 
+   house_indigent_files
+   inspection_report_attachment</comment>
+			<entity schema="igns" name="applicants" />
+			<entity schema="igns" name="indigents" />
+			<entity schema="igns" name="inspection_groups" />
+			<entity schema="igns" name="comission_proceedings" />
+			<entity schema="igns" name="comission_members" />
+			<entity schema="igns" name="inspection_members" />
+			<callout x="615" y="540" pointer="SV" />
+		</group>
+		<group name="house_indigent_files" color="f2faf0" >
+			<comment>Used by : 
+   applicants
+   inspection_report_attachment
+   roles</comment>
+			<entity schema="igns" name="house_indigent_files" />
+			<entity schema="igns" name="handicapped_files" />
+			<entity schema="igns" name="elderly_care_files" />
+			<entity schema="igns" name="economic_problem_files" />
+			<entity schema="igns" name="convict_files" />
+			<entity schema="igns" name="indigent_files" />
+			<callout x="60" y="540" pointer="SV" />
+		</group>
+		<group name="inspection_report_attachment" color="f0f4fa" >
+			<comment>Used by : 
+   roles</comment>
+			<entity schema="igns" name="inspection_report_attachment" />
+			<entity schema="igns" name="inspection_reports" />
+			<entity schema="igns" name="user_groups" />
+			<entity schema="igns" name="group_users" />
+			<entity schema="igns" name="auth_users" />
+			<entity schema="igns" name="users" />
+			<callout x="1245" y="540" pointer="SV" />
+		</group>
+		<group name="roles" color="f0f0fa" >
+			<entity schema="igns" name="roles" />
+			<entity schema="igns" name="user_roles" />
+			<entity schema="igns" name="disastered_items" />
+			<entity schema="igns" name="disaster_indigent_files" />
+			<entity schema="igns" name="features" />
+			<entity schema="igns" name="debtor_files" />
+		</group>
+	</layout>
+</project>

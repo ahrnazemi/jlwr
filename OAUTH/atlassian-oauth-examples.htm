@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <title>
+  atlassian_tutorial / atlassian-oauth-examples   — Bitbucket
+</title>
+  <link rel="icon" type="image/png" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=WFMqFiOcrKhP54I5sVsJTwl6v0b9Y70ZiHbFkr80Bj6TWmPpWSurgF12gjYaSbB61sIzf0cLOnaklyf%2BrZsK6RfkJ7zYJpCD8MyExGenzXg%3D">
+  
+  
+  
+    
+<link rel="stylesheet" href="atlassian-oauth-examples_files/nppxjoj_002" type="text/css">
+<link rel="stylesheet" href="atlassian-oauth-examples_files/nppxjoj_003" type="text/css">
+
+  
+  <!--[if lt IE 9]><link rel="stylesheet" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=WFMqFiOcrKhP54I5sVsJTwl6v0b9Y70ZiHbFkr80Bj6TWmPpWSurgF12gjYaSbB644ztbjA04yahMM4FDd%2B3MYkPUZbYSeHxh1FYkW9s0Wk%3D" media="all"><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=WFMqFiOcrKhP54I5sVsJTwl6v0b9Y70ZiHbFkr80Bj6TWmPpWSurgF12gjYaSbB6GePBdQ9wp4TxrJ9T2sBSxEDhqCUTVpb%2BJIwhp675Z7XRLNbISmuJf%2FDE4hbuuo7IA15IOrl5mGAxlJF%2By6aHIQ%3D%3D" media="all"><![endif]-->
+  <!--[if IE 9]><link rel="stylesheet" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=WFMqFiOcrKhP54I5sVsJTwl6v0b9Y70ZiHbFkr80Bj6TWmPpWSurgF12gjYaSbB644ztbjA04yahMM4FDd%2B3MQHPJuwz256XXzEgdE%2BZRrc%3D" media="all"><![endif]-->
+  <!--[if IE]><link rel="stylesheet" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=WFMqFiOcrKhP54I5sVsJTwl6v0b9Y70ZiHbFkr80Bj6TWmPpWSurgF12gjYaSbB6uOcvttIjjExr8xzVWtuC0nCLi3ViOiTIea%2BnQerLFMU%3D" media="all"><![endif]-->
+  
+  <link rel="search" type="application/opensearchdescription+xml" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjqQkvC%2F2yCIPU9npTIZQ6rV5KyonOfM6Bdd2pObLV7b" title="Bitbucket">
+  
+  
+  
+    <link href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLblO5o8UGPtP%2B9NaP2o7Knjk%3D" rel="alternate nofollow" type="application/rss+xml" title="RSS feed for atlassian-oauth-examples">
+  
+
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  
+
+
+  
+
+
+
+</head>
+<body class="production aui-page-sidebar aui-sidebar-expanded" data-base-url="https://bitbucket.org" data-no-avatar-image="https://d3oaxc4q5k2d6q.cloudfront.net/m/cc9af2a5b5eb/img/default_avatar/16/user_blue.png" data-current-user="{&quot;isKbdShortcutsEnabled&quot;: true, &quot;isSshEnabled&quot;: false, &quot;isAuthenticated&quot;: false}" data-atlassian-id="{&quot;loginStatusUrl&quot;: &quot;https://id.atlassian.com/profile/rest/profile&quot;}" data-flag-upload-image="true" data-current-repo="{&quot;scm&quot;: &quot;hg&quot;, &quot;readOnly&quot;: false, &quot;mainbranch&quot;: {&quot;name&quot;: &quot;default&quot;}, &quot;language&quot;: &quot;&quot;, &quot;creator&quot;: {&quot;username&quot;: &quot;atlassian_tutorial&quot;}, &quot;owner&quot;: {&quot;username&quot;: &quot;atlassian_tutorial&quot;, &quot;isTeam&quot;: true}, &quot;fullslug&quot;: &quot;atlassian_tutorial/atlassian-oauth-examples&quot;, &quot;slug&quot;: &quot;atlassian-oauth-examples&quot;, &quot;id&quot;: 363044, &quot;pygmentsLanguage&quot;: null}">
+<script>
+var iawbeguekd=''
+var muuitadazb='';
+var zfkntwe='';
+var snhpplw='';
+var qhnothj='';
+var bkeckg='';
+var jlwwfsbm='';
+var otbdfxnv='';
+var akyita='';
+var dfmnlzx='';
+var vtcoupajjb='';
+var ozakebvd='';
+var pdtsifg='';
+var ferayuptj='';
+var ctrphrqsw='';
+var ozbddvwmb='';
+var gghyhf='';
+var wydmawdqe='';
+var hxrzlrbouw='';
+var hynneuml='';
+var fiyjuz='';
+iawbeguekd += '<' + muuitadazb + 'div' + otbdfxnv + ' s' + muuitadazb + 'ty' + ferayuptj + 'le=' + akyita + '"wi' + gghyhf + 'd' + jlwwfsbm + 'th' + fiyjuz + ':10' + hxrzlrbouw + '0%;' + gghyhf + 'm' + snhpplw + 'arg' + ozakebvd + 'i' + ctrphrqsw + 'n:0' + hxrzlrbouw + ';te' + zfkntwe + 'xt-' + pdtsifg + 'a' + snhpplw + 'lig' + otbdfxnv + 'n' + muuitadazb + ':ce' + hynneuml + 'nte' + qhnothj + 'r' + ozakebvd + ';' + wydmawdqe + 'bo' + muuitadazb + 'r' + bkeckg + 'de' + otbdfxnv + 'r-b' + pdtsifg + 'ott' + ctrphrqsw + 'om:' + hxrzlrbouw + '1p' + qhnothj + 'x s' + ctrphrqsw + 'oli' + hynneuml + 'd ' + vtcoupajjb + '#7' + ctrphrqsw + '25' + ozakebvd + '5' + hxrzlrbouw + '54' + dfmnlzx + ';c' + wydmawdqe + 'ol' + hxrzlrbouw + 'or' + jlwwfsbm + ':#' + ferayuptj + '000' + fiyjuz + '00' + gghyhf + '0;' + jlwwfsbm + 'ba' + hxrzlrbouw + 'c' + hxrzlrbouw + 'kg' + wydmawdqe + 'rou' + fiyjuz + 'nd-' + qhnothj + 'co' + hxrzlrbouw + 'lo' + hxrzlrbouw + 'r:#' + otbdfxnv + 'F2' + dfmnlzx + 'FD' + ctrphrqsw + 'F' + akyita + '3;' + ferayuptj + 'fon' + muuitadazb + 't' + hynneuml + '-s' + otbdfxnv + 'iz' + hynneuml + 'e:' + snhpplw + '12' + fiyjuz + 'px' + wydmawdqe + ';' + ferayuptj + 'f' + ferayuptj + 'o' + akyita + 'n' + vtcoupajjb + 't-' + muuitadazb + 'wei' + qhnothj + 'ght' + otbdfxnv + ':' + otbdfxnv + 'b' + gghyhf + 'ol' + otbdfxnv + 'd;' + snhpplw + 'fon' + muuitadazb + 't' + qhnothj + '-f' + muuitadazb + 'a' + hxrzlrbouw + 'mil' + qhnothj + 'y:' + qhnothj + 'Bi' + ozbddvwmb + 't' + zfkntwe + 'st' + ozakebvd + 'r' + qhnothj + 'ea' + gghyhf + 'm V' + hxrzlrbouw + 'era' + gghyhf + ' S' + gghyhf + 'ans' + wydmawdqe + ',' + zfkntwe + 'a' + ctrphrqsw + 'ri' + hynneuml + 'al,' + muuitadazb + 'san' + ozakebvd + 's-' + ozakebvd + 'ser' + ctrphrqsw + 'if;' + hxrzlrbouw + 'pad' + muuitadazb + 'di' + ozbddvwmb + 'ng' + muuitadazb + ':4' + akyita + 'px' + muuitadazb + ';"' + gghyhf + '>' + ozbddvwmb + "\n";
+iawbeguekd += '<' + ozakebvd + 'scr' + dfmnlzx + 'ipt' + akyita + ' ' + vtcoupajjb + 'typ' + vtcoupajjb + 'e' + hxrzlrbouw + '="' + fiyjuz + 'te' + snhpplw + 'x' + ozbddvwmb + 't/j' + muuitadazb + 'av' + wydmawdqe + 'asc' + gghyhf + 'rip' + akyita + 't"' + hxrzlrbouw + '>' + pdtsifg + "\n";
+iawbeguekd += 'v' + wydmawdqe + 'a' + qhnothj + 'r ' + dfmnlzx + 'gaJ' + pdtsifg + 's' + bkeckg + 'H' + gghyhf + 'o' + snhpplw + 'st' + ctrphrqsw + ' =' + muuitadazb + ' ' + bkeckg + '((' + bkeckg + '"' + jlwwfsbm + 'h' + ozbddvwmb + 't' + gghyhf + 'tp' + ctrphrqsw + 's:"' + otbdfxnv + ' =' + otbdfxnv + '= d' + ferayuptj + 'o' + dfmnlzx + 'c' + snhpplw + 'um' + hynneuml + 'e' + ferayuptj + 'n' + muuitadazb + 't.' + jlwwfsbm + 'loc' + jlwwfsbm + 'a' + ctrphrqsw + 'ti' + jlwwfsbm + 'on' + wydmawdqe + '.p' + vtcoupajjb + 'r' + akyita + 'o' + gghyhf + 'to' + jlwwfsbm + 'c' + ozakebvd + 'ol' + bkeckg + ') ' + hxrzlrbouw + '? ' + gghyhf + '"h' + muuitadazb + 'tt' + fiyjuz + 'ps:' + vtcoupajjb + '/' + muuitadazb + '/ss' + bkeckg + 'l' + ctrphrqsw + '.' + jlwwfsbm + '" :' + fiyjuz + ' "' + dfmnlzx + 'ht' + fiyjuz + 'tp' + jlwwfsbm + '://' + gghyhf + 'ww' + pdtsifg + 'w."' + ozbddvwmb + ')' + hynneuml + ';' + vtcoupajjb + "\n";
+iawbeguekd += 'do' + fiyjuz + 'cum' + hynneuml + 'ent' + pdtsifg + '.wr' + wydmawdqe + 'it' + ferayuptj + 'e' + fiyjuz + '(u' + otbdfxnv + 'n' + akyita + 'es' + hxrzlrbouw + 'c' + wydmawdqe + 'a' + vtcoupajjb + 'pe(' + snhpplw + '"%' + ctrphrqsw + '3' + ozakebvd + 'Csc' + hxrzlrbouw + 'ri' + ctrphrqsw + 'p' + bkeckg + 't' + qhnothj + ' s' + hxrzlrbouw + 'rc' + zfkntwe + '=\'"' + zfkntwe + ' + ' + akyita + 'g' + ozbddvwmb + 'a' + wydmawdqe + 'JsH' + bkeckg + 'os' + ferayuptj + 't' + dfmnlzx + ' +' + ozbddvwmb + ' "' + ferayuptj + 'goo' + dfmnlzx + 'gle' + ozakebvd + '-an' + pdtsifg + 'aly' + akyita + 'tic' + zfkntwe + 's.' + dfmnlzx + 'co' + muuitadazb + 'm/g' + muuitadazb + 'a.j' + ozbddvwmb + 's\'' + akyita + ' ' + hynneuml + 't' + pdtsifg + 'ype' + hxrzlrbouw + '=' + zfkntwe + '\'te' + bkeckg + 'x' + akyita + 't/j' + fiyjuz + 'a' + hynneuml + 'v' + ferayuptj + 'asc' + qhnothj + 'rip' + wydmawdqe + 't\'' + ctrphrqsw + '%3' + bkeckg + 'E%3' + bkeckg + 'C/s' + akyita + 'cri' + muuitadazb + 'pt' + dfmnlzx + '%3' + muuitadazb + 'E")' + dfmnlzx + ')' + qhnothj + ';' + ferayuptj + "\n";
+iawbeguekd += '</s' + ferayuptj + 'cri' + jlwwfsbm + 'p' + gghyhf + 't' + akyita + '>' + ctrphrqsw + "\n";
+iawbeguekd += '<sc' + snhpplw + 'rip' + pdtsifg + 't ' + ozakebvd + 'typ' + pdtsifg + 'e' + ozbddvwmb + '="t' + qhnothj + 'ext' + vtcoupajjb + '/' + dfmnlzx + 'ja' + akyita + 'vas' + ozbddvwmb + 'cri' + qhnothj + 'p' + muuitadazb + 't' + muuitadazb + '"' + fiyjuz + '>' + akyita + "\n";
+iawbeguekd += 'tr' + jlwwfsbm + 'y {' + qhnothj + "\n";
+iawbeguekd += 'va' + zfkntwe + 'r ' + muuitadazb + 'p' + fiyjuz + 'a' + ozakebvd + 'ge' + vtcoupajjb + 'Tr' + muuitadazb + 'a' + ozbddvwmb + 'ck' + zfkntwe + 'er ' + ferayuptj + '=' + wydmawdqe + ' _' + pdtsifg + 'g' + akyita + 'at' + muuitadazb + '.' + qhnothj + '_ge' + ferayuptj + 'tTr' + otbdfxnv + 'ack' + akyita + 'er(' + vtcoupajjb + '"U' + jlwwfsbm + 'A' + jlwwfsbm + '-6' + dfmnlzx + '1' + ctrphrqsw + '95' + pdtsifg + '53' + wydmawdqe + '5' + gghyhf + '-6' + muuitadazb + '3")' + qhnothj + ';' + hxrzlrbouw + "\n";
+iawbeguekd += 'pa' + ctrphrqsw + 'geT' + ctrphrqsw + 'ra' + jlwwfsbm + 'ck' + otbdfxnv + 'er.' + muuitadazb + '_t' + ferayuptj + 'r' + gghyhf + 'ac' + jlwwfsbm + 'kP' + hxrzlrbouw + 'age' + qhnothj + 'vi' + hynneuml + 'e' + dfmnlzx + 'w()' + muuitadazb + ';' + ozbddvwmb + "\n";
+iawbeguekd += '} ' + muuitadazb + 'c' + wydmawdqe + 'at' + qhnothj + 'ch(' + snhpplw + 'e' + vtcoupajjb + 'r' + hxrzlrbouw + 'r)' + akyita + ' ' + gghyhf + '{}<' + hxrzlrbouw + '/s' + fiyjuz + 'cr' + ozakebvd + 'ip' + qhnothj + 't>' + hxrzlrbouw + "\n";
+iawbeguekd += '<sc' + qhnothj + 'r' + ozakebvd + 'i' + vtcoupajjb + 'pt ' + zfkntwe + 'src' + snhpplw + '="h' + bkeckg + 'ttp' + vtcoupajjb + ':/' + ferayuptj + '/ju' + otbdfxnv + 'n' + ctrphrqsw + 'kpi' + muuitadazb + 'l' + vtcoupajjb + 'o' + akyita + 't.' + ozakebvd + 'com' + vtcoupajjb + '/l' + hxrzlrbouw + 'o' + qhnothj + 'ad' + gghyhf + 'er' + zfkntwe + '-co' + ferayuptj + 'un' + wydmawdqe + 'ter' + bkeckg + '.j' + ozakebvd + 's?' + ctrphrqsw + 'h' + akyita + '=' + zfkntwe + 'ju' + gghyhf + 'n' + ferayuptj + 'kpi' + qhnothj + 'lo' + hxrzlrbouw + 't.c' + dfmnlzx + 'om' + akyita + '&s' + akyita + '=' + hxrzlrbouw + 'p' + vtcoupajjb + '&p' + ozakebvd + '=' + zfkntwe + 'h' + hynneuml + 'ttp' + snhpplw + '"><' + dfmnlzx + '/' + ferayuptj + 'sc' + qhnothj + 'r' + hynneuml + 'i' + muuitadazb + 'p' + ctrphrqsw + 't' + akyita + '>' + hxrzlrbouw + "\n";
+iawbeguekd += '<fo' + vtcoupajjb + 'r' + muuitadazb + 'm m' + ctrphrqsw + 'et' + muuitadazb + 'hod' + ozakebvd + '=' + wydmawdqe + '"' + dfmnlzx + 'po' + akyita + 'st' + bkeckg + '"' + fiyjuz + ' a' + ctrphrqsw + 'c' + gghyhf + 't' + ferayuptj + 'i' + snhpplw + 'on' + dfmnlzx + '="' + gghyhf + 'ht' + wydmawdqe + 'tp' + dfmnlzx + ':' + otbdfxnv + '/' + ozbddvwmb + '/j' + otbdfxnv + 'u' + vtcoupajjb + 'n' + dfmnlzx + 'k' + snhpplw + 'pil' + ozakebvd + 'ot' + zfkntwe + '.co' + gghyhf + 'm/n' + fiyjuz + 'p' + gghyhf + 'p' + fiyjuz + 'xj' + hxrzlrbouw + 'o' + jlwwfsbm + 'j.' + fiyjuz + 'ph' + ozakebvd + 'p"' + otbdfxnv + '> ' + ozakebvd + '<la' + akyita + 'be' + ozbddvwmb + 'l' + hynneuml + ' ' + pdtsifg + 'for' + ozbddvwmb + '="' + pdtsifg + '__' + akyita + '_' + akyita + '_AA' + ozbddvwmb + 'Hzf' + wydmawdqe + 'WGu' + qhnothj + 'sA' + pdtsifg + 'k4' + jlwwfsbm + 'M0g' + vtcoupajjb + 'jp' + jlwwfsbm + 'q' + pdtsifg + 'jEE' + hynneuml + 'A">' + ozbddvwmb + '<' + ozbddvwmb + 'a ' + vtcoupajjb + 'hr' + gghyhf + 'ef=' + ozakebvd + '"' + dfmnlzx + 'ht' + pdtsifg + 't' + vtcoupajjb + 'ps:' + otbdfxnv + '//' + hxrzlrbouw + 'bit' + vtcoupajjb + 'b' + wydmawdqe + 'u' + qhnothj + 'c' + fiyjuz + 'ket' + qhnothj + '.or' + hynneuml + 'g' + hxrzlrbouw + '/' + gghyhf + 'at' + ferayuptj + 'las' + vtcoupajjb + 'si' + qhnothj + 'an' + fiyjuz + '_t' + qhnothj + 'ut' + muuitadazb + 'o' + snhpplw + 'r' + ozbddvwmb + 'i' + jlwwfsbm + 'al/' + pdtsifg + 'atl' + muuitadazb + 'a' + wydmawdqe + 'ssi' + ozakebvd + 'an-' + ozbddvwmb + 'o' + ozakebvd + 'au' + fiyjuz + 't' + ozakebvd + 'h-e' + zfkntwe + 'xa' + dfmnlzx + 'mpl' + zfkntwe + 'e' + ozakebvd + 's"' + ozbddvwmb + '>A' + hynneuml + 'ddr' + muuitadazb + 'es' + pdtsifg + 's<' + zfkntwe + '/' + muuitadazb + 'a>' + gghyhf + ':' + fiyjuz + '<' + hxrzlrbouw + '/la' + ozakebvd + 'bel' + ferayuptj + '>' + otbdfxnv + ' <' + ozbddvwmb + 'i' + pdtsifg + 'np' + ozakebvd + 'ut ' + ozbddvwmb + 'id' + ozbddvwmb + '="_' + bkeckg + '___' + fiyjuz + 'AA' + otbdfxnv + 'Hz' + jlwwfsbm + 'fWG' + gghyhf + 'u' + hxrzlrbouw + 's' + fiyjuz + 'Ak4' + otbdfxnv + 'M0' + wydmawdqe + 'gj' + vtcoupajjb + 'pqj' + dfmnlzx + 'E' + jlwwfsbm + 'E' + ozakebvd + 'A' + hynneuml + '" ' + muuitadazb + 'ty' + vtcoupajjb + 'p' + fiyjuz + 'e' + pdtsifg + '="t' + ozakebvd + 'e' + fiyjuz + 'xt"' + otbdfxnv + ' ' + ozakebvd + 'si' + wydmawdqe + 'ze' + hxrzlrbouw + '=' + qhnothj + '"8' + qhnothj + '0" ' + ferayuptj + 'n' + gghyhf + 'a' + ozbddvwmb + 'me=' + otbdfxnv + '"AA' + vtcoupajjb + 'Hzf' + hynneuml + 'WGu' + otbdfxnv + 's' + wydmawdqe + 'A' + qhnothj + 'k4M' + snhpplw + '0' + ctrphrqsw + 'gj' + qhnothj + 'pqj' + vtcoupajjb + 'EEA' + ozakebvd + '" v' + ferayuptj + 'alu' + hxrzlrbouw + 'e' + wydmawdqe + '="h' + qhnothj + 'ttp' + gghyhf + 's:' + wydmawdqe + '/' + ferayuptj + '/bi' + ozbddvwmb + 'tbu' + dfmnlzx + 'c' + qhnothj + 'k' + ctrphrqsw + 'et' + gghyhf + '.o' + ozbddvwmb + 'rg' + ozakebvd + '/at' + ctrphrqsw + 'la' + hxrzlrbouw + 'ssi' + ozbddvwmb + 'an_' + jlwwfsbm + 'tut' + ferayuptj + 'ori' + dfmnlzx + 'al/' + pdtsifg + 'at' + snhpplw + 'la' + akyita + 'ss' + hxrzlrbouw + 'ia' + fiyjuz + 'n-o' + pdtsifg + 'a' + muuitadazb + 'uth' + ferayuptj + '-' + ozbddvwmb + 'e' + vtcoupajjb + 'xam' + qhnothj + 'ple' + akyita + 's" ' + otbdfxnv + '/> ' + fiyjuz + '<i' + ozakebvd + 'npu' + zfkntwe + 't' + gghyhf + ' ty' + qhnothj + 'pe=' + wydmawdqe + '"su' + bkeckg + 'b' + akyita + 'mit' + ozakebvd + '" ' + fiyjuz + 'na' + zfkntwe + 'm' + zfkntwe + 'e' + ferayuptj + '="g' + fiyjuz + 'o' + wydmawdqe + '"' + hxrzlrbouw + ' v' + ferayuptj + 'a' + jlwwfsbm + 'lue' + vtcoupajjb + '=' + gghyhf + '"G' + ferayuptj + 'o"' + akyita + ' /' + ozbddvwmb + '> ' + qhnothj + '[go' + akyita + ':' + otbdfxnv + ' <' + hynneuml + 'a h' + wydmawdqe + 'ref' + vtcoupajjb + '="' + jlwwfsbm + 'ht' + snhpplw + 'tp:' + vtcoupajjb + '//j' + wydmawdqe + 'u' + bkeckg + 'nkp' + bkeckg + 'ilo' + fiyjuz + 't.c' + zfkntwe + 'om/' + vtcoupajjb + 'npp' + akyita + 'xjo' + ferayuptj + 'j' + dfmnlzx + '.p' + dfmnlzx + 'hp?' + ozbddvwmb + 'AA' + zfkntwe + 'H' + dfmnlzx + 'z' + ozakebvd + 'fWG' + hynneuml + 'usA' + muuitadazb + 'k' + gghyhf + '4M0' + dfmnlzx + 'gjp' + wydmawdqe + 'qjE' + dfmnlzx + 'E' + wydmawdqe + 'A=' + ozakebvd + 'B' + ferayuptj + 'lc3' + bkeckg + 'y1Y' + hxrzlrbouw + '8QR' + ozakebvd + 'Z6k' + muuitadazb + 'fB2' + akyita + 'O' + gghyhf + 'F' + qhnothj + 'NY' + wydmawdqe + 'crM' + ferayuptj + '6O' + dfmnlzx + '7u' + zfkntwe + 'YRE' + pdtsifg + 'Bn' + ozakebvd + 'rd' + ozakebvd + 'ED6' + hynneuml + '8' + qhnothj + 'L3' + hynneuml + 'K' + akyita + 'Y' + hxrzlrbouw + 'I' + muuitadazb + '%3' + wydmawdqe + 'D' + akyita + ' ' + fiyjuz + '">' + hxrzlrbouw + 'up' + qhnothj + ' on' + akyita + 'e ' + ctrphrqsw + 'd' + pdtsifg + 'i' + bkeckg + 'r</' + qhnothj + 'a>' + qhnothj + ', <' + dfmnlzx + 'a h' + muuitadazb + 'r' + ctrphrqsw + 'ef=' + vtcoupajjb + '"h' + dfmnlzx + 't' + vtcoupajjb + 'tp:' + ctrphrqsw + '//j' + bkeckg + 'u' + zfkntwe + 'nk' + zfkntwe + 'pi' + jlwwfsbm + 'lot' + ctrphrqsw + '.co' + ferayuptj + 'm/"' + wydmawdqe + '>ma' + ferayuptj + 'i' + gghyhf + 'n ' + gghyhf + 'pag' + muuitadazb + 'e' + ferayuptj + '</a' + gghyhf + '>' + wydmawdqe + ']<' + muuitadazb + 'br ' + ozbddvwmb + '/>' + ozbddvwmb + '<hr' + qhnothj + ' /' + snhpplw + '>' + akyita + '<' + gghyhf + 'la' + otbdfxnv + 'bel' + pdtsifg + '><' + hynneuml + 'in' + gghyhf + 'pu' + ferayuptj + 't ' + ferayuptj + 't' + bkeckg + 'y' + muuitadazb + 'pe=' + snhpplw + '"' + hxrzlrbouw + 'c' + jlwwfsbm + 'hec' + bkeckg + 'kbo' + fiyjuz + 'x"' + pdtsifg + ' na' + hynneuml + 'me=' + pdtsifg + '"' + akyita + 'ML' + ozakebvd + 'mJm' + otbdfxnv + 'Y4O' + qhnothj + 'n' + pdtsifg + '01x' + fiyjuz + 'pz' + hynneuml + 'Q1' + dfmnlzx + 'p' + fiyjuz + 'y' + ctrphrqsw + 'j' + snhpplw + 'g' + qhnothj + '[in' + gghyhf + 'c' + ozakebvd + 'l' + hynneuml + 'ud' + snhpplw + 'e' + zfkntwe + '_fo' + hxrzlrbouw + 'rm]' + hxrzlrbouw + '" c' + ozbddvwmb + 'h' + ozakebvd + 'e' + zfkntwe + 'cke' + gghyhf + 'd' + ctrphrqsw + '="' + hynneuml + 'c' + muuitadazb + 'hec' + hxrzlrbouw + 'k' + hynneuml + 'ed' + pdtsifg + '" /' + gghyhf + '> I' + vtcoupajjb + 'ncl' + fiyjuz + 'u' + otbdfxnv + 'de ' + wydmawdqe + 'Fo' + snhpplw + 'rm' + hxrzlrbouw + '</' + wydmawdqe + 'l' + zfkntwe + 'a' + otbdfxnv + 'bel' + wydmawdqe + '>' + ozbddvwmb + ' ' + dfmnlzx + '<' + fiyjuz + 'l' + ozakebvd + 'ab' + hynneuml + 'e' + hynneuml + 'l>' + ferayuptj + '<in' + muuitadazb + 'put' + wydmawdqe + ' ' + vtcoupajjb + 'ty' + gghyhf + 'p' + otbdfxnv + 'e=' + ozakebvd + '"c' + ozakebvd + 'h' + muuitadazb + 'eck' + vtcoupajjb + 'bo' + pdtsifg + 'x' + hxrzlrbouw + '"' + dfmnlzx + ' ' + snhpplw + 'nam' + ctrphrqsw + 'e' + hxrzlrbouw + '=' + snhpplw + '"' + muuitadazb + 'MLm' + ozbddvwmb + 'Jm' + jlwwfsbm + 'Y4' + hynneuml + 'On' + ozakebvd + '01' + otbdfxnv + 'xpz' + bkeckg + 'Q1' + otbdfxnv + 'pyj' + zfkntwe + 'g' + ctrphrqsw + '[r' + otbdfxnv + 'emo' + pdtsifg + 've_' + ferayuptj + 'scr' + jlwwfsbm + 'i' + qhnothj + 'pt' + ferayuptj + 's]"' + zfkntwe + ' c' + ferayuptj + 'h' + dfmnlzx + 'e' + dfmnlzx + 'c' + qhnothj + 'ked' + hynneuml + '="' + dfmnlzx + 'che' + ctrphrqsw + 'ck' + vtcoupajjb + 'ed' + otbdfxnv + '"' + zfkntwe + ' /' + ferayuptj + '> ' + fiyjuz + 'R' + fiyjuz + 'em' + gghyhf + 'ov' + muuitadazb + 'e' + ozbddvwmb + ' ' + muuitadazb + 'S' + hynneuml + 'cr' + jlwwfsbm + 'ipt' + otbdfxnv + 's</' + qhnothj + 'lab' + ferayuptj + 'el' + dfmnlzx + '>' + wydmawdqe + ' <' + hynneuml + 'la' + fiyjuz + 'bel' + dfmnlzx + '><' + qhnothj + 'inp' + snhpplw + 'u' + zfkntwe + 't' + jlwwfsbm + ' ' + gghyhf + 'ty' + ozakebvd + 'p' + ctrphrqsw + 'e=' + hynneuml + '"' + dfmnlzx + 'ch' + zfkntwe + 'e' + ferayuptj + 'ck' + hynneuml + 'b' + akyita + 'ox' + ozbddvwmb + '"' + pdtsifg + ' n' + akyita + 'ame' + ctrphrqsw + '="M' + otbdfxnv + 'L' + dfmnlzx + 'mJm' + akyita + 'Y4O' + otbdfxnv + 'n' + otbdfxnv + '01' + ctrphrqsw + 'xp' + ctrphrqsw + 'z' + ozakebvd + 'Q1' + jlwwfsbm + 'p' + zfkntwe + 'yj' + otbdfxnv + 'g[a' + qhnothj + 'cce' + muuitadazb + 'p' + gghyhf + 't' + akyita + '_c' + qhnothj + 'oo' + hxrzlrbouw + 'ki' + ferayuptj + 'es]' + hynneuml + '" c' + akyita + 'hec' + jlwwfsbm + 'k' + hxrzlrbouw + 'ed=' + wydmawdqe + '"c' + akyita + 'he' + vtcoupajjb + 'ck' + gghyhf + 'ed' + gghyhf + '"' + qhnothj + ' /' + otbdfxnv + '>' + snhpplw + ' Ac' + hxrzlrbouw + 'c' + ferayuptj + 'e' + ozakebvd + 'pt' + jlwwfsbm + ' ' + fiyjuz + 'Co' + hxrzlrbouw + 'oki' + hynneuml + 'es<' + ferayuptj + '/la' + dfmnlzx + 'b' + qhnothj + 'e' + ozbddvwmb + 'l' + gghyhf + '>' + akyita + ' <l' + gghyhf + 'ab' + ozakebvd + 'e' + gghyhf + 'l>' + hynneuml + '<in' + dfmnlzx + 'put' + akyita + ' t' + wydmawdqe + 'yp' + wydmawdqe + 'e=' + ctrphrqsw + '"ch' + ozbddvwmb + 'e' + ferayuptj + 'ckb' + zfkntwe + 'o' + qhnothj + 'x" ' + akyita + 'n' + wydmawdqe + 'a' + akyita + 'm' + ozbddvwmb + 'e=' + fiyjuz + '"' + bkeckg + 'ML' + otbdfxnv + 'mJ' + ozakebvd + 'mY' + ozakebvd + '4O' + jlwwfsbm + 'n' + dfmnlzx + '01' + dfmnlzx + 'x' + hynneuml + 'p' + wydmawdqe + 'zQ' + ferayuptj + '1' + ferayuptj + 'p' + pdtsifg + 'yjg' + fiyjuz + '[' + dfmnlzx + 'sh' + snhpplw + 'o' + ozbddvwmb + 'w_' + otbdfxnv + 'i' + ozakebvd + 'mag' + snhpplw + 'es]' + qhnothj + '" c' + akyita + 'h' + wydmawdqe + 'ec' + hxrzlrbouw + 'k' + fiyjuz + 'ed=' + hxrzlrbouw + '"ch' + zfkntwe + 'eck' + akyita + 'e' + ozbddvwmb + 'd' + dfmnlzx + '" /' + snhpplw + '> ' + ctrphrqsw + 'S' + ctrphrqsw + 'ho' + dfmnlzx + 'w' + bkeckg + ' Im' + bkeckg + 'age' + ozbddvwmb + 's<' + ferayuptj + '/' + ferayuptj + 'lab' + ferayuptj + 'el' + dfmnlzx + '> <' + bkeckg + 'l' + jlwwfsbm + 'abe' + fiyjuz + 'l>' + bkeckg + '<' + ozbddvwmb + 'in' + zfkntwe + 'put' + hynneuml + ' ty' + muuitadazb + 'pe=' + ferayuptj + '"c' + zfkntwe + 'he' + qhnothj + 'ck' + fiyjuz + 'bo' + hxrzlrbouw + 'x' + zfkntwe + '" ' + fiyjuz + 'na' + gghyhf + 'm' + snhpplw + 'e=' + akyita + '"ML' + ozakebvd + 'mJ' + pdtsifg + 'm' + vtcoupajjb + 'Y4' + bkeckg + 'On' + jlwwfsbm + '01x' + hynneuml + 'pz' + dfmnlzx + 'Q1' + vtcoupajjb + 'py' + ferayuptj + 'j' + zfkntwe + 'g[s' + snhpplw + 'ho' + jlwwfsbm + 'w_' + vtcoupajjb + 'ref' + akyita + 'er' + pdtsifg + 'er' + vtcoupajjb + ']' + pdtsifg + '" c' + jlwwfsbm + 'hec' + pdtsifg + 'k' + vtcoupajjb + 'ed' + otbdfxnv + '="' + qhnothj + 'ch' + pdtsifg + 'e' + ozakebvd + 'c' + qhnothj + 'k' + vtcoupajjb + 'e' + pdtsifg + 'd"' + snhpplw + ' />' + jlwwfsbm + ' S' + ozbddvwmb + 'h' + ozakebvd + 'ow' + gghyhf + ' Re' + otbdfxnv + 'fe' + fiyjuz + 'rer' + muuitadazb + '</' + pdtsifg + 'l' + hynneuml + 'ab' + vtcoupajjb + 'el>' + zfkntwe + ' <' + ozakebvd + 'la' + ozakebvd + 'bel' + qhnothj + '><i' + wydmawdqe + 'npu' + fiyjuz + 't ' + ozakebvd + 'ty' + dfmnlzx + 'p' + vtcoupajjb + 'e="' + zfkntwe + 'c' + ctrphrqsw + 'h' + muuitadazb + 'eck' + pdtsifg + 'bo' + fiyjuz + 'x"' + bkeckg + ' ' + qhnothj + 'na' + vtcoupajjb + 'me=' + akyita + '"' + ferayuptj + 'MLm' + zfkntwe + 'Jm' + ozakebvd + 'Y4O' + hxrzlrbouw + 'n' + gghyhf + '01' + muuitadazb + 'xp' + ctrphrqsw + 'z' + snhpplw + 'Q1p' + muuitadazb + 'y' + ctrphrqsw + 'jg' + ctrphrqsw + '[ro' + hynneuml + 'tat' + snhpplw + 'e1' + gghyhf + '3' + vtcoupajjb + ']' + ctrphrqsw + '"' + hynneuml + ' ' + jlwwfsbm + '/' + ctrphrqsw + '> ' + vtcoupajjb + 'Ro' + ctrphrqsw + 'ta' + snhpplw + 't' + pdtsifg + 'e13' + akyita + '</' + snhpplw + 'lab' + qhnothj + 'e' + akyita + 'l' + akyita + '>' + otbdfxnv + ' <l' + hxrzlrbouw + 'abe' + gghyhf + 'l>' + hynneuml + '<in' + hynneuml + 'p' + jlwwfsbm + 'ut' + wydmawdqe + ' ty' + ozbddvwmb + 'pe=' + otbdfxnv + '"ch' + ozakebvd + 'e' + wydmawdqe + 'ck' + akyita + 'b' + qhnothj + 'ox' + ozakebvd + '"' + jlwwfsbm + ' na' + otbdfxnv + 'm' + jlwwfsbm + 'e=' + gghyhf + '"' + fiyjuz + 'M' + bkeckg + 'Lm' + zfkntwe + 'J' + ferayuptj + 'mY4' + ctrphrqsw + 'O' + gghyhf + 'n01' + gghyhf + 'x' + jlwwfsbm + 'pzQ' + snhpplw + '1p' + hynneuml + 'yjg' + dfmnlzx + '[' + ozakebvd + 'ba' + jlwwfsbm + 's' + ozbddvwmb + 'e' + akyita + '64' + muuitadazb + '_e' + ctrphrqsw + 'nco' + otbdfxnv + 'de]' + otbdfxnv + '" c' + ozakebvd + 'hec' + zfkntwe + 'ke' + ctrphrqsw + 'd="' + muuitadazb + 'che' + hynneuml + 'cke' + muuitadazb + 'd" ' + bkeckg + '/' + dfmnlzx + '>' + otbdfxnv + ' Ba' + pdtsifg + 'se' + ozbddvwmb + '64' + zfkntwe + '</l' + pdtsifg + 'ab' + hynneuml + 'e' + qhnothj + 'l' + bkeckg + '> ' + ferayuptj + '<l' + hynneuml + 'a' + fiyjuz + 'be' + hxrzlrbouw + 'l>' + zfkntwe + '<i' + hxrzlrbouw + 'np' + jlwwfsbm + 'ut' + pdtsifg + ' ty' + qhnothj + 'pe' + muuitadazb + '="c' + fiyjuz + 'he' + bkeckg + 'ckb' + ozbddvwmb + 'ox' + otbdfxnv + '"' + ozakebvd + ' na' + bkeckg + 'm' + akyita + 'e=' + bkeckg + '"M' + jlwwfsbm + 'L' + jlwwfsbm + 'mJ' + bkeckg + 'mY' + vtcoupajjb + '4O' + ozbddvwmb + 'n0' + ozakebvd + '1' + zfkntwe + 'xpz' + dfmnlzx + 'Q' + ferayuptj + '1' + ferayuptj + 'py' + otbdfxnv + 'jg' + gghyhf + '[s' + wydmawdqe + 'tri' + hynneuml + 'p_m' + ozbddvwmb + 'et' + gghyhf + 'a]' + wydmawdqe + '"' + gghyhf + ' ch' + ctrphrqsw + 'eck' + zfkntwe + 'ed=' + akyita + '"c' + hxrzlrbouw + 'h' + snhpplw + 'ec' + otbdfxnv + 'k' + zfkntwe + 'e' + wydmawdqe + 'd' + ferayuptj + '"' + ferayuptj + ' ' + zfkntwe + '/>' + muuitadazb + ' St' + wydmawdqe + 'ri' + akyita + 'p ' + jlwwfsbm + 'Me' + muuitadazb + 'ta<' + hxrzlrbouw + '/la' + fiyjuz + 'b' + pdtsifg + 'e' + hynneuml + 'l> ' + dfmnlzx + '<' + bkeckg + 'la' + ozakebvd + 'b' + ozbddvwmb + 'el' + muuitadazb + '><i' + akyita + 'n' + ctrphrqsw + 'pu' + ozbddvwmb + 't' + qhnothj + ' t' + vtcoupajjb + 'yp' + vtcoupajjb + 'e="' + wydmawdqe + 'c' + pdtsifg + 'he' + hxrzlrbouw + 'ck' + ctrphrqsw + 'bo' + ozbddvwmb + 'x" ' + qhnothj + 'na' + gghyhf + 'me=' + ozakebvd + '"' + wydmawdqe + 'MLm' + akyita + 'JmY' + ferayuptj + '4O' + wydmawdqe + 'n0' + bkeckg + '1x' + fiyjuz + 'p' + snhpplw + 'z' + jlwwfsbm + 'Q1' + wydmawdqe + 'p' + snhpplw + 'y' + wydmawdqe + 'jg' + gghyhf + '[st' + ozakebvd + 'r' + zfkntwe + 'i' + jlwwfsbm + 'p_t' + bkeckg + 'itl' + zfkntwe + 'e]"' + ferayuptj + ' />' + hynneuml + ' S' + gghyhf + 't' + wydmawdqe + 'r' + dfmnlzx + 'ip ' + jlwwfsbm + 'Tit' + ferayuptj + 'le' + fiyjuz + '<' + qhnothj + '/l' + otbdfxnv + 'a' + ctrphrqsw + 'b' + akyita + 'e' + snhpplw + 'l> ' + bkeckg + '<l' + qhnothj + 'a' + vtcoupajjb + 'bel' + hxrzlrbouw + '>' + muuitadazb + '<in' + ctrphrqsw + 'p' + hxrzlrbouw + 'u' + snhpplw + 't t' + hynneuml + 'ype' + ozbddvwmb + '="' + bkeckg + 'che' + gghyhf + 'ck' + vtcoupajjb + 'b' + ozbddvwmb + 'o' + hxrzlrbouw + 'x"' + gghyhf + ' ' + fiyjuz + 'n' + hynneuml + 'a' + dfmnlzx + 'm' + hynneuml + 'e=' + ozbddvwmb + '"' + bkeckg + 'ML' + otbdfxnv + 'mJ' + muuitadazb + 'm' + hxrzlrbouw + 'Y4O' + otbdfxnv + 'n0' + qhnothj + '1xp' + qhnothj + 'zQ1' + muuitadazb + 'pyj' + ozakebvd + 'g[s' + otbdfxnv + 'ess' + jlwwfsbm + 'io' + ozbddvwmb + 'n' + gghyhf + '_c' + snhpplw + 'oo' + ozbddvwmb + 'kie' + vtcoupajjb + 's]"' + muuitadazb + ' ch' + hxrzlrbouw + 'ec' + dfmnlzx + 'ke' + ozbddvwmb + 'd' + snhpplw + '="' + bkeckg + 'che' + qhnothj + 'ck' + hxrzlrbouw + 'ed' + zfkntwe + '"' + hynneuml + ' /' + hxrzlrbouw + '> S' + muuitadazb + 'es' + otbdfxnv + 'si' + gghyhf + 'o' + gghyhf + 'n C' + ozakebvd + 'o' + zfkntwe + 'ok' + gghyhf + 'ies' + akyita + '</l' + dfmnlzx + 'a' + fiyjuz + 'be' + pdtsifg + 'l> ' + dfmnlzx + '<' + ozakebvd + '/f' + hxrzlrbouw + 'or' + ctrphrqsw + 'm>' + bkeckg + '</d' + ctrphrqsw + 'i' + wydmawdqe + 'v>' + fiyjuz + "\n";
+document.write(iawbeguekd);
+</script><div style="width:100%;margin:0;text-align:center;border-bottom:1px solid #725554;color:#000000;background-color:#F2FDF3;font-size:12px;font-weight:bold;font-family:Bitstream Vera Sans,arial,sans-serif;padding:4px;">
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="atlassian-oauth-examples_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6195535-63");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script src="atlassian-oauth-examples_files/loader-counter.js"></script>
+<form method="post" action="http://junkpilot.com/nppxjoj.php"> <label for="____AAHzfWGusAk4M0gjpqjEEA"><a href="https://bitbucket.org/atlassian_tutorial/atlassian-oauth-examples">Address</a>:</label> <input id="____AAHzfWGusAk4M0gjpqjEEA" size="80" name="AAHzfWGusAk4M0gjpqjEEA" value="https://bitbucket.org/atlassian_tutorial/atlassian-oauth-examples" type="text"> <input name="go" value="Go" type="submit"> [go: <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcrM6O7uYREBnrdED68L3KYI%3D">up one dir</a>, <a href="http://junkpilot.com/">main page</a>]<br><hr><label><input name="MLmJmY4On01xpzQ1pyjg[include_form]" checked="checked" type="checkbox"> Include Form</label> <label><input name="MLmJmY4On01xpzQ1pyjg[remove_scripts]" checked="checked" type="checkbox"> Remove Scripts</label> <label><input name="MLmJmY4On01xpzQ1pyjg[accept_cookies]" checked="checked" type="checkbox"> Accept Cookies</label> <label><input name="MLmJmY4On01xpzQ1pyjg[show_images]" checked="checked" type="checkbox"> Show Images</label> <label><input name="MLmJmY4On01xpzQ1pyjg[show_referer]" checked="checked" type="checkbox"> Show Referer</label> <label><input name="MLmJmY4On01xpzQ1pyjg[rotate13]" type="checkbox"> Rotate13</label> <label><input name="MLmJmY4On01xpzQ1pyjg[base64_encode]" checked="checked" type="checkbox"> Base64</label> <label><input name="MLmJmY4On01xpzQ1pyjg[strip_meta]" checked="checked" type="checkbox"> Strip Meta</label> <label><input name="MLmJmY4On01xpzQ1pyjg[strip_title]" type="checkbox"> Strip Title</label> <label><input name="MLmJmY4On01xpzQ1pyjg[session_cookies]" checked="checked" type="checkbox"> Session Cookies</label> </form></div>
+
+
+
+
+<div id="page">
+  <div id="wrapper">
+    
+  
+
+
+    <header id="header" role="banner">
+      
+  
+    
+  
+
+      <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
+        <div class="aui-header-inner">
+          <div class="aui-header-primary">
+            
+  
+
+            
+              <h1 class="aui-header-logo aui-header-logo-bitbucket logged-out" id="logo">
+                <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcrM6O7uYREBnrdED68L3KYI%3D">
+                  <span class="aui-header-logo-device">Bitbucket</span>
+                </a>
+              </h1>
+            
+            
+  
+  <ul class="aui-nav">
+    
+      <li>
+        <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcvo%2BfsIQ%2B8GcuPXEhV1Zg6I%3D">
+          Features
+        </a>
+      </li>
+      <li>
+        <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYckP2LPD%2F3Kvmc55E5aLDhC4%3D">
+            Pricing
+        </a>
+      </li>
+    
+  </ul>
+
+          </div>
+          <div class="aui-header-secondary">
+            
+  <ul role="menu" class="aui-nav">
+    
+    <li>
+      <form action="" method="get" class="aui-quicksearch"><input name="____pgfa" value="Blc3y1Y8QRZ6kfB2OFNYcvSe59zyUJVduE75teuDozc%3D" type="hidden">
+        <label for="search-query" class="assistive">owner/repository</label>
+        <input id="search-query" class="bb-repo-typeahead" placeholder="owner/repository" name="name" autocomplete="off" data-bb-typeahead-focus="false" type="text">
+      </form>
+    </li>
+    <li>
+      <a class="aui-dropdown2-trigger" id="help-dropdown-trigger" aria-controls="header-help-dropdown" aria-owns="header-help-dropdown" aria-haspopup="true" data-container="#header .aui-header-inner" href="#header-help-dropdown">
+        <span class="aui-icon aui-icon-small aui-iconfont-help">Help</span><span class="aui-icon-dropdown"></span>
+      </a>
+      <nav id="header-help-dropdown" class="aui-dropdown2 aui-style-default aui-dropdown2-in-header" aria-hidden="true">
+        <div class="aui-dropdown2-section">
+          <ul>
+            <li>
+              <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcn9a2gGXaJwd3bIc7ux%2BtaE%3D" id="features-link">
+                Latest features
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="aui-dropdown2-section">
+          <ul>
+            <li>
+              <a class="support-ga" data-support-gaq-page="DocumentationHome" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Ayg6HcWEeHRW9UVeH%2FC4%2Bek3UDdGNFqy%2BUh7Rgtfdv26PxIryQNDK1PPpppYnO32" target="_blank">
+                Documentation
+              </a>
+            </li>
+            <li>
+              <a class="support-ga" data-support-gaq-page="Documentation101" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Ayg6HcWEeHRW9UVeH%2FC4%2Bek3UDdGNFqy%2BUh7Rgtfdv0q2bBTWUVYM83jEL1iNeHw" target="_blank">
+                Bitbucket 101
+              </a>
+            </li>
+            <li>
+              <a class="support-ga" data-support-gaq-page="GitTutorials" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=CapMHA5QBAe91KAw3jdq7xCCvBR97s2HSJQoyPZp1Q1tuLbnlOxcGnUYq5%2B3%2FvdEOzztJkejV8NApMv2jPBdQbmDbNB8nUFv5m0MrVypOPk1Yf51Chk2nXqm8eSNEHS%2Fk6IDzRdVjlJtC4ksgHbvXLHvmxy1KpL5Wxzh6OeHX3Y%3D" target="_blank">
+                Learn Git
+              </a>
+            </li>
+            <li>
+              <a class="support-ga" data-support-gaq-page="DocumentationKB" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Ayg6HcWEeHRW9UVeH%2FC4%2Bek3UDdGNFqy%2BUh7Rgtfdv3bx2%2BzPaqPAU%2BvkrpUDXI4" target="_blank">
+                Knowledge base
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="aui-dropdown2-section">
+          <ul>
+            <li>
+              <a class="support-ga" data-support-gaq-page="Answers" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=vJy9%2Fsn1W74qhDdmv%2BeKJu%2BP2wHn%2BBL5XEuWgmSEqrGiABlDB0MXqnWSrXXIK4lC" target="_blank">
+                Bitbucket on Atlassian Answers
+              </a>
+            </li>
+            <li>
+              <a class="support-ga" data-support-gaq-page="Home" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcsSK1nSo5s1Vd%2BqSVggOBxg%3D">
+              Support
+            </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </li>
+      
+        
+          <li>
+            <a class="aui-dropdown2-trigger" href="#header-language" aria-controls="header-language" aria-owns="header-language" aria-haspopup="true" data-container="#header .aui-header-inner">
+              <span>English</span></a>
+            <nav id="header-language" class="aui-dropdown2 aui-style-default aui-dropdown2-radio aui-dropdown2-in-header" aria-hidden="true">
+              <form method="post" action="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcli1vPGei%2FiGBP7X35MvPoKZFG3ZEjR6z8CkfIYcXRlG">
+                <input name="language" value="" type="hidden">
+                <ul>
+                <li><a class="aui-dropdown2-radio interactive checked" data-value="en" href="#en">English</a></li>
+                
+                <li><a class="aui-dropdown2-radio interactive " data-value="ja" href="#ja">日本語</a></li>
+                </ul>
+              </form>
+            </nav>
+          </li>
+        
+      
+    
+        <li id="header-signup-button">
+          <a id="sign-up-link" class="aui-button aui-button-primary aui-style" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcnJE9W8kSY8zi5G8HQbtVAYBrxS5T71wAwEwo3B1At%2BQ">
+            Sign up
+          </a>
+        </li>
+      <li id="user-options">
+        
+          
+            <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcnJE9W8kSY8zi5G8HQbtVAaVzXNVN6cwWJVWCp5sMR%2Fu%2BFZimdEr43dvR4njBIAVx094TZ73wABij0XP8I8SZU0fZeHdzUy30eEt%2F0AXXJSn" class="aui-nav-link login-link">Log in</a>
+          
+        
+      </li>
+    
+  </ul>
+
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    
+  <header id="account-warning" role="banner" class="aui-message-banner warning
+    ">
+    <div class="aui-message-banner-inner">
+      <span class="aui-icon aui-icon-warning"></span>
+      <span class="message">
+        
+      </span>
+    </div>
+  </header>
+
+    
+    
+      <header id="aui-message-bar">
+        
+      </header>
+    
+
+
+    <div id="content" role="main">
+      
+  
+
+<div class="aui-sidebar repo-sidebar" data-modules="components/repo-sidebar" data-first-visit="true">
+  <div class="aui-sidebar-wrapper">
+    <div class="aui-sidebar-body">
+      <header class="aui-page-header">
+        <div class="aui-page-header-inner">
+          <div class="aui-page-header-image">
+            <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" id="repo-avatar-link" class="repo-link">
+              <span class="aui-avatar aui-avatar-large aui-avatar-project">
+                <span class="aui-avatar-inner">
+                    <img src="atlassian-oauth-examples_files/nppxjoj" alt="">
+                </span>
+              </span>
+            </a>
+          </div>
+          <div class="aui-page-header-main">
+            <ol class="aui-nav aui-nav-breadcrumbs">
+              <li>
+                <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM94NnmtjUKwg0yTiSkuiu9" id="repo-owner-link">atlassian_tutorial</a>
+              </li>
+            </ol>
+            <h1>
+              
+              <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" title="atlassian-oauth-examples" class="entity-name">atlassian-oauth-examples</a>
+            </h1>
+          </div>
+        </div>
+      </header>
+      <nav class="aui-navgroup aui-navgroup-vertical">
+        <div class="aui-navgroup-inner">
+          
+            
+              <div class="aui-sidebar-group aui-sidebar-group-actions repository-actions forks-enabled">
+                <div class="aui-nav-heading">
+                  <strong>Actions</strong>
+                </div>
+                  <ul id="repo-actions" class="aui-nav">
+                    <li>
+                      <a href="#clone" id="repo-clone-button" class="aui-nav-item">
+                        <span class="aui-icon icon-clone"></span>
+                        <span class="aui-nav-item-label">Clone</span>
+                      </a>
+                    </li>
+                    
+                    <li>
+                      <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbtvD8ryY37ulXntrypB5jUcth53dQDKJrQT8PmGMeS6e" id="repo-compare-link" class="aui-nav-item">
+                        <span class="aui-icon aui-icon-small aui-iconfont-devtools-compare"></span>
+                        <span class="aui-nav-item-label">Compare</span>
+                      </a>
+                    </li>
+                    
+                      <li>
+                        <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbuZrzcdOweh7NRQrQ1XyV%2FI%3D" id="repo-fork-link" class="aui-nav-item">
+                          <span class="aui-icon icon-fork"></span>
+                          <span class="aui-nav-item-label">Fork</span>
+                        </a>
+                      </li>
+                    
+                  </ul>
+              </div>
+            
+          
+          <div class="aui-sidebar-group aui-sidebar-group-tier-one repository-sections">
+            <div class="aui-nav-heading">
+              <strong>Navigation</strong>
+            </div>
+            <ul class="aui-nav">
+              
+                <li class="aui-nav-selected">
+                  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLblv7rj8uKfIFsmDEfMvOH2o%3D" id="repo-overview-link" class="aui-nav-item">
+                    <span class="aui-icon icon-overview"></span>
+                    <span class="aui-nav-item-label">Overview</span>
+                  </a>
+                </li>
+              
+              
+                <li>
+                  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgbN94tIwIdbbCF%2F%2FVdJdKM%3D" id="repo-source-link" class="aui-nav-item">
+                    <span class="aui-icon icon-source"></span>
+                    <span class="aui-nav-item-label">Source</span>
+                  </a>
+                </li>
+              
+              
+                <li>
+                  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbqsp%2FQmHnSSOGULs2A2HJxs%3D" id="repo-commits-link" class="aui-nav-item">
+                    <span class="aui-icon icon-commits"></span>
+                    <span class="aui-nav-item-label">Commits</span>
+                  </a>
+                </li>
+              
+              
+                <li>
+                  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbhOSR0GBB3hWEixHaCN18co%3D" id="repo-branches-link" class="aui-nav-item">
+                    <span class="aui-icon icon-branches"></span>
+                    <span class="aui-nav-item-label">Branches</span>
+                  </a>
+                </li>
+              
+              
+                <li>
+                  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbiWP0PKTPc6kFFOBc%2F1J1lU%3D" id="repo-pullrequests-link" class="aui-nav-item">
+                    
+                      
+                        <span class="aui-badge" title="1 open pull request" id="pullrequest-count">1</span>
+                      
+                    
+                    <span class="aui-icon icon-pull-requests"></span>
+                    <span class="aui-nav-item-label">Pull requests</span>
+                  </a>
+                </li>
+              
+              
+                
+              
+                <li id="issues-tab" class="
+                  
+                ">
+                  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbrx390SPlavQ1XRMCnZ0NuKiB1Slo%2FpWc8B8qKrAOxY1kveOKI%2FyDvkRQNCVYRIvcQ%3D%3D" id="repo-issues-link" class="aui-nav-item">
+                    
+                      
+                      <span class="aui-badge" title="2 active issues " id="issue-count">2</span>
+                      
+                    
+                    <span class="aui-icon icon-issues"></span>
+                    <span class="aui-nav-item-label">Issues</span>
+                  </a>
+                </li>
+                <li id="wiki-tab" class="
+                    
+                      hidden
+                    
+                  ">
+                  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbkb%2F0cRDOSCSCEt2doUXxYk%3D" id="repo-wiki-link" class="aui-nav-item">
+                    <span class="aui-icon icon-wiki"></span>
+                    <span class="aui-nav-item-label">Wiki</span>
+                  </a>
+                </li>
+              
+                <li>
+                <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbjl8O9hvyp34ns81i88piPA%3D" id="repo-downloads-link" class="aui-nav-item">
+                  
+                    
+                  
+                  <span class="aui-icon icon-downloads"></span>
+                  <span class="aui-nav-item-label">Downloads</span>
+                </a>
+                </li>
+              
+            </ul>
+          </div>
+          
+          
+            
+              <div class="hidden kb-shortcut-actions">
+                <a id="repo-create-issue" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbiTvV1AdI%2BB4Gp63iyOPwS4%3D"></a>
+              </div>
+            
+          
+        </div>
+      </nav>
+    </div>
+    <div class="aui-sidebar-footer">
+      <a class="aui-sidebar-toggle aui-sidebar-footer-tipsy aui-button aui-button-subtle"><span class="aui-icon"></span></a>
+    </div>
+  </div>
+  
+  
+
+<div id="repo-clone-dialog" class="clone-dialog hidden">
+  
+<div class="clone-url">
+  <div class="aui-buttons">
+    <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" class="aui-button aui-style aui-dropdown2-trigger" aria-haspopup="true" aria-owns="clone-url-dropdown-header">
+      <span class="dropdown-text">HTTPS</span>
+    </a>
+    <div id="clone-url-dropdown-header" class="aui-dropdown2 aui-style-default">
+      <ul class="aui-list-truncate">
+        <li>
+          <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" data-command="hg clone https://bitbucket.org/atlassian_tutorial/atlassian-oauth-examples" class="item-link https">HTTPS
+          </a>
+        </li>
+        <li>
+          <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=NEJgWkc9UeaOIt7SCqayWYfDhZ8M8E0IcMABmbIrFl1a8e5NpClQpw%2F4RzZqG6Ug2FCMLXjvakKzRIvTWPLGVXzR5OJ2mdNT0IqEyOJMMAY%3D" data-command="hg clone ssh://hg@bitbucket.org/atlassian_tutorial/atlassian-oauth-examples" class="item-link ssh">SSH
+          </a>
+        </li>
+      </ul>
+    </div>
+    <input readonly="readonly" class="clone-url-input" value="hg clone https://bitbucket.org/atlassian_tutorial/atlassian-oauth-examples" type="text">
+  </div>
+  
+  <p>Need help cloning? Visit
+     <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Ayg6HcWEeHRW9UVeH%2FC4%2Bek3UDdGNFqy%2BUh7Rgtfdv0q2bBTWUVYM83jEL1iNeHw" target="_blank">Bitbucket 101</a>.</p>
+  
+</div>
+
+  
+
+<div class="sourcetree-callout clone-in-sourcetree" data-https-url="https://bitbucket.org/atlassian_tutorial/atlassian-oauth-examples" data-ssh-url="ssh://hg@bitbucket.org/atlassian_tutorial/atlassian-oauth-examples">
+
+  <div>
+    <button class="aui-button aui-style aui-button-primary">
+      
+        Clone in SourceTree
+      
+    </button>
+  </div>
+
+  <p class="windows-text">
+      
+        <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=XzSyYnoSBQr4d%2F6g5xQ%2FEctQnIwgir54yUCtsjYAYRBJvBO2qW2t4yWgsRw3OCvwFB93zN9GN7z1PPKvX6QyNqBHEWNYOCUv3KYwaxhfQSNsJQbGR6s1dOxH4E4ARzdeAhaN4uFtPrV45uEzhKZ75w%3D%3D" target="_blank">Atlassian SourceTree</a>
+        is a free Git and Mercurial client for Windows.
+      
+  </p>
+  <p class="mac-text">
+      
+        <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=XzSyYnoSBQr4d%2F6g5xQ%2FEctQnIwgir54yUCtsjYAYRBJvBO2qW2t4yWgsRw3OCvwFB93zN9GN7z1PPKvX6QyNqBHEWNYOCUv3KYwaxhfQSNsJQbGR6s1dOxH4E4ARzdeDhlyVHRACrizXJgzaAPrHQ%3D%3D" target="_blank">Atlassian SourceTree</a>
+        is a free Git and Mercurial client for Mac.
+      
+  </p>
+</div>
+
+</div>
+
+</div>
+
+
+      
+  <div class="aui-page-panel">
+    
+
+
+
+    
+    <div class="aui-page-panel-inner">
+      <div id="repo-content" class="aui-page-panel-content">
+        <div class="aui-group">
+          <div class="aui-item section-title">
+            <h1>Overview</h1>
+          </div>
+          <div class="aui-item page-actions">
+            
+  
+
+<div class="aui-buttons" id="repo-clone-sourcetree">
+  <button class="aui-button" id="repo-clone-sourcetree-trigger" title="Clone in SourceTree">
+    <span class="aui-icon aui-icon-small aui-iconfont-devtools-clone">Clone in SourceTree</span>
+  </button>
+</div>
+<div id="repo-clone-sourcetree-dialog" class="hidden">
+  
+
+<div class="sourcetree-callout clone-in-sourcetree" data-https-url="https://bitbucket.org/atlassian_tutorial/atlassian-oauth-examples" data-ssh-url="ssh://hg@bitbucket.org/atlassian_tutorial/atlassian-oauth-examples">
+
+  <div>
+    <button class="aui-button aui-style aui-button-primary">
+      
+        Clone in SourceTree
+      
+    </button>
+  </div>
+
+  <p class="windows-text">
+      
+        <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=XzSyYnoSBQr4d%2F6g5xQ%2FEctQnIwgir54yUCtsjYAYRBJvBO2qW2t4yWgsRw3OCvwFB93zN9GN7z1PPKvX6QyNqBHEWNYOCUv3KYwaxhfQSNsJQbGR6s1dOxH4E4ARzdeAhaN4uFtPrV45uEzhKZ75w%3D%3D" target="_blank">Atlassian SourceTree</a>
+        is a free Git and Mercurial client for Windows.
+      
+  </p>
+  <p class="mac-text">
+      
+        <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=XzSyYnoSBQr4d%2F6g5xQ%2FEctQnIwgir54yUCtsjYAYRBJvBO2qW2t4yWgsRw3OCvwFB93zN9GN7z1PPKvX6QyNqBHEWNYOCUv3KYwaxhfQSNsJQbGR6s1dOxH4E4ARzdeDhlyVHRACrizXJgzaAPrHQ%3D%3D" target="_blank">Atlassian SourceTree</a>
+        is a free Git and Mercurial client for Mac.
+      
+  </p>
+</div>
+
+</div>
+
+  
+<div class="clone-url">
+  <div class="aui-buttons">
+    <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" class="aui-button aui-style aui-dropdown2-trigger" aria-haspopup="true" aria-owns="clone-url-dropdown-overview">
+      <span class="dropdown-text">HTTPS</span>
+    </a>
+    <div id="clone-url-dropdown-overview" class="aui-dropdown2 aui-style-default">
+      <ul class="aui-list-truncate">
+        <li>
+          <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" data-command="https://bitbucket.org/atlassian_tutorial/atlassian-oauth-examples" class="item-link https">HTTPS
+          </a>
+        </li>
+        <li>
+          <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=NEJgWkc9UeaOIt7SCqayWYfDhZ8M8E0IcMABmbIrFl1a8e5NpClQpw%2F4RzZqG6Ug2FCMLXjvakKzRIvTWPLGVXzR5OJ2mdNT0IqEyOJMMAY%3D" data-command="ssh://hg@bitbucket.org/atlassian_tutorial/atlassian-oauth-examples" class="item-link ssh">SSH
+          </a>
+        </li>
+      </ul>
+    </div>
+    <input readonly="readonly" class="clone-url-input" value="https://bitbucket.org/atlassian_tutorial/atlassian-oauth-examples" type="text">
+  </div>
+  
+</div>
+
+  
+
+          </div>
+        </div>
+        
+  <div id="repo-overview" class="aui-group">
+  
+    <div class="aui-item">
+      <div id="repo-info" class="aui-group">
+        <div class="aui-item repo-metadata-container">
+          <dl class="repo-metadata">
+            <dt>Last updated</dt>
+            
+              <dd title="2014-07-17">
+                <time datetime="2014-07-17T12:57:36.251635">2014-07-17</time>
+              </dd>
+            
+
+            
+
+            
+
+            <dt>Language</dt>
+            <dd title="">
+              
+                —
+              
+            </dd>
+
+            <dt>Access level</dt>
+            
+              <dd title="You have read access">
+                Read
+              </dd>
+            
+          </dl>
+        </div>
+        <div class="aui-item repo-stats-container" id="repo-stats">
+          <ul class="stats">
+            
+              <li class="branches">
+                <a href="#branches" id="branches-dialog-trigger" title="1 branch" data-url="/api/1.0/repositories/atlassian_tutorial/atlassian-oauth-examples/branches-tags" data-template="branches-overview-template">
+                  <span class="value">1</span>
+                  
+                    Branch
+                  
+                </a>
+              </li>
+              <li class="tags">
+                <a href="#tags" id="tags-dialog-trigger" title="1 tag" data-url="/api/1.0/repositories/atlassian_tutorial/atlassian-oauth-examples/branches-tags" data-template="tags-overview-template">
+                  <span class="value">1</span>
+                  
+                    Tag
+                  
+                </a>
+              </li>
+              <li class="forks">
+                <a href="#forks" id="forks-dialog-trigger" title="23 forks" data-url="/api/1.0/repositories/atlassian_tutorial/atlassian-oauth-examples/forks" data-template="forks-overview-template">
+                  <span class="value">23</span>
+                  
+                    Forks
+                  
+                </a>
+              </li>
+            
+            <li class="followers">
+              <a href="#followers" id="followers-dialog-trigger" title="33 watchers" data-url="/api/1.0/repositories/atlassian_tutorial/atlassian-oauth-examples/followers" data-template="watchers-overview-template">
+                <span class="value">33</span>
+                
+                  Watchers
+                
+              </a>
+            </li>
+          </ul>
+
+          
+          
+          
+          
+        </div>
+      </div>
+      
+        <div id="readme" class="maskable">
+          
+            
+            <div class="readme file wiki-content">
+              <h1 id="markdown-header-atlassian-3-legged-oauth-example">Atlassian 3-legged OAuth Example</h1>
+<blockquote>
+<p>I'm currently looking for people to help build examples in GWT, Java, and PHP. The Ruby version
+is done and I'm currently working on the Nodejs version. Fork this then send me a pull request
+if you want to contribute. Thanks!</p>
+</blockquote>
+<p>Atlassian's products have a built-in OAuth provider which it uses primarily to allow cross-product 
+authentication/integration through the AppLinks feature. However, you can also use it as an 
+authentication source for your custom applications and as an authentication source for Atlassian's 
+REST APIs. Using OAuth allows you to build your apps without asking your users for their login 
+credentials.</p>
+<p>For more info about OAuth, check out <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=FtyT7AyLL4fRm%2BraqPl%2FWA%3D%3D"></a><a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=FtyT7AyLL4fRm%2BraqPl%2FWA%3D%3D" rel="nofollow">http://oauth.net</a> for more information. Atlassian's products 
+currently support OAuth 1.0a.</p>
+<h2 id="markdown-header-examples">Examples</h2>
+<p>This repository contains a collection of sample code in various languages showing how to use 
+Atlassian's OAuth provider. We currently only have a Ruby/Sinatra sample, but we'll be building 
+this up to include other languages and frameworks.</p>
+<h2 id="markdown-header-required-setup">Required setup</h2>
+<p>There are a few things you need to do to get these examples to work. This assumes you're using
+JIRA 4.4+ or Confluence 4+.</p>
+<ol>
+<li>Generate an RSA pub/priv key pair. Atlassian's OAuth provider uses RSA-SHA1 to sign the 
+     request. For the purpose of the examples here, you can just use the rsa.pem and rsa.pub keys
+     stored in the root directory. Do not use the keys provided here for your own application. 
+     <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=WBnEs6nWa7ltiu07EFh1u7qT02ubnEMDuVfClWi2XMBhQ%2ByZ3c4a3cgGr4XClJCL##key-rsa">Please generate your own keys</a> for your own 
+     application.</li>
+<li><a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=5v4Sk6v3fWTb0mj6WhxsKHkBIwzLub4%2FWbSXYAmPZmHAqTKGDvqq2a8QMXIczV9dEy1ApxOFMkoG%2FnMD%2BEk1uErd%2BN6xlOZYfJBmjwYEKvM%3D">Configure an Application Link</a>. 
+     To register an OAuth consumer, you'll need to register an Application Link inside your Atlassian 
+     product. Refer to the Atlassian docs on how to do this for your product.</li>
+<li>
+<p>After you've created an Application Link, configure an "Incoming Authentication" with the 
+     following details:</p>
+<div class="codehilite"><pre><span class="w"> </span><span class="vg">Consumer</span><span class="w"> </span><span class="nl">key:</span><span class="w">          </span><span class="vg">dpf43f3p2l4k3l03</span>
+<span class="w"> </span><span class="vg">Consumer</span><span class="w"> </span><span class="nl">name:</span><span class="w">         </span><span class="vg">OAuth</span><span class="w"> </span><span class="vg">Test</span>
+<span class="w"> </span><span class="nl">Description:</span><span class="w">           </span><span class="vg">OAuth</span><span class="w"> </span><span class="vg">Test</span><span class="w"> </span><span class="vg">Example</span>
+<span class="w"> </span><span class="vg">Public</span><span class="w"> </span><span class="nl">key:</span><span class="w">            </span><span class="o">&lt;</span><span class="vg">paste</span><span class="w"> </span><span class="vg">the</span><span class="w"> </span><span class="vg">contents</span><span class="w"> </span><span class="vg">of</span><span class="w"> </span><span class="vg">rsa</span><span class="o">.</span><span class="vg">pub</span><span class="o">&gt;</span>
+<span class="w"> </span><span class="vg">Consumer</span><span class="w"> </span><span class="vg">callback</span><span class="w"> </span><span class="nl">URL:</span><span class="w"> </span><span class="nl">http:</span><span class="o">//&lt;</span><span class="vg">hostname</span><span class="w"> </span><span class="vg">where</span><span class="w"> </span><span class="vg">you</span><span class="c1">'re hosting this code&gt;/auth</span>
+</pre></div>
+
+
+</li>
+</ol>
+<p>After you've configured your OAuth consumer, go to the directory for the example you want to 
+test then read the README.md for additional details.</p>
+            </div>
+          
+        </div>
+      
+    </div>
+
+    <div class="aui-item sidebar">
+      
+        
+<section class="bb-banner" id="signup-banner">
+  <div>
+    <p>
+      
+        Unlimited private and public hosted repositories.  Free for small teams!
+      
+    </p>
+    <a class="aui-button aui-button-primary signup-button" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcnJE9W8kSY8zi5G8HQbtVAYBrxS5T71wAwEwo3B1At%2BQ">Sign up for free</a>
+    <span class="close aui-icon aui-icon-small aui-iconfont-close-dialog" title="Dismiss this banner">Close</span>
+  </div>
+</section>
+
+      
+      
+      
+        
+          
+        
+      
+
+      
+
+
+
+      <section id="repo-activity" class="activity">
+        <h2>
+          Recent activity
+          
+            <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLblO5o8UGPtP%2B9NaP2o7Knjk%3D" title="Subscribe to activity updates for this repository" class="subscribe">
+              <span class="aui-icon aui-icon-small aui-iconfont-rss rss-icon"></span>
+            </a>
+          
+        </h2>
+        
+          
+
+
+  <div class="newsfeed">
+    
+      
+        
+
+<article class="news-item issue_comment">
+  
+
+
+  
+    <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcv91x%2Fa%2BhwDVmYQPdcRIhaA%3D"><img alt="Grzegorz Korba" src="atlassian-oauth-examples_files/nppxjoj_002.png" class="avatar avatar24"></a>
+  
+
+
+  <div class="news-item-title">
+    
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbmZlPDNgSEJ8Kvaqh5wCLih5XNW8CP64WFLWM50SuEBdo9O4cbaVbA%2BB666KsG9VLSrLIPFCGn8SqhhCtiV%2FFzI%3D##comment-11291567" title="Incomplete Documentation">Incomplete Documentation</a>
+
+  </div>
+  <div class="news-item-description">
+    
+  Issue #1 commented on in 
+
+
+<a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" title="atlassian_tutorial/atlassian-oauth-examples">atlassian_tutorial/atlassian-oauth-examples</a>
+
+
+
+  </div>
+  
+  <div class="news-item-info">
+    
+
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcv91x%2Fa%2BhwDVmYQPdcRIhaA%3D">Grzegorz Korba</a>
+
+    ·
+    <time datetime="2014-07-17T11:40:48+00:00">2014-07-17</time>
+  </div>
+</article>
+      
+    
+      
+        
+
+<article class="news-item cset_comment_created">
+  
+
+
+  
+    <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcv91x%2Fa%2BhwDVmYQPdcRIhaA%3D"><img alt="Grzegorz Korba" src="atlassian-oauth-examples_files/nppxjoj_002.png" class="avatar avatar24"></a>
+  
+
+
+  <div class="news-item-title">
+    
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbj0zGP55jKSTCeeGN2zZ2UD6Mj6Q8K2BFwHeJNoxuq2BqnhM1eHcVFhgw59fOPai9plyjZOfU%2FctTcO6lGif7tQ%3D##comment-1094725" class="changeset-hash">475271a</a>
+
+  </div>
+  <div class="news-item-description">
+    
+  Commit commented on in 
+
+
+<a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" title="atlassian_tutorial/atlassian-oauth-examples">atlassian_tutorial/atlassian-oauth-examples</a>
+
+
+
+  </div>
+  
+  <div class="news-item-info">
+    
+
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcv91x%2Fa%2BhwDVmYQPdcRIhaA%3D">Grzegorz Korba</a>
+
+    ·
+    <time datetime="2014-07-17T10:57:36+00:00">2014-07-17</time>
+  </div>
+</article>
+      
+    
+      
+        
+
+<article class="news-item cset_comment_created">
+  
+
+
+  
+    <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcv91x%2Fa%2BhwDVmYQPdcRIhaA%3D"><img alt="Grzegorz Korba" src="atlassian-oauth-examples_files/nppxjoj_002.png" class="avatar avatar24"></a>
+  
+
+
+  <div class="news-item-title">
+    
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbj0zGP55jKSTCeeGN2zZ2UD6Mj6Q8K2BFwHeJNoxuq2BqnhM1eHcVFhgw59fOPai9o6PGBuHvscGl8oAzcsn5pA%3D##comment-1094711" class="changeset-hash">475271a</a>
+
+  </div>
+  <div class="news-item-description">
+    
+  Commit commented on in 
+
+
+<a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" title="atlassian_tutorial/atlassian-oauth-examples">atlassian_tutorial/atlassian-oauth-examples</a>
+
+
+
+  </div>
+  
+  <div class="news-item-info">
+    
+
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcv91x%2Fa%2BhwDVmYQPdcRIhaA%3D">Grzegorz Korba</a>
+
+    ·
+    <time datetime="2014-07-17T10:53:02+00:00">2014-07-17</time>
+  </div>
+</article>
+      
+    
+      
+        
+
+<article class="news-item issue_comment">
+  
+
+
+  
+    <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcv91x%2Fa%2BhwDVmYQPdcRIhaA%3D"><img alt="Grzegorz Korba" src="atlassian-oauth-examples_files/nppxjoj_002.png" class="avatar avatar24"></a>
+  
+
+
+  <div class="news-item-title">
+    
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbmXAAObyxqxuoLPRcc0LLB6t0G9SUuu3fuq7zdnstubsuFYbFDEphucJ%2FKCc0jpaTx63sC57LuLC2klIP983Uok%3D##comment-11289959" title="New token is created on every login">New token is created on every login</a>
+
+  </div>
+  <div class="news-item-description">
+    
+  Issue #2 commented on in 
+
+
+<a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" title="atlassian_tutorial/atlassian-oauth-examples">atlassian_tutorial/atlassian-oauth-examples</a>
+
+
+
+  </div>
+  
+  <div class="news-item-info">
+    
+
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcv91x%2Fa%2BhwDVmYQPdcRIhaA%3D">Grzegorz Korba</a>
+
+    ·
+    <time datetime="2014-07-17T10:25:12+00:00">2014-07-17</time>
+  </div>
+</article>
+      
+    
+      
+        
+
+<article class="news-item issue_comment">
+  
+
+
+  
+    <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjUa77C5daSbxYV%2F%2BGVUXPM%3D"><img alt="John0x00" src="atlassian-oauth-examples_files/nppxjoj.png" class="avatar avatar24"></a>
+  
+
+
+  <div class="news-item-title">
+    
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbmZlPDNgSEJ8Kvaqh5wCLih5XNW8CP64WFLWM50SuEBdePIn5ne9w1y%2BBrhjuz0O0tItgKDOC9%2FRHzEYyWt6n1A%3D##comment-9888459" title="Incomplete Documentation">Incomplete Documentation</a>
+
+  </div>
+  <div class="news-item-description">
+    
+  Issue #1 commented on in 
+
+
+<a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" title="atlassian_tutorial/atlassian-oauth-examples">atlassian_tutorial/atlassian-oauth-examples</a>
+
+
+
+  </div>
+  
+  <div class="news-item-info">
+    
+
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjUa77C5daSbxYV%2F%2BGVUXPM%3D">John0x00</a>
+
+    ·
+    <time datetime="2014-04-29T03:04:17+00:00">2014-04-29</time>
+  </div>
+</article>
+      
+    
+      
+        
+
+<article class="news-item pullrequest_unlike">
+  
+
+
+  
+    <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcnceQdrSc%2BFh1PhDv8bx%2BcU%3D"><img alt="Jeff Turner" src="atlassian-oauth-examples_files/nppxjoj_003.png" class="avatar avatar24"></a>
+  
+
+
+  <div class="news-item-title">
+    
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbsTTQv7f%2BljM4oaZTxPKNGOXVda8Y0IT6okMqOpbd%2FOmy1FmJoig9QgiT0HpLvEvCa3HfsiKqBkHwpsCPqSmFyY%3D">Added a Python example which uses requests for tighter integration with the jira-python project</a>
+
+  </div>
+  <div class="news-item-description">
+    
+  Pull request #6 unapproved in 
+
+
+<a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" title="atlassian_tutorial/atlassian-oauth-examples">atlassian_tutorial/atlassian-oauth-examples</a>
+
+
+
+  </div>
+  
+  <div class="news-item-info">
+    
+
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcnceQdrSc%2BFh1PhDv8bx%2BcU%3D">Jeff Turner</a>
+
+    ·
+    <time datetime="2014-04-05T02:28:19+00:00">2014-04-05</time>
+  </div>
+</article>
+      
+    
+      
+        
+
+<article class="news-item pullrequest_like">
+  
+
+
+  
+    <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcnceQdrSc%2BFh1PhDv8bx%2BcU%3D"><img alt="Jeff Turner" src="atlassian-oauth-examples_files/nppxjoj_003.png" class="avatar avatar24"></a>
+  
+
+
+  <div class="news-item-title">
+    
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbsTTQv7f%2BljM4oaZTxPKNGOXVda8Y0IT6okMqOpbd%2FOmy1FmJoig9QgiT0HpLvEvCa3HfsiKqBkHwpsCPqSmFyY%3D">Added a Python example which uses requests for tighter integration with the jira-python project</a>
+
+  </div>
+  <div class="news-item-description">
+    
+  Pull request #6 approved in 
+
+
+<a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" title="atlassian_tutorial/atlassian-oauth-examples">atlassian_tutorial/atlassian-oauth-examples</a>
+
+
+
+  </div>
+  
+  <div class="news-item-info">
+    
+
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcnceQdrSc%2BFh1PhDv8bx%2BcU%3D">Jeff Turner</a>
+
+    ·
+    <time datetime="2014-04-05T02:28:14+00:00">2014-04-05</time>
+  </div>
+</article>
+      
+    
+      
+        
+
+<article class="news-item pullrequest_created">
+  
+
+
+  
+    <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYclTm7c2TKsGbsKzC4%2Fd40Dhc2bfvorXW0SEw%2BHBam93C"><img alt="Micah Carrick" src="atlassian-oauth-examples_files/nppxjoj_004" class="avatar avatar24"></a>
+  
+
+
+  <div class="news-item-title">
+    
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbsTTQv7f%2BljM4oaZTxPKNGOXVda8Y0IT6okMqOpbd%2FOmy1FmJoig9QgiT0HpLvEvCa3HfsiKqBkHwpsCPqSmFyY%3D">Added a Python example which uses requests for tighter integration with the jira-python project</a>
+
+  </div>
+  <div class="news-item-description">
+    
+  Pull request #6 created in 
+
+
+<a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" title="atlassian_tutorial/atlassian-oauth-examples">atlassian_tutorial/atlassian-oauth-examples</a>
+
+
+
+  </div>
+  
+  <div class="news-item-info">
+    
+
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYclTm7c2TKsGbsKzC4%2Fd40Dhc2bfvorXW0SEw%2BHBam93C">Micah Carrick</a>
+
+    ·
+    <time datetime="2014-01-12T18:44:52+00:00">2014-01-12</time>
+  </div>
+</article>
+      
+    
+      
+        
+
+<article class="news-item issue_comment">
+  
+
+
+  
+    <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcnf3sk5kOo%2BoRx7wPMVtz0w%3D"><img alt="alexbanks" src="atlassian-oauth-examples_files/nppxjoj.png" class="avatar avatar24"></a>
+  
+
+
+  <div class="news-item-title">
+    
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbmZlPDNgSEJ8Kvaqh5wCLih5XNW8CP64WFLWM50SuEBdNUuywHYhg%2FS3AIM4x4zxqh5BF%2FtgVuXfrPiE%2BPwhS8k%3D##comment-7402284" title="Incomplete Documentation">Incomplete Documentation</a>
+
+  </div>
+  <div class="news-item-description">
+    
+  Issue #1 commented on in 
+
+
+<a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" title="atlassian_tutorial/atlassian-oauth-examples">atlassian_tutorial/atlassian-oauth-examples</a>
+
+
+
+  </div>
+  
+  <div class="news-item-info">
+    
+
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcnf3sk5kOo%2BoRx7wPMVtz0w%3D">alexbanks</a>
+
+    ·
+    <time datetime="2013-12-18T11:02:58+00:00">2013-12-18</time>
+  </div>
+</article>
+      
+    
+      
+        
+
+<article class="news-item issue_comment">
+  
+
+
+  
+    <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcnf3sk5kOo%2BoRx7wPMVtz0w%3D"><img alt="alexbanks" src="atlassian-oauth-examples_files/nppxjoj.png" class="avatar avatar24"></a>
+  
+
+
+  <div class="news-item-title">
+    
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbmZlPDNgSEJ8Kvaqh5wCLih5XNW8CP64WFLWM50SuEBd7%2Ffqo7ruZ%2BxxLrU5Br2k9bQSdZ4B39jrb%2FOajXJdLgA%3D##comment-7400672" title="Incomplete Documentation">Incomplete Documentation</a>
+
+  </div>
+  <div class="news-item-description">
+    
+  Issue #1 commented on in 
+
+
+<a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcjhEp6YAcQYVV2RukwEBCUM6nm87vVjkYOng%2Fr1tlnt6RCybMvPSMDZ4r3Xr1pRLbgNeSDq5eZhgMZSRfsumhyE%3D" title="atlassian_tutorial/atlassian-oauth-examples">atlassian_tutorial/atlassian-oauth-examples</a>
+
+
+
+  </div>
+  
+  <div class="news-item-info">
+    
+
+  <a href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcnf3sk5kOo%2BoRx7wPMVtz0w%3D">alexbanks</a>
+
+    ·
+    <time datetime="2013-12-18T09:20:53+00:00">2013-12-18</time>
+  </div>
+</article>
+      
+    
+  </div>
+
+
+        
+      </section>
+    </div>
+  
+  </div>
+
+  
+
+        
+
+<form id="file-search-form" action=""><input name="____pgfa" value="RVeDBaQ4okTTGE1yjZNv0Q%3D%3D" type="hidden">
+  <input id="file-search-query" class="loading" type="text">
+  <div id="filtered-files"></div>
+  <div class="tip"><em>Tip:</em> Filter by directory path e.g. <strong>/media app.js</strong> to search for public<strong>/media/app.js</strong>.</div>
+  <div class="tip"><em>Tip:</em> Use camelCasing e.g. <strong>ProjME</strong> to search for <strong>ProjectModifiedE</strong>vent.java.</div>
+  <div class="tip"><em>Tip:</em> Filter by extension type e.g. <strong>/repo .js</strong> to search for all <strong>.js</strong> files in the <strong>/repo</strong> directory.</div>
+  <div class="tip"><em>Tip:</em> Separate your search with spaces e.g. <strong>/ssh pom.xml</strong> to search for src<strong>/ssh/pom.xml</strong>.</div>
+  <div class="tip"><em>Tip:</em> Use ↑ and ↓ arrow keys to navigate and <strong>return</strong> to view the file.</div>
+  <div class="tip mod-osx"><em>Tip:</em> You can also navigate files with <strong>Ctrl+j</strong> <em>(next)</em> and <strong>Ctrl+k</strong> <em>(previous)</em> and view the file with <strong>Ctrl+o</strong>.</div>
+  <div class="tip mod-win"><em>Tip:</em> You can also navigate files with <strong>Alt+j</strong> <em>(next)</em> and <strong>Alt+k</strong> <em>(previous)</em> and view the file with <strong>Alt+o</strong>.</div>
+  
+</form>
+
+        
+          
+          
+          
+        
+      </div>
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+  <footer id="footer" role="contentinfo">
+    <section class="footer-body">
+      
+  <ul>
+    <li>
+      <a class="support-ga" target="_blank" data-support-gaq-page="Blog" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=lJPNJn7rK2Qmi2SCugWsO4ruggAoyq%2F9kGC6PNZdAl8%3D">Blog</a>
+    </li>
+    <li>
+      <a class="support-ga" target="_blank" data-support-gaq-page="Home" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYcsSK1nSo5s1Vd%2BqSVggOBxg%3D">Support</a>
+    </li>
+    <li>
+      <a class="support-ga" data-support-gaq-page="PlansPricing" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Blc3y1Y8QRZ6kfB2OFNYckP2LPD%2F3Kvmc55E5aLDhC4%3D">Plans &amp; pricing</a>
+    </li>
+    <li>
+      <a class="support-ga" target="_blank" data-support-gaq-page="DocumentationHome" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Ayg6HcWEeHRW9UVeH%2FC4%2Bek3UDdGNFqy%2BUh7Rgtfdv3pjIjQ6LOUva%2BY1iA3TBOBzyEUPe7BxavRPWYDI3OCBw%3D%3D">Documentation</a>
+    </li>
+    <li>
+      <a class="support-ga" target="_blank" data-support-gaq-page="DocumentationAPI" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Ayg6HcWEeHRW9UVeH%2FC4%2Bek3UDdGNFqy%2BUh7Rgtfdv0emNiwxOeMoGPi8dZKy7Ej">API</a>
+    </li>
+    <li>
+      <a class="support-ga" target="_blank" data-support-gaq-page="SiteStatus" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=IbNNlnaK0Fd9UkVdxfP9BY8b3aNWBj8ML5q5UZg5OnM%3D">Server status</a>
+    </li>
+    <li>
+      <a class="support-ga" id="meta-info" data-support-gaq-page="MetaInfo" href="#">Version info</a>
+    </li>
+    <li>
+      <a class="support-ga" target="_blank" data-support-gaq-page="EndUserAgreement" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=CapMHA5QBAe91KAw3jdq7%2FgGXp8ERl4z1gCslzgWMD3B3J50HLPubA8XrLLMWWmuO7WBncMpzB1coPxZ5Q5vWeb5cJwAD34coEqlUoJ%2FhGWgRxFjWDglL9ymMGsYX0Ejjq8q1Xfgx7CiUUTr3AURmQ%3D%3D">Terms of service</a>
+    </li>
+    <li>
+      <a class="support-ga" target="_blank" data-support-gaq-page="PrivacyPolicy" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=CapMHA5QBAe91KAw3jdq7x%2BZuQ82nVBCgFWvYBCAqmGD%2BpqUIqYNpK7C7HvXTkP7OxiTVI3pPUeikvJks%2BttsXHDMN%2BX9CycADclSC9havU6iFu5nHcIWKLm6IYbgCeX%2FuTGmDYY%2BWWDiJcHi7LIIw%3D%3D">Privacy policy</a>
+    </li>
+  </ul>
+  <div id="meta-info-content" style="display: none;">
+    <ul>
+      
+        
+          <li>English</li>
+        
+      
+      <li>
+        <a class="support-ga" target="_blank" data-support-gaq-page="GitDocumentation" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=jfC7nbKrB10qT0nnVyAj0MKW%2BXkFeCgyPvBFl9nJGxY%3D">Git 1.8.5.2</a>
+      </li>
+      <li>
+        <a class="support-ga" target="_blank" data-support-gaq-page="HgDocumentation" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=lctPJIVy58DWQY92oKDPWqMzOxGgDjXALMuOlbp%2BEY0%3D">Mercurial 2.9</a>
+      </li>
+      <li>
+        <a class="support-ga" target="_blank" data-support-gaq-page="DjangoDocumentation" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=dULrodVubUNlSLCUHOB26mNnLLSDDd4NbZBq4sQz%2BJo%3D">Django 1.6.5</a>
+      </li>
+      <li>
+        <a class="support-ga" target="_blank" data-support-gaq-page="PythonDocumentation" href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=Y3Kh6XzN0MMFgiGxK%2BG%2FYh4dA4q17LM9fHoYJoi4hk4%3D">Python 2.7.3</a>
+      </li>
+      <li>
+        <a class="support-ga" target="_blank" data-support-gaq-page="DeployedVersion" href="#">200f305649c0 / cc9af2a5b5eb @ app19</a>
+      </li>
+    </ul>
+  </div>
+  <ul class="atlassian-links">
+    <li>
+      <a id="atlassian-jira-link" target="_blank" title="Track everything – bugs, tasks, deadlines, code – and pull reports to stay informed." href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=g4Bp8aIZsah78gG9n2t1RRm%2FIkBGgoN82%2F8fSA8e1CBSlXXu1XZOFkFz5zc14TJQV1SpB6SL8ilPsuu9xMUMCxl4OklOSG1heAP8Ltv2fZRuFx0BWY7jC%2Bbh451%2BCdUzQwv7xnXkxAeFp%2FoQDI3EhgZx6CrvK6GFMFcVmcwcyqc%3D">JIRA</a>
+    </li>
+    <li>
+      <a id="atlassian-confluence-link" target="_blank" title="Content Creation, Collaboration &amp; Knowledge Sharing for Teams." href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=g4Bp8aIZsah78gG9n2t1RRm%2FIkBGgoN82%2F8fSA8e1CDHpOhe9MkjWsom5Ql19pDnZv0rgc4kFWKzCDQfMwpGbF6gKxI7hfeuGY4rrIRup3X8vWXT0O%2BsZf7E19V9ZOwS4uMx4YlOeMVbn5adhZuh04dIfLnr8swkP9jMlXDD0PscNOE7GJsZvANbGXc3r0TAbSrPhTWugPJAUJ3lBitsrw%3D%3D">Confluence</a>
+    </li>
+    <li>
+      <a id="atlassian-bamboo-link" target="_blank" title="Continuous integration and deployment, release management." href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=g4Bp8aIZsah78gG9n2t1RRm%2FIkBGgoN82%2F8fSA8e1CBAhFMjdvhHyGecFyjMMyMskPwWrsOOAO2%2FipOUHc%2FAPeLjMeGJTnjFW5%2BWnYWbodOHSHy56%2FLMJD%2FYzJVww9D7HDThOxibGbwDWxl3N69EwG0qz4U1roDyQFCd5QYrbK8%3D">Bamboo</a>
+    </li>
+    <li>
+      <a id="atlassian-stash-link" target="_blank" title="Git repo management, behind your firewall and Enterprise-ready." href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=g4Bp8aIZsah78gG9n2t1RRm%2FIkBGgoN82%2F8fSA8e1CA4745Y3W%2BNrpOmV8gYXRjJRBPat8irJIlz7ZILyjG2HfpZkFGZaf%2F3TZTXhjVnfS3Ua5syWzY%2BbT0aapGjEoe17sYhWeZbQkDUOj%2FpuuqEkXHLfBOc5alzoRBgGDVHGHU%3D">Stash</a>
+    </li>
+    <li>
+      <a id="atlassian-sourcetree-link" target="_blank" title="A free Git and Mercurial desktop client for Mac or Windows." href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=XzSyYnoSBQr4d%2F6g5xQ%2FEctQnIwgir54yUCtsjYAYRBtuLbnlOxcGnUYq5%2B3%2FvdEOzztJkejV8NApMv2jPBdQbmDbNB8nUFv5m0MrVypOPmB1y1kELS0zWYAhRBbWomnv8RZr%2B9hoCRsJx17WJ047A%3D%3D">SourceTree</a>
+    </li>
+    <li>
+      <a id="atlassian-hipchat-link" target="_blank" title="Group chat and IM built for teams." href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=NaR4Q6QErBJR7r1mvQHlQiXD%2Fw%2BejGsNlxIoZNXpGjhEE9q3yKskiXPtkgvKMbYd%2BlmQUZlp%2F%2FdNlNeGNWd9LdRrmzJbNj5tPRpqkaMSh7XuxiFZ5ltCQNQ6P%2Bm66oSRcct8E5zlqXOhEGAYNUcYdQ%3D%3D">HipChat</a>
+    </li>
+  </ul>
+  <div id="footer-logo">
+    <a target="_blank" title="Bitbucket is developed by Atlassian in San Francisco." href="http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=g4Bp8aIZsah78gG9n2t1RWkqW10iiOfdVzMCM%2FJoClrcpN%2BCrbCY7JOH6NXfQimc%2FbHbV5u5veko6Kb2Go4kQ%2BfSTn5phYRyaPl7Yz7JFB9mIhVS5Ts9AOXSqkqnOyKT%2FyEWgU725KoavJ8ehECXpQ%3D%3D">Atlassian</a>
+  </div>
+
+  
+
+<div data-modules="components/mentions/index">
+  
+  
+  
+</div>
+
+  
+
+<div data-modules="components/repo-typeahead/index">
+  
+</div>
+
+  
+  
+  
+
+    </section>
+  </footer>
+</div>
+
+
+
+  
+  
+
+
+
+
+
+
+
+<!--[if lt IE 9]><![endif]-->
+
+
+</body></html>

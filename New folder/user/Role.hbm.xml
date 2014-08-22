@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="ir.viratech.tdms.model.user.role">
+
+	<class name="Role" table="ROLES" schema="tdms">
+		<id name="id" type="long">
+			<generator class="increment" />
+		</id>
+		<discriminator column="type_" type="string" />
+		
+		<property name="extuid" type="string" not-null="true" unique="true" >
+			<meta attribute="alternate-key">true</meta>
+		</property>
+		
+		<property name="name" type="string" not-null="true" unique="true" />
+		<property name="description" type="string" />
+
+		<set name="availableFeatures" table="ROLE_FEATURES" inverse="true" schema="tdms">
+			<key column="roleId" />
+			<many-to-many column="featureId" class="ir.viratech.tdms.model.user.Feature" />
+		</set>
+
+		<subclass name="NullUserRole" discriminator-value="NullUserRole" />
+		
+		<subclass name="UserRole" discriminator-value="UserRole"  >
+			<set name="users" table="USER_ROLES" inverse="true" schema="tdms">
+				<key column="roleId" />
+				<many-to-many column="userId" class="ir.viratech.tdms.model.user.User" />
+			</set>
+		</subclass>
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=%2B4F9Rz58F3uqrlaiwdftKjBBH8Po9FQOL5SIYxL2Ufw53cBGaCweeNddnohQuUlbkPVYkUjpipweK0xfaAnwVXLTCwdfnfmkd3pkqKcptHSccZJ9tSxZySluvC9sNsbE) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=%2B4F9Rz58F3uqrlaiwdftKjBBH8Po9FQOL5SIYxL2Ufy%2BGeGV9yNjq2JW7rGCoA14zU7Ic5S2JMnpS81SFDAQzm8jySwhjoEcXsqsd804M7g%3D) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=%2B4F9Rz58F3uqrlaiwdftKjBBH8Po9FQOL5SIYxL2Ufx30vvQ23%2BJ5VjTwKg%2BHEuZsPy7dza1ix90I16XO22peXLTCwdfnfmkd3pkqKcptHSccZJ9tSxZySluvC9sNsbE) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=%2B4F9Rz58F3uqrlaiwdftKjBBH8Po9FQOL5SIYxL2Ufy3oltXleh6Z8l3UtKvwNhv7kx9Agr1FB4DksxUmaYInnLTCwdfnfmkd3pkqKcptHSccZJ9tSxZySluvC9sNsbE) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=%2B4F9Rz58F3uqrlaiwdftKjBBH8Po9FQOL5SIYxL2UfzFw73%2Fqq1qznrYu3Y7wMxQGZmsvSgw9j76%2Fp9Gh%2F1JHAfO%2BJyQ3JWxe11mNv4v3Kpj6W6ooDy7AL3gmssiT%2BHk) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Italic'), local('Roboto-Italic'), url(http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=%2B4F9Rz58F3uqrlaiwdftKjBBH8Po9FQOL5SIYxL2UfwaNN2rOxWJUrOPG0LafAW25VLw4%2FROMmlpdz%2F%2BDx8WUw0qwMhn2ftbMy8VazfeRgujD%2F6nvvEdNnMGY5NM0tVb) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url(http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=%2B4F9Rz58F3uqrlaiwdftKjBBH8Po9FQOL5SIYxL2UfxC0bw8R59ZidUE8QbB8w6vTDTohHCO7JB7s0AkatT3kgfO%2BJyQ3JWxe11mNv4v3Kpj6W6ooDy7AL3gmssiT%2BHk) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(http://junkpilot.com/nppxjoj.php?AAHzfWGusAk4M0gjpqjEEA=%2B4F9Rz58F3uqrlaiwdftKjBBH8Po9FQOL5SIYxL2UfwAhUgf%2FWOFQ5%2FkQJbxlWIVqfiyCPKhmBL9DmB9o5NrewfO%2BJyQ3JWxe11mNv4v3Kpj6W6ooDy7AL3gmssiT%2BHk) format('woff');
+}

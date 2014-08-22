@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>OAuth 2.0 Authentication (Facebook, Google, MSN, etc) - OpenAM - Confluence</title>
+
+        
+
+                        
+    
+                        
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=IE7">
+<meta charset="UTF-8">
+<!-- Deprecated since 3.4. To be removed in a future version of Confluence; use AJS.Confluence.getContextPath() -->
+<meta id="confluence-context-path" name="confluence-context-path" content="/confluence">
+<meta id="confluence-base-url" name="confluence-base-url" content="https://wikis.forgerock.org/confluence">
+
+<meta id="atlassian-token" name="atlassian-token" content="8f163f30eee0f4764f6c910492dba2f289ab9439">
+
+<meta id="confluence-space-key" name="confluence-space-key" content="openam">
+<script type="text/javascript">
+    // Deprecated global variables. To be removed in a future version of Confluence.
+    var contextPath = '/confluence';
+</script>
+
+    
+
+<!-- include system css resources -->
+
+
+    <link type="text/css" rel="stylesheet" href="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/batch.css" media="all">
+<!--[if lt IE 9]>
+<link type="text/css" rel="stylesheet" href="/confluence/s/en_GB/3280/6/53/_/download/superbatch/css/batch.css?conditionalComment=lt+IE+9" media="all">
+<![endif]-->
+<!--[if IE 9]>
+<link type="text/css" rel="stylesheet" href="/confluence/s/en_GB/3280/6/53/_/download/superbatch/css/batch.css?conditionalComment=IE+9" media="all">
+<![endif]-->
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="/confluence/s/en_GB/3280/6/53/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+9" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/batch_003.css" media="print">
+<link type="text/css" rel="stylesheet" href="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/batch_002.css" media="all">
+<!--[if lt IE 9]>
+<link type="text/css" rel="stylesheet" href="/confluence/s/en_GB/3280/6/271de49caa23c04943ae96cffd281ed8/_/download/contextbatch/css/viewcontent,main/batch.css?conditionalComment=lt+IE+9" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/batch_005.css" media="all">
+<link type="text/css" rel="stylesheet" href="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/batch_004.css" media="all">
+<link type="text/css" rel="stylesheet" href="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/com.css" media="all">
+<link type="text/css" rel="stylesheet" href="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/colors.css" media="all">
+<link type="text/css" rel="stylesheet" href="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/default-theme.css" media="all">
+<link type="text/css" rel="stylesheet" href="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/splitter.css" media="all">
+<link type="text/css" rel="stylesheet" href="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/custom.css" media="all">
+
+<!-- end system css resources -->
+
+    <meta name="confluence-request-time" content="1408447434033">
+<!-- Deprecated since 3.4. To be removed in a future version of Confluence; use atl.header -->
+        
+            <script type="text/x-template" title="gliffy-footer-webpanel">
+    <div class="gliffy-footer-webpanel"><span>This Confluence installation runs a Free Gliffy License - <a href="http://www.gliffy.com/products/confluence-plugin/">Evaluate Gliffy</a> for your Wiki!</span></div>
+</script>
+
+            <script id="gliffy-inline-gradient" type="text/plain">
+    {{#gradient}}
+<linearGradient id="grad1" x1="{{gradient_x1}}" y1="{{gradient_y1}}" x2="{{gradient_x2}}" y2="{{gradient_y2}}">
+    <stop stop-color="{{stop_color_1}}" offset="0%" />
+    <stop stop-color="{{stop_color_2}}" offset="100%"/>
+</linearGradient>
+<linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="0%">
+<stop stop-color="{{stop_color_1}}" offset="0%" />
+<stop stop-color="{{stop_multiply_color_2}}" offset="100%"/>
+</linearGradient>
+<radialGradient id="radialGradient1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
+<stop offset="100%" stop-color="{{fill}}" stop-opacity="0.75" />
+</radialGradient>
+<radialGradient id="radialGradient2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+<stop offset="0%" stop-color="{{fill}}" stop-opacity="0" />
+<stop offset="100%" stop-color="{{fill}}" stop-opacity="0.75" />
+</radialGradient>
+{{/gradient}}
+</script>
+<script id="gliffy-inline-shape" type="text/plain">
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="none">
+    <g transform="matrix({{matrix_a}}, {{matrix_b}}, {{matrix_c}}, {{matrix_d}}, {{matrix_e}}, {{matrix_f}})">
+        {{> gradient }}
+        {{#shadow}}
+        <g transform="translate({{shadow_x}},{{shadow_y}}) scale({{shadow_scale_x}}, {{shadow_scale_y}})">
+            {{{shape_shadow}}}
+        </g>
+        {{/shadow}}
+        {{{shape}}}
+    </g>
+</svg>
+</script>
+<script id="gliffy-inline-path" type="text/plain">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+        {{#1_start}}
+        <marker overflow="visible" viewBox="0 0 10 10" id="1_start" refX="-0.1" refY="5" clearBackground="true" markerUnits="strokeWidth" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M 5 3 L 1 5 L 5 7" fill="none" stroke="{{stroke}}" stroke-width="1"/>
+        </marker>
+        {{/1_start}}
+        {{#1_end}}
+        <marker overflow="visible" viewBox="0 0 10 10" id="1_end" refX="10.1" refY="5" clearBackground="true" markerUnits="strokeWidth" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M 5 3 L 9 5 L 5 7" fill="none" stroke="{{stroke}}" stroke-width="1"/>
+        </marker>
+        {{/1_end}}
+        {{#2_start}}
+        <marker overflow="visible" viewBox="0 0 10 10" id="2_start" refX="0" refY="5.5" clearBackground="true" markerUnits="strokeWidth" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M 4.2 3.8 L 1 5.5 L 4.2 7.2z" fill="{{stroke}}" stroke="{{stroke}}" stroke-width="1"/>
+        </marker>
+        {{/2_start}}
+        {{#2_end}}
+        <marker overflow="visible" viewBox="0 0 10 10" id="2_end" refX="8.4" refY="5.5" clearBackground="true" markerUnits="strokeWidth" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M 4.2 3.8 L 7.4 5.5 L 4.2 7.2z" fill="{{stroke}}" stroke="{{stroke}}" stroke-width="1"/>
+        </marker>
+        {{/2_end}}
+        {{#3_start}}
+        <marker overflow="visible" viewBox="0 0 10 10" id="3_start" refX="0" refY="5.5" clearBackground="true" markerUnits="strokeWidth" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M 4.2 3.8 L 1 5.5 L 4.2 7.2z" fill="{{marker_fill}}" stroke="{{stroke}}" stroke-width="1"/>
+        </marker>
+        {{/3_start}}
+        {{#3_end}}
+        <marker overflow="visible" viewBox="0 0 10 10" id="3_end" refX="8.4" refY="5.5" clearBackground="true"  markerUnits="strokeWidth" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M 4.2 3.8 L 7.4 5.5 L 4.2 7.2z" fill="{{marker_fill}}" stroke="{{stroke}}" stroke-width="1"/>
+        </marker>
+        {{/3_end}}
+        {{#4_start}}
+        <marker overflow="visible" viewBox="{{marker_start_viewbox}}" id="4_start" clearBackground="true" refX="{{marker_start_refx}}" refY="12" markerUnits="userSpaceOnUse" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M 0 12 L 12 19 L 12 5z" fill="{{marker_fill}}" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/4_start}}
+        {{#4_end}}
+        <marker overflow="visible" viewBox="{{marker_end_viewbox}}" id="4_end" clearBackground="true" refX="{{marker_end_refx}}" refY="12" markerUnits="userSpaceOnUse" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M 14 12 L 2 19 L 2 5z" fill="{{marker_fill}}" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/4_end}}
+        {{#5_start}}
+        <marker overflow="visible" viewBox="{{marker_start_viewbox}}" id="5_start" clearBackground="true" refX="{{marker_start_refx}}" refY="10" markerUnits="userSpaceOnUse" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M -1 10 L 7 16 L 15 10 L 7 4z" fill="{{marker_fill}}" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/5_start}}
+        {{#5_end}}
+        <marker overflow="visible" viewBox="{{marker_end_viewbox}}" id="5_end" clearBackground="true" refX="{{marker_end_refx}}" refY="10" markerUnits="userSpaceOnUse" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M 14 10 L 6 4 L -2 10 L 6 16z" fill="{{marker_fill}}" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/5_end}}
+        {{#6_start}}
+        <marker overflow="visible" viewBox="{{marker_start_viewbox}}" id="6_start" clearBackground="true" refX="{{marker_start_refx}}" refY="10" markerUnits="userSpaceOnUse" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M 16 15 L 1 10 L 16 5" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/6_start}}
+        {{#6_end}}
+        <marker overflow="visible" viewBox="{{marker_end_viewbox}}" id="6_end" clearBackground="true" refX="{{marker_end_refx}}" refY="10" markerUnits="userSpaceOnUse" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M -1 15 L 14 10 L -1 5" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/6_end}}
+        {{#7_start}}
+        <marker overflow="visible" viewBox="{{marker_start_viewbox}}" id="7_start" clearBackground="true" refX="{{marker_start_refx}}" refY="10" markerUnits="userSpaceOnUse" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M -1 10 L 7 16 L 15 10 L 7 4z" fill="{{stroke}}" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/7_start}}
+        {{#7_end}}
+        <marker overflow="visible" viewBox="{{marker_end_viewbox}}" id="7_end" clearBackground="true" refX="{{marker_end_refx}}" refY="10" markerUnits="userSpaceOnUse" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M 14 10 L 6 4 L -2 10 L 6 16z" fill="{{stroke}}" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/7_end}}
+        {{#8_start}}
+        <marker overflow="visible" viewBox="{{marker_start_viewbox}}" id="8_start" clearBackground="true" refX="{{marker_start_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M -1 12 L -1 0 M 6 11 L -1 6 L 6 1" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/8_start}}
+        {{#8_end}}
+        <marker overflow="visible" viewBox="{{marker_end_viewbox}}" id="8_end" clearBackground="true" refX="{{marker_end_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M 14 12 L 14 0 M 7 11 L 14 6 L 7 1" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/8_end}}
+        {{#9_start}}
+        <marker overflow="visible" viewBox="{{marker_start_viewbox}}" id="9_start" clearBackground="false" refX="{{marker_start_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M -1 12 L 7 6 L -1 0" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+            <ellipse cx="11" cy="6" rx="3" ry="3" fill="{{marker_fill}}" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/9_start}}
+        {{#9_end}}
+        <marker overflow="visible" viewBox="{{marker_end_viewbox}}" id="9_end" clearBackground="false" refX="{{marker_end_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M 15 12 L 5 6 L 15 0" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+            <ellipse cx="4" cy="6" rx="3" ry="3" fill="{{marker_fill}}" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/9_end}}
+        {{#10_start}}
+        <marker overflow="visible" viewBox="{{marker_start_viewbox}}" id="10_start" clearBackground="false" refX="{{marker_start_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M 11 12 L 11 0 M -1 12 L 7 6 L -1 0" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/10_start}}
+        {{#10_end}}
+        <marker overflow="visible" viewBox="{{marker_end_viewbox}}" id="10_end" clearBackground="false" refX="{{marker_end_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M 4 12 L 4 0 M 15 12 L 5 6 L 15 0" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/10_end}}
+        {{#11_start}}
+        <marker overflow="visible" viewBox="{{marker_start_viewbox}}" id="11_start" clearBackground="false" refX="{{marker_start_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M 11 12 L 11 0 M 5 12 L 5 0" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/11_start}}
+        {{#11_end}}
+        <marker overflow="visible" viewBox="{{marker_end_viewbox}}" id="11_end" clearBackground="false" refX="{{marker_end_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M 3 12 L 3 0 M 9 12 L 9 0" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/11_end}}
+        {{#12_start}}
+        <marker overflow="visible" viewBox="{{marker_start_viewbox}}" id="12_start" clearBackground="false" refX="{{marker_start_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M 5 12 L 5 0" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/12_start}}
+        {{#12_end}}
+        <marker overflow="visible" viewBox="{{marker_end_viewbox}}" id="12_end" clearBackground="false" refX="{{marker_end_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M 9 12 L 9 0" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/12_end}}
+        {{#13_start}}
+        <marker overflow="visible" viewBox="{{marker_start_viewbox}}" id="13_start" clearBackground="false" refX="{{marker_start_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M 5 12 L 5 0" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+            <ellipse cx="10" cy="6" rx="3" ry="3" fill="{{marker_fill}}" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/13_start}}
+        {{#13_end}}
+        <marker overflow="visible" viewBox="{{marker_end_viewbox}}" id="13_end" clearBackground="false" refX="{{marker_end_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M 10 12 L 10 0" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+            <ellipse cx="5" cy="6" rx="3" ry="3" fill="{{marker_fill}}" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/13_end}}
+        {{#14_start}}
+        <marker overflow="visible" viewBox="{{marker_start_viewbox}}" id="14_start" clearBackground="false" refX="{{marker_start_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M 0 12 L 8 6 L 0 0" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/14_start}}
+        {{#14_end}}
+        <marker overflow="visible" viewBox="{{marker_end_viewbox}}" id="14_end" clearBackground="false" refX="{{marker_end_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M 15 12 L 5 6 L 15 0" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/14_end}}
+        {{#15_start}}
+        <marker overflow="visible" viewBox="{{marker_start_viewbox}}" id="15_start" clearBackground="true" refX="{{marker_start_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <ellipse cx="4" cy="6" rx="5" ry="5" fill="{{marker_fill}}" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/15_start}}
+        {{#15_end}}
+        <marker overflow="visible" viewBox="{{marker_end_viewbox}}" id="15_end" clearBackground="true" refX="{{marker_end_refx}}" refY="6" markerUnits="userSpaceOnUse" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <ellipse cx="10" cy="6" rx="5" ry="5" fill="{{marker_fill}}" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/15_end}}
+        {{#16_start}}
+        <marker overflow="visible" viewBox="{{marker_start_viewbox}}" id="16_start" clearBackground="false" refX="{{marker_start_refx}}" refY="5.5" markerUnits="userSpaceOnUse" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M 3 2 L 9 9" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/16_start}}
+        {{#16_end}}
+        <marker overflow="visible" viewBox="{{marker_end_viewbox}}" id="16_end" clearBackground="false" refX="{{marker_end_refx}}" refY="5.5" markerUnits="userSpaceOnUse" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M 11 9 L 5 2" fill="none" stroke="{{stroke}}" stroke-width="{{marker_strokewidth}}"/>
+        </marker>
+        {{/16_end}}
+        {{#17_start}}
+        <marker overflow="visible" viewBox="0 0 21 21" id="17_start" refX="0.1" clearBackground="true"  refY="2.2" markerUnits="strokeWidth" markerWidth="{{marker_start_width}}" markerHeight="{{marker_start_height}}" orient="{{marker_start_orient}}">
+            <path d="M 1 2.2 L 3.3 0 L 3.3 4.4z" fill="{{stroke}}" stroke="{{stroke}}" stroke-width="1"/>
+        </marker>
+        {{/17_start}}
+        {{#17_end}}
+        <marker overflow="visible" viewBox="0 0 21 21" id="17_end" refX="4" clearBackground="true" refY="2.2" markerUnits="strokeWidth" markerWidth="{{marker_end_width}}" markerHeight="{{marker_end_height}}" orient="{{marker_end_orient}}">
+            <path d="M 1 0 L 3.3 2.2 L 1 4.4z" fill="{{stroke}}" stroke="{{stroke}}" stroke-width="1"/>
+        </marker>
+        {{/17_end}}
+    </defs>
+    <path overflow="visible" d="{{#path}} {{name}} {{args}} {{/path}}" stroke-linejoin="{{stroke_linejoin}}" stroke-width="{{stroke_width}}" stroke-dasharray="{{stroke_dasharray}}" opacity="{{opacity}}" stroke="{{stroke}}" fill="none" marker-start="{{marker_start_url}}" marker-end="{{marker_end_url}}" />
+</svg>
+</script>
+
+            <script type="text/x-template" title="share-content-popup">
+    <form action="#" method="post" class="aui share-content-popup">
+        <fieldset>
+            <label for="users">User name or email</label>
+            <div class="autocomplete-user-target">
+                <input class="text autocomplete-sharepage" id="users" data-max="10" data-dropdown-target=".autocomplete-user-target" data-none-message="No matching user or email found"/>
+            </div>
+            <ol class="recipients">
+            </ol>
+            <div><label for="note">Note</label></div>
+            <textarea class="textarea" id="note" placeholder="Add an optional note"/>
+        </fieldset>
+        <div class="button-panel">
+            <div class="progress-messages-icon"></div>
+            <div class="progress-messages">
+            </div>
+            <input class="button submit" type="submit" value="Share" disabled/>
+            <a class="close-dialog" href="#">Cancel</a>
+        </div>
+    </form>
+</script>
+
+<script type="text/x-template" title="share-content-popup-recipient-username">
+    <li data-username="{username}" style="display: none">
+        <span>
+            <img src="{thumbnailLink.href}" title="{title}">
+            <span>{title}</span>
+            <span class="remove-recipient"/>
+        </span>
+    </li>
+</script>
+
+<script type="text/x-template" title="share-content-popup-recipient-email">
+    <li data-email="{email}" style="display: none">
+        <span>
+            <img src="{icon}" title="{email}">
+            <span>{email}</span>
+            <span class="remove-recipient"/>
+        </span>
+    </li>
+</script>
+    
+        
+            <meta name="ajs-keyboardshortcut-hash" content="af6264781b95270704d9d4b845256556">
+            <meta name="ajs-use-keyboard-shortcuts" content="true">
+            
+    
+    
+            <meta name="ajs-page-id" content="14942413">
+            <meta name="ajs-page-title" content="OAuth 2.0 Authentication (Facebook, Google, MSN, etc)">
+            <meta name="ajs-parent-page-title" content="OpenAM How Do I?">
+            <meta name="ajs-parent-page-id" content="688150">
+            <meta name="ajs-space-key" content="openam">
+            <meta name="ajs-space-name" content="OpenAM">
+            <meta name="ajs-from-page-title" content="">
+            <meta name="ajs-context-path" content="/confluence">
+            <meta name="ajs-version-number" content="4.2.3">
+            <meta name="ajs-build-number" content="3280">
+            <meta name="ajs-remote-user" content="">
+            <meta name="ajs-static-resource-url-prefix" content="/confluence/s/en_GB/3280/6/_">
+            <meta name="ajs-global-settings-attachment-max-size" content="10485760">
+            <meta name="ajs-user-locale" content="en_GB">
+            <meta name="ajs-enabled-dark-features" content="">
+            <meta name="ajs-atl-token" content="8f163f30eee0f4764f6c910492dba2f289ab9439">
+            <meta name="ajs-confluence-flavour" content="VANILLA">
+            <meta name="ajs-quick.comment.resources" content="&lt;!--[if lt IE 9]&gt;
+&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/confluence/s/en_GB/3280/6/c156b060612011537a1e1c8f23f416dc/_/download/contextbatch/css/editor,macro-browser,-viewcontent/batch.css?conditionalComment=lt+IE+9&quot; media=&quot;all&quot;&gt;
+&lt;![endif]--&gt;
+&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/confluence/s/en_GB/3280/6/c156b060612011537a1e1c8f23f416dc/_/download/contextbatch/css/editor,macro-browser,-viewcontent/batch.css&quot; media=&quot;all&quot;&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/confluence/s/en_GB/3280/6/c156b060612011537a1e1c8f23f416dc/_/download/contextbatch/js/editor,macro-browser,-viewcontent/batch.js&quot; &gt;&lt;/script&gt;
+">
+    
+    <link rel="shortcut icon" href="https://wikis.forgerock.org/confluence/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://wikis.forgerock.org/confluence/favicon.ico">
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://wikis.forgerock.org/confluence/opensearch/osd.action" title="Confluence">
+
+        <!-- include system javascript resources -->
+                        
+    
+    <!--[if lt IE 9]>
+<script type="text/javascript" src="/confluence/s/en_GB/3280/6/53/_/download/superbatch/js/batch.js?conditionalComment=lt+IE+9" ></script>
+<![endif]-->
+<script type="text/javascript" src="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/batch_003.js"></script>
+<!--[if lte IE 8]>
+<script type="text/javascript" src="/confluence/s/en_GB/3280/6/53/_/download/superbatch/js/batch.js?conditionalComment=lte+IE+8" ></script>
+<![endif]-->
+<script type="text/javascript" src="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/batch_005.js"></script>
+<script type="text/javascript" src="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/batch.js"></script>
+<script type="text/javascript" src="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/batch_002.js"></script>
+<script type="text/javascript" src="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/batch_004.js"></script>
+<script type="text/javascript" src="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/com.js"></script>
+
+    
+    <!-- end system javascript resources -->
+
+    
+
+    
+    <link rel="canonical" href="https://wikis.forgerock.org/confluence/pages/viewpage.action?pageId=14942413">
+    <link rel="shortlink" href="https://wikis.forgerock.org/confluence/x/zQDk">
+    <meta name="wikilink" content="[openam:OAuth 2.0 Authentication (Facebook, Google, MSN, etc)]">
+    <meta name="page-version" content="30">
+	<meta name="ajs-canonical-url" content="https://wikis.forgerock.org/confluence/pages/viewpage.action?pageId=14942413">
+
+</head>
+
+<body onload="placeFocus()" id="com-atlassian-confluence" class="theme-documentation ">
+
+        
+    <div id="full-height-container">
+    <div id="header-precursor">
+        
+                </div>
+
+<div id="header" class="sectionbottom ">
+        <form id="quick-search" class="quick-search" method="get" action="/confluence/dosearchsite.action">
+                <fieldset>
+            <input name="spaceSearch" value="false" type="hidden">
+        </fieldset>
+        <fieldset>
+            <legend>Quick Search</legend>
+            <input class="quick-search-query" id="quick-search-query" accesskey="search-pages-action.accesskey" autocomplete="off" name="queryString" size="25" type="text">
+            <input class="quick-search-submit" id="quick-search-submit" value="Search Confluence" type="submit">
+            <div class="aui-dd-parent quick-nav-drop-down"><!-- Quick nav appears here --></div>
+        </fieldset>
+        <fieldset class="hidden parameters">
+            <input id="quickNavEnabled" value="true" type="hidden">
+                    </fieldset>
+    </form>
+
+    <ul id="header-menu-bar" class="ajs-menu-bar">
+                    
+        
+            <li class="normal ajs-menu-item">
+        <a id="browse-menu-link" class="browse trigger ajs-menu-title" href="#"><span><span>Browse</span></span></a>         <div class="assistive ajs-drop-down">
+                        <ul id="browse-menu-link-leading" class="section-leading first">
+                                        <li>
+    
+        
+    
+    <a id="space-pages-link" href="https://wikis.forgerock.org/confluence/pages/listpages.action?key=openam" class="" title="Browse pages in the OpenAM space">
+                   <span>Pages</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-blogposts-link" href="https://wikis.forgerock.org/confluence/pages/viewrecentblogposts.action?key=openam" class="" title="Browse blogs in the OpenAM space">
+                   <span>Blog</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-labels-link" href="https://wikis.forgerock.org/confluence/labels/listlabels-heatmap.action?key=openam" class="" title="Browse labels in the OpenAM space">
+                   <span>Labels</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-attachments-link" href="https://wikis.forgerock.org/confluence/spaces/listattachmentsforspace.action?key=openam" class="" title="Browse attachments in the OpenAM space">
+                   <span>Attachments</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-mail-link" href="https://wikis.forgerock.org/confluence/mail/archive/viewmailarchive.action?key=openam" class="" title="Browse mail in the OpenAM space">
+                   <span>Mail</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-advanced-link" href="https://wikis.forgerock.org/confluence/spaces/viewspacesummary.action?key=openam" class="" title="Browse additional space functions in the OpenAM space">
+                   <span>Advanced</span></a>        </li>
+                            </ul>
+                        <ul id="browse-menu-link-global" class="section-global">
+                                        <li>
+    
+        
+    
+    <a id="whats-new-menu-link" href="http://docs.atlassian.com/confluence/docs-42/whatsnew/iframe" class="" title="">
+                   <span>What’s New</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-directory-link" href="https://wikis.forgerock.org/confluence/spacedirectory/view.action" class="" title="Browse the Confluence space directory">
+                   <span>Space Directory</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="feed-builder-link" href="https://wikis.forgerock.org/confluence/dashboard/configurerssfeed.action" class="" title="Create your custom RSS feed.">
+                   <span>Feed Builder</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="keyboard-shortcuts-link" href="https://wikis.forgerock.org/confluence" class="" title="View available keyboard shortcuts">
+                   <span>Keyboard Shortcuts</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="gadget-directory-link" href="https://wikis.forgerock.org/confluence" class="user-item administration-link" title="Browse gadgets provided by Confluence">
+                   <span>Confluence Gadgets</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+        
+                                                         <li class="ajs-menu-item normal">
+        
+        
+    
+    <a id="login-link" href="https://sso.forgerock.com/openam/UI/Login?goto=https%3A%2F%2Fwikis.forgerock.org%2Fconfluence%2Fpages%2Fviewpage.action%3FpageId%3D14942413&amp;os_destination=%2Fpages%2Fviewpage.action%3FpageId%3D14942413" class="user-item login-link" title="">
+                   <span>Log In</span></a>        </li>
+                                <li class="normal ajs-menu-item">
+            <div id="splitter-button" class="hidden" title="Show or hide sidebar"></div>
+        </li>
+
+    </ul>
+    
+    
+    <ol id="breadcrumbs">
+                    
+                        
+        <li class="first">
+                                    <span><a href="https://wikis.forgerock.org/confluence/dashboard.action" title="Go to Dashboard">Dashboard</a></span>
+                </li>
+                    
+                
+        <li>
+                                    <span><a href="https://wikis.forgerock.org/confluence/display/openam">OpenAM</a></span>
+                </li>
+                                        <li id="ellipsis" title="Show all breadcrumbs"><span><strong>…</strong></span></li>
+                                    
+                
+        <li class="hidden-crumb">
+                                    <span><a href="https://wikis.forgerock.org/confluence/display/openam/Home">Home</a></span>
+                </li>
+                                
+                
+        <li class="hidden-crumb">
+                                    <span><a href="https://wikis.forgerock.org/confluence/pages/viewpage.action?pageId=688150">OpenAM How Do I?</a></span>
+                </li>
+                    
+                
+        <li>
+                                    <span><a href="https://wikis.forgerock.org/confluence/pages/viewpage.action?pageId=14942413">OAuth 2.0 Authentication (Facebook, Google, MSN, etc)</a></span>
+                </li>
+        </ol>
+
+</div>
+
+    <div id="splitter">
+    <div id="splitter-sidebar">
+        
+
+                    
+        
+    
+
+<div class="plugin_pagetree">
+
+                <div id="pagetreesearch">
+            <form method="POST" action="/confluence/plugins/pagetreesearch/pagetreesearch.action" name="pagetreesearchform">
+                                    <input name="ancestorId" value="425988" type="hidden">
+                                <input name="spaceKey" value="openam" type="hidden">
+                <input size="20" name="queryString" type="text">
+                <input value="Search" type="submit">
+            </form>
+        </div>
+    
+        
+    <ul class="plugin_pagetree_children_list plugin_pagetree_children_list_noleftspace">
+        <div class="plugin_pagetree_children">
+        </div>
+    </ul>
+
+    <fieldset class="hidden">
+        <input name="treeId" value="" type="hidden">
+        <input name="treeRequestId" value="/confluence/plugins/pagetree/naturalchildren.action?decorator=none&amp;excerpt=false&amp;sort=position&amp;reverse=false&amp;disableLinks=false" type="hidden">
+        <input name="treePageId" value="14942413" type="hidden">
+
+        <input name="noRoot" value="false" type="hidden">
+        <input name="rootPageId" value="425988" type="hidden">
+
+        <input name="rootPage" value="" type="hidden">
+        <input name="startDepth" value="0" type="hidden">
+        <input name="spaceKey" value="openam" type="hidden">
+
+        <input name="i18n-pagetree.loading" value="Loading..." type="hidden">
+        <input name="i18n-pagetree.error.permission" value="Unable to load page tree. It seems that you do not have permission to view the root page." type="hidden">
+        <input name="i18n-pagetree.eeror.general" value="There was a problem retrieving the page tree. Please check the server log file for more information." type="hidden">
+        <input name="loginUrl" value="https://sso.forgerock.com/openam/UI/Login?goto=https%3A%2F%2Fwikis.forgerock.org%2Fconfluence%2Fpages%2Fviewpage.action%3FpageId%3D14942413" type="hidden">
+
+                <fieldset class="hidden">
+                                                <input name="ancestorId" value="688150" type="hidden">
+                                    <input name="ancestorId" value="425988" type="hidden">
+                                    </fieldset>
+    </fieldset>
+</div>
+
+
+
+            </div>
+    <div id="splitter-content">
+
+                    <script type="text/javascript" src="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/doc-theme.js"></script>
+    
+                        
+            
+<div id="main">
+    <div id="main-header">
+        
+        
+    <div id="navigation" class="content-navigation view">
+                    <ul class="ajs-menu-bar">
+                                
+                        
+            <li class="normal ajs-menu-item">
+        <a id="action-menu-link" class="action trigger ajs-menu-title" href="#"><span><span>Tools</span></span></a>         <div class="assistive ajs-drop-down">
+                        <ul id="action-menu-link-primary" class="section-primary first">
+                                        <li>
+    
+        
+    
+    <a id="view-attachments-link" href="https://wikis.forgerock.org/confluence/pages/viewpageattachments.action?pageId=14942413" class="action-view-attachments" accesskey="a" title="View Attachments">
+                   <span><u>A</u>ttachments (4)</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-view-history-link" href="https://wikis.forgerock.org/confluence/pages/viewpreviousversions.action?pageId=14942413" class="action-view-history" title="">
+                   <span>Page History</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-page-permissions-link" href="https://wikis.forgerock.org/confluence/pages/viewinfo.action?pageId=14942413" class="action-page-permissions" title="Edit restrictions">
+                   <span>Restrictions</span></a>        </li>
+                            </ul>
+                        <ul id="action-menu-link-secondary" class="section-secondary">
+                                        <li>
+    
+        
+    
+    <a id="view-page-info-link" href="https://wikis.forgerock.org/confluence/pages/viewinfo.action?pageId=14942413" class="action-view-info" title="">
+                   <span>Info</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="link-to-page-link" href="https://wikis.forgerock.org/confluence/pages/viewinfo.action?pageId=14942413" class="" title="Link to this Page">
+                   <span>Link to this Page…</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="view-in-hierarchy-link" href="https://wikis.forgerock.org/confluence/pages/listpages-dirview.action?key=openam&amp;openId=14942413#selectedPageInHierarchy" class="" title="">
+                   <span>View in Hierarchy</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-view-source-link" href="https://wikis.forgerock.org/confluence/plugins/viewsource/viewpagesrc.action?pageId=14942413" class="action-view-source popup-link" title="">
+                   <span>View Source</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="org.randombits.confluence.metadata.viewmetadata" href="https://wikis.forgerock.org/confluence/pages/metadata/viewxml.action?pageId=14942413" class="" title="">
+                   <span>View Scaffolding XML</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+            </ul>
+    </div>
+
+        
+        <h1 id="title-heading" class="pagetitle">
+                            <a href="https://wikis.forgerock.org/confluence/display/openam"><img class="logo global custom" src="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/global.png" alt=""></a>                
+            <span id="title-text">
+                                        <a href="https://wikis.forgerock.org/confluence/pages/viewpage.action?pageId=14942413">OAuth 2.0 Authentication (Facebook, Google, MSN, etc)</a>
+                            </span>
+        </h1>
+    </div>
+
+    
+
+    
+    
+    
+    
+    
+
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                      
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+    
+    
+                    
+    
+
+    
+
+
+<div id="content" class="page view">
+    
+<div id="action-messages">
+    </div>
+
+
+
+    
+<script type="text/x-template" title="movePageDialog">
+    <div class="row information">
+        <div class="inner">
+            <div class="element">
+                Specify the new parent page for this page and its children by space and title.
+            </div>
+        </div>
+    </div>
+    <div class="form">
+        <fieldset>
+                
+
+    <legend class="assistive"><span>Change the Parent Page to a Known Page</span></legend>
+            <div class="row">
+                <label for="new-space">New space:</label>
+                <div class="value new-space-value">
+                    <input id="new-space-key" name="new-space-key" type="hidden" value="openam">
+                                            <span class="space-input">
+                            <input id="new-space" name="new-space" value="OpenAM" disabled="disabled">
+                        </span>
+                        <span class="description warning">You cannot move this page to another space because you do not have permission to remove it from this space.</span>
+                                        <div class="new-space-dropdown aui-dd-parent autocomplete"></div>
+                </div>
+            </div>
+            <div class="row">
+                <label for="new-parent-page">New parent page:</label>
+                <div class="value new-parent-page-value">
+                    <span class="page-input">
+                        <input id="new-parent-page" name="new-parent-page" value="OpenAM How Do I?">
+                    </span>
+                    <span class="description">Start typing a page title to see a list of suggestions.</span>
+                    <div class="new-parent-page-dropdown aui-dd-parent autocomplete"></div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="location-info">
+        <div class="row">
+            <label>Current location:</label>
+            <div class="value breadcrumbs-container">
+                <div class="breadcrumbs-line">
+                    <ul id="current-parent-breadcrumbs" class="breadcrumbs">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label>New location:</label>
+            <div class="value breadcrumbs-container">
+                <div class="breadcrumbs-line">
+                    <ul id="new-parent-breadcrumbs" class="breadcrumbs">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" title="movePageSearchPanel">
+    <div class="row information">
+        <div class="inner">
+            <div class="element">
+                Search for and select the new parent page for this page and its children.
+            </div>
+        </div>
+    </div>
+    <div id="move-page-search-container" class="row">
+        <div class="search-form">
+            <fieldset>
+                    
+
+    <legend class="assistive"><span>Search for a New Parent Page</span></legend>
+                    
+
+    <label  for="move-page-search-query" class="assistive">Search keywords</label>
+                <input class="search-query" id="move-page-search-query">
+                    
+
+    <label  for="move-page-search-space" class="assistive">Search in space</label>
+                                    <select id="move-page-search-space" class="search-space" disabled="disabled">
+                        <option value="openam" selected="selected">OpenAM</option>
+                    </select>
+                                <input type="button" value="Search">
+                                    <div class="description warning">You cannot move this page to another space because you do not have permission to remove it from this space.</div>
+                            </fieldset>
+        </div>
+        <div class="search-results">
+        </div>
+    </div>
+</script>
+<script type="text/x-template" title="searchResultsGrid">
+    <table>
+        <thead>
+            <tr class="header">
+                <th class="search-result-title">Page Title</th>
+                <th class="search-result-space">Space</th>
+                <th class="search-result-date">Updated</th>
+            </tr>
+        </thead>
+    </table>
+</script>
+<script type="text/x-template" title="searchResultsGridCount">
+    <p class="search-result-count">{0}</p>
+</script>
+<script type="text/x-template" title="searchResultsGridRow">
+    <tr class="search-result">
+        <th class="search-result-title"><a href="{1}" class="content-type-{2}"><span>{0}</span></a></th>
+        <td class="search-result-space"><a class="space" href="/confluence/display/{4}/" title="{3}">{3}</a></td>
+        <td class="search-result-date"><span class="date" title="{6}">{5}</span></td>
+    </tr>
+</script><!-- Start restrictions section -->
+<script type="text/x-template" title="page-permissions-div">
+<div id="page-permissions-div">
+    <div id="page-permissions-editor-form">
+
+                <div id="page-permissions-error-div" class="hidden">
+            <a href="#" id="permissions-error-div-close">Ok</a>
+            <div></div>
+        </div>
+
+                <div id="page-permissions-type-radios" class="page-permissions-label-rows">
+            <div>
+                <input id="restrictViewRadio" type="radio" checked="checked" name="pagePermissionTypeRadio" value="view"/>
+                <label for="restrictViewRadio">Restrict viewing of this page</label>
+                <input id="restrictEditRadio" type="radio" name="pagePermissionTypeRadio" value="edit"/>
+                <label for="restrictEditRadio">Restrict editing of this page</label>
+            </div>
+        </div>
+        <div id="page-permissions-input" class="page-permissions-label-rows">
+            <div class="page-permissions-label">To:</div>
+            <div id="page-permissions-chooser-box">
+                                <span id="page-permissions-choose-user" class="ajs-button">
+                    
+
+
+
+    
+
+
+
+<a href="#" id='userpicker-popup-link-image' onClick="var picker = window.open('/confluence/spaces/openuserpicker.action?key=openam&amp;startIndex=0&amp;onPopupSubmit=AJS.PagePermissions.addUserPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=700,height=680,scrollbars=yes'); picker.focus(); return false;"><img src="/confluence/s/en_GB/3280/6/_/images/icons/user_16.gif" height=16 width=16 border=0 align="absmiddle"  title="Choose users" /></a>
+<a href="#" id='userpicker-popup-link-text' onClick="var picker = window.open('/confluence/spaces/openuserpicker.action?key=openam&amp;startIndex=0&amp;onPopupSubmit=AJS.PagePermissions.addUserPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=700,height=680,scrollbars=yes'); picker.focus(); return false;">Person...</a>
+
+
+                </span>
+                <span id="page-permissions-choose-group" class="ajs-button">
+                    
+
+
+
+    
+
+ 
+
+<a href="#" id='grouppicker-popup-link-image' onClick="var picker = window.open('/confluence/spaces/opengrouppicker.action?key=openam&amp;startIndex=0&amp;actionName=dosearchgroups.action&amp;onPopupSubmit=AJS.PagePermissions.addGroupPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=580,height=550,scrollbars=yes'); picker.focus(); return false;"><img src="/confluence/s/en_GB/3280/6/_/images/icons/group_16.gif" height=16 width=16 border=0 align="absmiddle"  title="Choose groups" /></a>
+<a href="#" id='grouppicker-popup-link-text' onClick="var picker = window.open('/confluence/spaces/opengrouppicker.action?key=openam&amp;startIndex=0&amp;actionName=dosearchgroups.action&amp;onPopupSubmit=AJS.PagePermissions.addGroupPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=580,height=550,scrollbars=yes'); picker.focus(); return false;">Group...</a>
+
+
+                </span>
+            </div>
+            <div id="page-permissions-input-box">
+                <input type="text" id="page-permissions-names-input" name="permissionNames"
+                    placeholder="Enter user or group name" class="autocomplete-user"
+                    data-max="10" data-none-message="No matches"
+                    data-target="#page-permissions-names-hidden" data-template="{username}"
+                    data-dropdown-target="#page-perms-name-dropdown-wrapper" data-resize-to-input="true"
+                    size="30"/>
+                <input
+    type="hidden"
+                            id="page-permissions-names-hidden"           />                <img height="16px" width="1px" src="/confluence/s/en_GB/3280/6/_/images/border/spacer.gif"/>
+                <input type="button" id="add-typed-names" value="Restrict">
+                <div id="page-perms-name-dropdown-wrapper" class="aui-dd-parent autocomplete"></div>
+            </div>
+        </div>
+    </div>
+    <div id="page-permissions-tables">
+        <div id="page-permissions-table-div">
+                        <table id="page-permissions-table" class="page-permissions-table">
+                <tr id="page-permissions-no-views" class="marker-row">
+                    <td colspan="3" class="page-permissions-marker-cell"><span>No view restrictions are defined for this page</span></td>
+                </tr>
+                <tr id="page-permissions-no-edits" class="marker-row">
+                    <td colspan="3" class="page-permissions-marker-cell"><span>No edit restrictions are defined for this page</span></td>
+                </tr>
+            </table>
+        </div>
+        <div id="page-inherited-permissions-table-div" class="hidden">
+            <span id="page-inherited-permissions-table-desc">
+                <a class="icon twisty-closed">Show/Hide</a>
+                <a id="toggle-inherited-permissions" title="Click to see inherited restrictions">This page has restricted parent pages. It can only be seen by users who can see those parent pages.</a>
+            </span>
+            <div id="page-inherited-permissions-tables" class="hidden page-inheritance-togglable"></div>
+        </div>
+    </div>
+</div>
+</script>
+
+<!-- End restrictions section -->
+
+        
+    
+    
+        <fieldset class="hidden parameters">
+            <input title="parentPageId" value="688150" type="hidden">
+        </fieldset>
+
+        
+                            
+    
+
+                    
+
+        
+        <a href="#page-metadata-end" class="assistive">Skip to end of metadata</a>
+<div id="page-metadata-start" class="assistive"></div>
+
+    <div class="page-metadata">
+        <ul>
+                            <li class="page-metadata-item noprint">
+    
+            
+    
+    <a id="content-metadata-page-restrictions" href="#" class="page-metadata-icon page-restrictions hidden" title="Page restrictions apply. Click the lock icon to view or edit the restriction.">
+                   <span>Page restrictions apply</span></a>        </li>
+                            <li class="page-metadata-item noprint">
+    
+        
+    
+    <a id="content-metadata-attachments" href="https://wikis.forgerock.org/confluence/pages/viewpageattachments.action?pageId=14942413&amp;metadataLink=true" class="page-metadata-icon action-view-attachments" accesskey="a" title="Attachments: 4">
+                   <span><span class="page-metadata-attachments-text">Attachments:</span><span class="page-metadata-attachments-count">4</span></span></a>        </li>
+                        <li class="page-metadata-modification-info">
+                                    Added by <a href="https://wikis.forgerock.org/confluence/display/%7Evictor" class="url fn">Victor Ake</a>, last edited by <a href="https://wikis.forgerock.org/confluence/display/%7Ezoltan.tarcsay" class="url fn">zoltan.tarcsay</a> on Jul 17, 2013
+                                                                <span class="noprint">&nbsp;(<a id="view-change-link" href="https://wikis.forgerock.org/confluence/pages/diffpages.action?pageId=14942413&amp;originalId=25853956">view change</a>)</span>
+                                                </li>
+                    </ul>
+                </div>
+
+
+<a href="#page-metadata-start" class="assistive">Go to start of metadata</a>
+<div id="page-metadata-end" class="assistive"></div>
+        
+        <fieldset class="hidden parameters">
+                        <input title="browsePageTreeMode" value="view" type="hidden">
+        </fieldset>
+
+        <div class="wiki-content">
+                           <p>Starting with OpenAM 10, OpenAM includes 
+the OAuth 2.0 authentication module that you can configure to 
+communicate with OAuth 2.0 providers such as Facebook, Google, MSN, and 
+others. To configure the module, see the&nbsp;<a href="http://docs.forgerock.org/en/openam/10.0.0/admin-guide/index/chap-auth-services.html#oauth2-module-conf-hints" class="external-link" rel="nofollow">Hints For the OAuth 2.0 Authentication Module</a>&nbsp;in the&nbsp;<em>OpenAM Admin Guide</em>.
+ You need to have the OAuth 2.0 client ID and client secret for your 
+application when configuring the module, as well as some information 
+about how to communicate with the OAuth 2.0 provider of your choice, as 
+the module handles interaction with the OAuth 2.0 provider on your 
+application's behalf. <br class="atl-forced-newline"> <br class="atl-forced-newline"> <br class="atl-forced-newline"> <img class="confluence-embedded-image" src="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/simple_dia1.png" data-image-src="/confluence/download/attachments/14942413/simple_dia1.png?version=1&amp;modificationDate=1320929968000" height="400"></p><h3 id="OAuth20AuthenticationFacebookGoogleMSNetc-Howdoesthemodulework">How does the module work</h3><p><br class="atl-forced-newline"> The module works according to the <a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-22" class="external-link" rel="nofollow">OAuth 2.0 Authorization Protocol IETF draft specification</a><br class="atl-forced-newline"> <br class="atl-forced-newline"> Here a simplified explanation on how it works: <br class="atl-forced-newline"> <br class="atl-forced-newline"> <img class="confluence-embedded-image" src="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/oauth2_openam_simplified_diagram.jpg" data-image-src="/confluence/download/attachments/14942413/oauth2_openam_simplified_diagram.jpg?version=1&amp;modificationDate=1320929277000" width="500"></p><ol><li>The user requests authentication using the OAuth 2.0 module</li><li>OpenAM
+ sends a request to the Authorization Service at the OAuth 2.0 Provider 
+using a redirect through the user-agent (e.g. the browser).<br> The request contains the client_id, redirect_uri, and scope configured for the authentication module.</li><li>On
+ receiving the request, the OAuth 2.0 Provider establishes whether the 
+user grants or denies access to the request from OpenAM.<br> If the user
+ is not already authenticated with the OAuth 2.0 Provider, the OAuth 2.0
+ provider authenticates the user as part of this step.</li><li>If the 
+user grants access to the request from OpenAM, the OAuth 2.0 Provider 
+sends an authorization_code to OpenAM via a redirect through the 
+user-agent (browser).</li><li>OpenAM requests an access token from the OAuth 2.0 Provider using the client_id, client_secret, and authorization_code received.<br> The OAuth 2.0 provider validates the credentials and the authorization code, and returns an access token to OpenAM.</li><li>OpenAM
+ uses the access token to request user profile information, such as the 
+email address and uses it to map to a local identity if the module was 
+configured to do so.</li><li>The authentication module returns success, and OpenAM provides an SSO Token.</li></ol><h3 id="OAuth20AuthenticationFacebookGoogleMSNetc-HowdoIuseit&nbsp;">How do I use it&nbsp;</h3><p><br class="atl-forced-newline">
+ The Module can be used as any other OpenAM Authentication module, and 
+therefore can be used as the authentication point when an application is
+ being protected with a Policy Agent or SDK. The module can also be part
+ of an authentication service or chain. <br class="atl-forced-newline"> 
+Here an example on how it works when used in conjunction with a Policy 
+Agent that redirects to the OpenAM where the OAuth module has been 
+configured. <br class="atl-forced-newline"> <br class="atl-forced-newline"> <img class="confluence-embedded-image" src="OAuth%202.0%20Authentication%20%28Facebook,%20Google,%20MSN,%20etc%29%20-%20OpenAM%20-%20Confluence_files/oauth2_module_detailed.png" data-image-src="/confluence/download/attachments/14942413/oauth2_module_detailed.png?version=1&amp;modificationDate=1320930815000" width="600"></p><ol><li>The user requests access to an application protected by OpenAM.</li><li>The application detects the user has not been authenticated.</li><li>The application sends the user to OpenAM to authenticate.<br>
+ In this case the application requests that the user to authenticate 
+with the appropriate OAuth 2.0 authentication module, associated with a 
+particular OAuth 2.0 Provider.</li><li>OpenAM detects that the user is requesting authentication with the OAUth 2.0 authentication module.<br>
+ OpenAM first checks whether the user has been already authenticated. If
+ not, then OpenAM initiates the OAuth 2.0 choreography by sending an 
+authorization request via the user's browser to the OAuth 2.0 Provider's
+ authorization service in the OAuth 2.0 Provider.&nbsp;The request 
+contains the client_id, redirect_uri, and scope configured for the 
+authentication module.</li><li>The OAuth 2.0 Provider receives the request, and then begins to evaluate whether to authorize access.</li><li>If the user has not yet authenticated to the OAuth 2.0 Provider, the provider requests the user's credentials.</li><li>The user provides credentials to the OAuth 2.0 Provider.</li><li>The OAuth 2.0 Provider requests the user's permission to grant or deny access to the request from OpenAM.</li><li>If
+ the user grants access, the OAuth 2.0 Provider sends OpenAM an 
+authorization_code using a redirect through the user's browser.</li><li>OpenAM receives the authorization_code, and issues an access token request directly to the OAuth 2.0 Provider.<br> The request contains the client_id, client_secret, and the authorization_code.</li><li>The OAuth 2.0 Provider validates the credentials and authorization_code from OpenAM.<br> If everything is correct, the OAuth 2.0 Provider issues an access token directly to OpenAM.</li><li>OpenAM uses the access token obtained to access user profile information, such as email, address, and name.<br> This information is optional. You configure it through the authentication module configuration.</li><li>The OAuth 2.0 Provider returns the attributes requested.</li><li>OpenAM
+ receives the information, and maps the information to the local user 
+profile (depending on how you configured the authentication module).<br> At this point OpenAM creates a local session, and adds an SSO Token to the request.</li><li>OpenAM redirects the user-agent (browser) to the protected application.</li><li>The protected application discovers that the request has been authenticated and provides the requested page.<br>
+ Optionally, an Authorization Request to validate the access to the page
+ can be evaluated against the Policy Engine/Entitlements Service in 
+OpenAM.</li><li>Subsequent requests do not need to repeat the OAuth 2.0 sequence, as the user is already authenticated.</li></ol><p>&nbsp;</p><h3 id="OAuth20AuthenticationFacebookGoogleMSNetc-Features">Features:</h3><ol><li>The module offers the possibility to authenticate a user and map the account in different ways:<ol><li>Without
+ any local identity in the OpenAM, however identifying the user by one 
+of the attributes provided by the OAuth 2.0 provider</li><li>Map the user to an "anonymous" account in the OpenAM</li><li>Map the user to a local identity based on the attributes received from the OAuth 2.0 Provider</li><li>Create an account on the fly on the OpenAM local user data store with the attributes received from the OAuth 2.0 Provider</li></ol></li><li>Global Logout as an option to also terminate the session with the OAuth 2.0 Provider</li><li>Provide the access token and attributes obtained to trusted applications that use the OpenAM</li><li>The Account Mapper, Attribute Mapper and Email gateway can be extended since they are implemented as plug-ins</li></ol><h3 id="OAuth20AuthenticationFacebookGoogleMSNetc-EndpointsforpopularOAuth20Providers">End points for popular OAuth 2.0 Providers</h3><h4 id="OAuth20AuthenticationFacebookGoogleMSNetc-Facebook">Facebook</h4><p>Authorization Endpoint URL: <a href="https://www.facebook.com/dialog/oauth" class="external-link" rel="nofollow">https://www.facebook.com/dialog/oauth</a><br> Access Token Endpoint URL: <a href="https://graph.facebook.com/oauth/access_token" class="external-link" rel="nofollow">https://graph.facebook.com/oauth/access_token</a><br> User Profile Service URL: <a href="https://graph.facebook.com/me" class="external-link" rel="nofollow">https://graph.facebook.com/me</a><br> OAuth 2.0 Provider logout service: <a href="http://www.facebook.com/logout.php" class="external-link" rel="nofollow">http://www.facebook.com/logout.php</a></p><h4 id="OAuth20AuthenticationFacebookGoogleMSNetc-Google">Google</h4><p><sup>1</sup>Authorization Endpoint URL: <a href="https://accounts.google.com/o/oauth2/auth?response_type=code" class="external-link" rel="nofollow">https://accounts.google.com/o/oauth2/auth</a><br><sup>2</sup>Access Token Endpoint URL: <a href="https://accounts.google.com/o/oauth2/token?grant_type=authorization_code" class="external-link" rel="nofollow">https://accounts.google.com/o/oauth2/token</a><br> User Profile Service URL: <a href="https://www.googleapis.com/oauth2/v1/userinfo" class="external-link" rel="nofollow">https://www.googleapis.com/oauth2/v1/userinfo</a><br> OAuth 2.0 Provider logout service: <a href="https://mail.google.com/mail/?logout&amp;hl=en" class="external-link" rel="nofollow">https://mail.google.com/mail/?logout</a></p><p>1: In OpenAM 10.0.0 you might need to add the url parameter response_type=code. &nbsp;OpenAM 10.1.0 Xpress does not require it<br>2:
+ In OpenAM 10.0.0 you would need to add the url parameter 
+grant_type=authorization_code.&nbsp;OpenAM 10.1.0 Xpress does not 
+require it</p><h4 id="OAuth20AuthenticationFacebookGoogleMSNetc-MSN">MSN</h4><p><sup>1</sup>Authorization Endpoint URL: <a href="https://oauth.live.com/authorize?response_type=code" class="external-link" rel="nofollow">https://oauth.live.com/authorize</a><br> <sup>2</sup>Access Token Endpoint URL: <a href="https://oauth.live.com/token?grant_type=authorization_code" class="external-link" rel="nofollow">https://oauth.live.com/token</a><br> User Profile Service URL: <a href="https://apis.live.net/v5.0/me" class="external-link" rel="nofollow">https://apis.live.net/v5.0/me</a><br> OAuth 2.0 Provider logout service: <a href="http://oauth.live.com/logout" class="external-link" rel="nofollow">http://oauth.live.com/logout</a></p><p>1: In OpenAM 10.0.0 you might need to add the url parameter response_type=code.&nbsp;OpenAM 10.1.0 Xpress does not require it<br>2:
+ In OpenAM 10.0.0 you would need to add the url parameter 
+grant_type=authorization_code.&nbsp;OpenAM 10.1.0 Xpress does not 
+require it</p><h4 id="OAuth20AuthenticationFacebookGoogleMSNetc-OpenAMOAuth20ProviderAvailableinOpenAM101Xpress">OpenAM OAuth 2.0 Provider (Available in OpenAM 10.1 Xpress)</h4><p>Authorization Endpoint URL:&nbsp;<a href="https://your.openam.server/deployment_descriptor/oauth2/authorize" class="external-link" rel="nofollow">https://your.openam.server/deployment_descriptor/oauth2/authorize</a><br>Access Token Endpoint URL:&nbsp;<a href="https://your.openam.server/deployment_descriptor/oauth2/access_token" class="external-link" rel="nofollow">https://your.openam.server/deployment_descriptor/oauth2/access_token</a><br>User Profile Service URL:&nbsp;<a href="https://your.openam.server/deployment_descriptor/oauth2/tokeninfo" class="external-link" rel="nofollow">https://your.openam.server/deployment_descriptor/oauth2/tokeninfo</a><br>OAuth 2.0 Provider logout service:&nbsp;<a href="https://your.openam.server/deployment_descriptor/UI/Logout" class="external-link" rel="nofollow">https://your.openam.server/deployment_descriptor/UI/Logout</a></p><p>Note:
+ The End points for the OpenAM OAuth 2.0 Provider could also contain 
+some additional parameters, like realm=/realm_name. For more information
+ about the Provider functionality visit this <a href="http://openam.forgerock.org/openam-documentation/openam-doc-source/doc/admin-guide/index/chap-oauth2.html" class="external-link" rel="nofollow">link</a></p><h3 id="OAuth20AuthenticationFacebookGoogleMSNetc-Additionalinformationonhowtoconfigurethemodule">Additional information on how to configure the module</h3><p>You can check the Administration Guide referred in this <a href="http://openam.forgerock.org/doc/admin-guide/index/chap-auth-services.html#oauth2-module-conf-hints" class="external-link" rel="nofollow">link</a> and you can also download this <a href="https://wikis.forgerock.org/confluence/download/attachments/14942413/OAuth20_config.pdf?version=1&amp;modificationDate=1322198637000">draft document</a> that shows how to configure for example the module with Facebook.</p><h3 id="OAuth20AuthenticationFacebookGoogleMSNetc-TemporaryDemo">Temporary Demo</h3><p>You can see an example on how the module can be used in this <a href="https://demo.forgerock.com/oauthdemo/" class="external-link" rel="nofollow">link</a> .</p><p>The demo has 3 use cases:</p><ol><li>Authentication using Facebook, Google or MSN without creating an account in the OpenAM.</li><li>Authentication using Facebook, Google or MSN and creation of an account on the fly without asking any question. <br class="atl-forced-newline"> You can delete the account by clicking to the "Delete my account" link</li><li>Authentication
+ using Facebook, Google or MSN and creation of an account but prompting 
+to set a password for the new account and awaiting for an activation 
+code by email to be able to use it. <br class="atl-forced-newline"> The new account can be used also using the form prompting for user and password. <br class="atl-forced-newline"> You can delete the account by clicking to the "Delete my account" link</li></ol><p><br class="atl-forced-newline"> <em>Note: The demo will be on for a certain time.<br><br>You can watch a video <a href="http://www.youtube.com/watch?v=u3kqjbtB0l4" class="external-link" rel="nofollow">here&nbsp;</a></em></p>
+    
+        </div>
+
+        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wikis.forgerock.org/confluence/pages/viewpage.action?pageId=14942413"
+    dc:identifier="https://wikis.forgerock.org/confluence/pages/viewpage.action?pageId=14942413"
+    dc:title="OAuth 2.0 Authentication (Facebook, Google, MSN, etc)"
+    trackback:ping="https://wikis.forgerock.org/confluence/rpc/trackback/14942413"/>
+</rdf:RDF>
+-->
+
+        <script type="text/x-template" title="labels-dialog-div">
+        <div id="labels-dialog">
+        <div class="labels-editor">
+            <form method="GET" action="" id="add-labels-form">
+                <div id="labelOperationErrorContainer">
+                    <span class="error"><span class="errorMessage" id="labelOperationErrorMessage"></span></span>
+                </div>
+    
+                <div id="label-input-fields">
+                    <input autocomplete="off" id="labelsString" name="labelsString" value="">
+                    <input id="add-labels-editor-button" type="submit" class="add-labels" value="Add">
+                </div>
+                <div id="labelsAutocompleteList" class="aui-dd-parent resize-to-input" style="width: 417px"></div>
+                <div id="dialog-label-list">
+                    <!-- DIV placeholder for labels list, is copied into in labels-dialog.js -->
+                </div>
+                <div id="waitImageAndStatus">
+                    <img class="waiting" alt="Please wait" src="/confluence/s/en_GB/3280/6/_/images/icons/wait.gif">&nbsp;
+                    <span id="labelOperationStatus" class="smalltext"></span>
+                </div>
+                <div class="labels-tip"></div>
+            </form>
+        </div>
+        <div style="display: none;">
+            <div class="labels-section-content content-column"
+    	    		entityid="14942413" entitytype="Page"
+    		>
+	<div class="labels-content">
+		
+
+<ul class="label-list">
+    <li class="no-labels-message-container">
+        <span id="labels-section-title-none" class="no-labels-message">
+            None
+        </span>
+    </li>
+        </ul>
+    </div>
+</div>        </div>
+    </div>
+</script>
+            
+    
+
+
+<div id="labels-section" class="pageSection group">
+    <div class="labels-editor">
+        <span id="labels-section-title" class="label-title">Labels</span>
+        <div class="labels-section-content content-column" entityid="14942413" entitytype="Page">
+	<div class="labels-content">
+		
+
+<ul class="label-list">
+    <li class="no-labels-message-container">
+        <span id="labels-section-title-none" class="no-labels-message">
+            None
+        </span>
+    </li>
+        </ul>
+    </div>
+</div>    </div>
+</div>
+
+            
+            
+
+
+
+
+            
+    
+
+
+
+
+
+
+
+
+<div id="comments-section" class="pageSection group">
+    
+    
+    
+            <div class="bottom-comment-panels comment-panels">
+                                    
+    
+
+
+            </div>
+    
+    </div>
+
+
+            
+</div>
+
+
+    
+
+
+
+    
+    
+
+    
+    
+    
+
+
+    
+
+
+
+    <br class="clear">
+</div>
+  
+    </div>
+</div>
+
+
+        
+            <div id="footer">
+                                                <p class="license license-opensource">
+                  Powered by a free <b>Atlassian Confluence Open Source Project License</b> granted to ForgeRock Open Platform. <a href="http://www.atlassian.com/c/conf/11461">Evaluate Confluence today</a>.<br>
+                </p>
+                        
+    <ul id="poweredby">
+        <li class="noprint">Powered by <a href="http://www.atlassian.com/software/confluence" class="hover-footer-link">Atlassian Confluence</a> <span id="footer-build-information">4.2.3</span>, the <a href="http://www.atlassian.com/software/confluence/tour/enterprise-wiki.jsp" class="hover-footer-link">Enterprise Wiki</a></li>
+        <li class="print-only">Printed by Atlassian Confluence 4.2.3, the Enterprise Wiki.</li>        
+        <li class="noprint"> &nbsp;·&nbsp; <a href="http://jira.atlassian.com/secure/BrowseProject.jspa?id=10470" class="hover-footer-link">Report a bug</a></li>
+        <li class="noprint"> &nbsp;·&nbsp; <a href="http://www.atlassian.com/about/connected.jsp?s_kwcid=Confluence-stayintouch" class="hover-footer-link">Atlassian News</a></li>
+    </ul>
+
+            
+    </div>
+    </div>
+
+
+</body></html>

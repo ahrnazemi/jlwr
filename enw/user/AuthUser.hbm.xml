@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="ir.viratech.commons.user_management.user">
+
+	<class name="AuthUser" table="AUTH_USERS"  schema="tdms">
+		<id name="id" type="java.lang.Long">
+			<generator class="increment" />
+		</id>
+		
+		<property name="extuid" type="string" not-null="true" unique="true" >
+			<meta attribute="alternate-key">true</meta>
+		</property>
+		
+		<property name="username" type="string" not-null="true" unique="true" />
+		
+		<property name="password" type="string" not-null="true" unique="false" />
+		
+		<property name="enabled" type="boolean" not-null="true" unique="false" >
+			<column name="enabled" default="true" not-null="true" unique="false" />
+		</property>
+		
+		<property name="firstName" type="string" />
+		<property name="lastName" type="string" />
+		<property name="phoneNumber" type="string" />
+		
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="ir.viratech.tdms.model.file.transition" default-lazy="true">
+
+	<class name="FileTransitionMapping" table="FILE_TRANSITION_MAPPINGS" schema="tdms">
+	    <composite-id>
+			<key-property name="alfrescoFileId" type="long" column="alfrescoFileId"/>
+			<key-property name="nativeFileId" type="long" column="nativeFileId"/>
+		</composite-id>
+		<property name="hashCodeString" column="hashCodeStr" type="string" unique="true" not-null="true" />
+	</class>
+
+</hibernate-mapping>

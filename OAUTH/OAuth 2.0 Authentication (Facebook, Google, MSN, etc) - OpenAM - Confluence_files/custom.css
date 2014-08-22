@@ -1,0 +1,10 @@
+
+/* Custom styles for Confluence (included for all themes by default) */
+
+#com-atlassian-confluence h1 {
+vertical-align: top;
+}
+
+/* End custom styles for Confluence */
+
+

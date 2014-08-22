@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="ir.viratech.tdms.model.file" default-lazy="true">
+
+	<class name="FileContent" table="FILE_CONTENTS" schema="tdms">
+		<id name="id" type="java.lang.Long">
+			<generator class="foreign">
+				<param name="property">file</param>
+			</generator>
+		</id>
+
+		<property name="legacy_data" type="org.hibernate.type.BinaryType" lazy="true">
+        	<meta attribute="property-type">byte[]</meta>
+        	<!-- <column name="data" sql-type="AddGeometryColumn[[4326, 'POINT', 2]]" /> -->
+		</property>
+		
+		<one-to-one name="file" class="NativeFile" constrained="true"/>
+
+	</class>
+	
+	<joined-subclass name="FileContent_FileSystem" extends="FileContent" table="FILE_CONTENTS_FILE_SYSTEM" schema="tdms">
+		<key column="fileContentId" />
+		<property name="fsName" type="string" not-null="true" unique="true" />
+		<property name="editCounter" type="int" not-null="true" unique="false" />
+	</joined-subclass>
+	
+</hibernate-mapping>

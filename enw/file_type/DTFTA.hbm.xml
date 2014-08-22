@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<!-- -->
+<hibernate-mapping package="ir.viratech.tdms.model.file_type">
+	<!-- DocumetnType_FileType Assignment -->
+	<class name="DTFTA" table="DTFTA" schema="tdms">
+		<id name="id" type="long">
+			<generator class="increment" />
+		</id>
+		
+		<one-to-one name="fileType" class="ir.viratech.tdms.model.file_type.FileType" property-ref="dtfta"  />
+		
+		<many-to-one name="documentType"
+			class="ir.viratech.tdms.model.document_type.DocumentType" column="documentTypeId"
+			not-null="true" cascade="none" />
+
+		<property name="required" type="boolean" not-null="true" />
+		<property name="_unique" type="boolean" not-null="true" />
+
+	</class>
+
+</hibernate-mapping>
