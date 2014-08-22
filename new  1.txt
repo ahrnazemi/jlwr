@@ -1,2 +1,0 @@
-$ ENV GIT_SSL_NO_VERIFY=true git clone https://nazemi@viratech.tk:6443/git/Tami
-n/IGNS.git
